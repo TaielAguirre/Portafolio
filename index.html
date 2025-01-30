@@ -128,20 +128,34 @@
         <h2>Proyectos Destacados</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="images/proyecto1.jpg" alt="Sistema de Gestión">
+                <img src="images/electroprimaapp.jpg" alt="ElectroPrima App">
                 <div class="project-info">
-                    <h3>Sistema de Gestión Empresarial</h3>
-                    <p>Plataforma integral para la gestión de recursos y procesos empresariales.</p>
-                    <a href="#" class="btn">Ver Proyecto</a>
+                    <h3>ElectroPrima App</h3>
+                    <p>Sistema de gestión integral para empresa de electrodomésticos. Control de inventario, ventas y servicio técnico.</p>
+                    <div class="project-actions">
+                        <a href="/demos/electroprimaapp" class="btn btn-demo">Ver Demo</a>
+                        <a href="#" class="btn btn-details" data-project="electroprimaapp">Detalles</a>
+                    </div>
                 </div>
             </div>
             <div class="project-card">
-                <img src="images/proyecto2.jpg" alt="App Móvil">
+                <img src="images/presupuestador.jpg" alt="Presupuestador">
                 <div class="project-info">
-                    <h3>App de Productividad</h3>
-                    <p>Aplicación móvil para optimizar flujos de trabajo y gestión de tareas.</p>
-                    <a href="#" class="btn">Ver Proyecto</a>
+                    <h3>Sistema Presupuestador</h3>
+                    <p>Aplicación web para generar presupuestos profesionales de manera rápida y eficiente.</p>
+                    <div class="project-actions">
+                        <a href="/demos/presupuestador" class="btn btn-demo">Ver Demo</a>
+                        <a href="#" class="btn btn-details" data-project="presupuestador">Detalles</a>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Modal para detalles de proyectos -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalContent"></div>
             </div>
         </div>
     </section>
