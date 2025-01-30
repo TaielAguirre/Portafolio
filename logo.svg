@@ -1,0 +1,5 @@
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 25 L40 25 M30 15 L30 35" stroke="#6200EA" stroke-width="2"/>
+    <text x="50" y="35" font-family="Space Grotesk" font-size="30" fill="#6200EA">Tech</text>
+    <text x="120" y="35" font-family="Space Grotesk" font-size="30" fill="#00E5FF">Weave</text>
+</svg> 
