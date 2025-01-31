@@ -32,21 +32,21 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p>Panel Principal</p>
                         </div>
                         <div class="step">
-                            <img src="./images/gestor-de-pedidos/crear pedido.PNG" alt="Crear Pedido" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/crear-pedido.PNG" alt="Crear Pedido" loading="lazy">
                             <p>Creación de Pedidos</p>
                         </div>
                         <div class="step">
-                            <img src="./images/gestor-de-pedidos/pedidos guardados.PNG" alt="Pedidos Guardados" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/pedidos-guardados.PNG" alt="Pedidos Guardados" loading="lazy">
                             <p>Pedidos Guardados</p>
                         </div>
                     </div>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="./images/gestor-de-pedidos/pedidos arribados.PNG" alt="Pedidos Arribados" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/pedidos-arribados.PNG" alt="Pedidos Arribados" loading="lazy">
                             <p>Pedidos Arribados</p>
                         </div>
                         <div class="step">
-                            <img src="./images/gestor-de-pedidos/historial de pedidos.PNG" alt="Historial" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/historial-de-pedidos.PNG" alt="Historial" loading="lazy">
                             <p>Historial de Pedidos</p>
                         </div>
                         <div class="step">
