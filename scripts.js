@@ -36,8 +36,22 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p>Creación de Pedidos</p>
                         </div>
                         <div class="step">
+                            <img src="images/gestor de pedidos/pedidos guardados.PNG" alt="Pedidos Guardados">
+                            <p>Pedidos Guardados</p>
+                        </div>
+                    </div>
+                    <div class="demo-steps">
+                        <div class="step">
+                            <img src="images/gestor de pedidos/pedidos arribados.PNG" alt="Pedidos Arribados">
+                            <p>Pedidos Arribados</p>
+                        </div>
+                        <div class="step">
                             <img src="images/gestor de pedidos/historial de pedidos.PNG" alt="Historial">
                             <p>Historial de Pedidos</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/gestor de pedidos/backup.PNG" alt="Sistema de Backup">
+                            <p>Sistema de Respaldo</p>
                         </div>
                     </div>
                 </div>
@@ -70,11 +84,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div class="step">
                             <img src="images/presupuestador/productos.PNG" alt="Gestión de Productos">
-                            <p>Gestión de Productos</p>
+                            <p>Catálogo de Productos</p>
                         </div>
                         <div class="step">
-                            <img src="images/presupuestador/clientes1.PNG" alt="Gestión de Clientes">
-                            <p>Gestión de Clientes</p>
+                            <img src="images/presupuestador/productos1.PNG" alt="Detalles de Productos">
+                            <p>Detalles de Productos</p>
+                        </div>
+                    </div>
+                    <div class="demo-steps">
+                        <div class="step">
+                            <img src="images/presupuestador/clientes1.PNG" alt="Lista de Clientes">
+                            <p>Lista de Clientes</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/presupuestador/clientes2.PNG" alt="Detalles de Cliente">
+                            <p>Detalles de Cliente</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/presupuestador/config.PNG" alt="Configuración">
+                            <p>Configuración del Sistema</p>
                         </div>
                     </div>
                 </div>
