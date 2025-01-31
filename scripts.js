@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Datos de los proyectos
     const projectsData = {
         electroprimaapp: {
-            title: 'ElectroPrima App',
+            title: 'Gestor de Pedidos',
             description: `
-                <h3>Sistema de Gestión Integral para ElectroPrima</h3>
-                <p>Aplicación web completa para la gestión de una empresa de electrodomésticos, incluyendo:</p>
+                <h3>Sistema de Gestión de Pedidos</h3>
+                <p>Aplicación web completa para la gestión de pedidos, incluyendo:</p>
                 <ul>
-                    <li>Sistema de gestión de pedidos y ventas</li>
-                    <li>Control de inventario en tiempo real</li>
-                    <li>Seguimiento de servicio técnico</li>
-                    <li>Generación de reportes y estadísticas</li>
+                    <li>Creación y seguimiento de pedidos</li>
+                    <li>Historial de pedidos realizados</li>
+                    <li>Control de pedidos arribados</li>
+                    <li>Sistema de respaldo de información</li>
                 </ul>
                 <div class="tech-stack">
                     <span>PHP</span>
@@ -28,16 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h4>Características Principales:</h4>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="images/electroprimaapp/pedidos.jpg" alt="Sistema de Pedidos">
-                            <p>Gestión de Pedidos</p>
+                            <img src="images/gestor de pedidos/main.PNG" alt="Panel Principal">
+                            <p>Panel Principal</p>
                         </div>
                         <div class="step">
-                            <img src="images/electroprimaapp/inventario.jpg" alt="Control de Inventario">
-                            <p>Control de Inventario</p>
+                            <img src="images/gestor de pedidos/crear pedido.PNG" alt="Crear Pedido">
+                            <p>Creación de Pedidos</p>
                         </div>
                         <div class="step">
-                            <img src="images/electroprimaapp/ventas.jpg" alt="Sistema de Ventas">
-                            <p>Sistema de Ventas</p>
+                            <img src="images/gestor de pedidos/historial de pedidos.PNG" alt="Historial">
+                            <p>Historial de Pedidos</p>
                         </div>
                     </div>
                 </div>
@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h3>Generador de Presupuestos Profesional</h3>
                 <p>Sistema web para la creación y gestión de presupuestos, que incluye:</p>
                 <ul>
-                    <li>Interfaz intuitiva de creación</li>
-                    <li>Cálculos automáticos de costos</li>
-                    <li>Exportación a PDF personalizado</li>
-                    <li>Historial y seguimiento de presupuestos</li>
+                    <li>Gestión de productos y servicios</li>
+                    <li>Administración de clientes</li>
+                    <li>Configuración personalizada</li>
+                    <li>Generación de presupuestos detallados</li>
                 </ul>
                 <div class="tech-stack">
                     <span>PHP</span>
@@ -65,16 +65,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h4>Características Principales:</h4>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="images/presupuestador/dashboard.jpg" alt="Panel Principal">
+                            <img src="images/presupuestador/main.PNG" alt="Panel Principal">
                             <p>Panel de Control</p>
                         </div>
                         <div class="step">
-                            <img src="images/presupuestador/nuevo.jpg" alt="Nuevo Presupuesto">
-                            <p>Creación de Presupuestos</p>
+                            <img src="images/presupuestador/productos.PNG" alt="Gestión de Productos">
+                            <p>Gestión de Productos</p>
                         </div>
                         <div class="step">
-                            <img src="images/presupuestador/preview.jpg" alt="Vista Previa">
-                            <p>Vista Previa PDF</p>
+                            <img src="images/presupuestador/clientes1.PNG" alt="Gestión de Clientes">
+                            <p>Gestión de Clientes</p>
                         </div>
                     </div>
                 </div>
@@ -92,11 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (project) {
                 modalContent.innerHTML = `
                     <h2>${project.title}</h2>
-                    <div class="project-gallery">
-                        ${project.images.map(img => `
-                            <img src="${img}" alt="${project.title}" />
-                        `).join('')}
-                    </div>
                     <div class="project-description">
                         ${project.description}
                     </div>
