@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Datos de los proyectos
     const projectsData = {
-        'gestor-pedidos': {
+        'gestor-de-pedidos': {
             title: 'Gestor de Pedidos',
             description: `
                 <h3>Sistema de Gestión de Pedidos</h3>
@@ -28,29 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h4>Características Principales:</h4>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="./images/gestor-pedidos/main.PNG" alt="Panel Principal" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/main.PNG" alt="Panel Principal" loading="lazy">
                             <p>Panel Principal</p>
                         </div>
                         <div class="step">
-                            <img src="./images/gestor-pedidos/crear-pedido.PNG" alt="Crear Pedido" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/crear pedido.PNG" alt="Crear Pedido" loading="lazy">
                             <p>Creación de Pedidos</p>
                         </div>
                         <div class="step">
-                            <img src="./images/gestor-pedidos/pedidos-guardados.PNG" alt="Pedidos Guardados" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/pedidos guardados.PNG" alt="Pedidos Guardados" loading="lazy">
                             <p>Pedidos Guardados</p>
                         </div>
                     </div>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="./images/gestor-pedidos/pedidos-arribados.PNG" alt="Pedidos Arribados" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/pedidos arribados.PNG" alt="Pedidos Arribados" loading="lazy">
                             <p>Pedidos Arribados</p>
                         </div>
                         <div class="step">
-                            <img src="./images/gestor-pedidos/historial-pedidos.PNG" alt="Historial" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/historial de pedidos.PNG" alt="Historial" loading="lazy">
                             <p>Historial de Pedidos</p>
                         </div>
                         <div class="step">
-                            <img src="./images/gestor-pedidos/backup.PNG" alt="Sistema de Backup" loading="lazy">
+                            <img src="./images/gestor-de-pedidos/backup.PNG" alt="Sistema de Backup" loading="lazy">
                             <p>Sistema de Respaldo</p>
                         </div>
                     </div>
