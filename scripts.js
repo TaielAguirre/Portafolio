@@ -9,52 +9,76 @@ document.addEventListener('DOMContentLoaded', function() {
         electroprimaapp: {
             title: 'ElectroPrima App',
             description: `
-                <h3>Sistema de Gestión Integral</h3>
-                <p>Una solución completa para la gestión de negocios de electrodomésticos que incluye:</p>
+                <h3>Sistema de Gestión Integral para ElectroPrima</h3>
+                <p>Aplicación web completa para la gestión de una empresa de electrodomésticos, incluyendo:</p>
                 <ul>
+                    <li>Sistema de gestión de pedidos y ventas</li>
                     <li>Control de inventario en tiempo real</li>
-                    <li>Gestión de ventas y facturación</li>
                     <li>Seguimiento de servicio técnico</li>
-                    <li>Reportes y estadísticas</li>
+                    <li>Generación de reportes y estadísticas</li>
                 </ul>
-                <h4>Tecnologías utilizadas:</h4>
                 <div class="tech-stack">
                     <span>PHP</span>
                     <span>MySQL</span>
                     <span>JavaScript</span>
                     <span>Bootstrap</span>
+                    <span>AJAX</span>
                 </div>
-            `,
-            images: [
-                'images/electroprimaapp/dashboard.jpg',
-                'images/electroprimaapp/ventas.jpg',
-                'images/electroprimaapp/inventario.jpg'
-            ]
+                <div class="demo-guide">
+                    <h4>Características Principales:</h4>
+                    <div class="demo-steps">
+                        <div class="step">
+                            <img src="images/electroprimaapp/pedidos.jpg" alt="Sistema de Pedidos">
+                            <p>Gestión de Pedidos</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/electroprimaapp/inventario.jpg" alt="Control de Inventario">
+                            <p>Control de Inventario</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/electroprimaapp/ventas.jpg" alt="Sistema de Ventas">
+                            <p>Sistema de Ventas</p>
+                        </div>
+                    </div>
+                </div>
+            `
         },
         presupuestador: {
             title: 'Sistema Presupuestador',
             description: `
-                <h3>Generador de Presupuestos Profesionales</h3>
-                <p>Herramienta web para crear y gestionar presupuestos que incluye:</p>
+                <h3>Generador de Presupuestos Profesional</h3>
+                <p>Sistema web para la creación y gestión de presupuestos, que incluye:</p>
                 <ul>
-                    <li>Plantillas personalizables</li>
-                    <li>Cálculos automáticos</li>
-                    <li>Exportación a PDF</li>
-                    <li>Historial de presupuestos</li>
+                    <li>Interfaz intuitiva de creación</li>
+                    <li>Cálculos automáticos de costos</li>
+                    <li>Exportación a PDF personalizado</li>
+                    <li>Historial y seguimiento de presupuestos</li>
                 </ul>
-                <h4>Tecnologías utilizadas:</h4>
                 <div class="tech-stack">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
                     <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>Bootstrap</span>
+                    <span>FPDF</span>
                 </div>
-            `,
-            images: [
-                'images/presupuestador/main.jpg',
-                'images/presupuestador/editor.jpg',
-                'images/presupuestador/preview.jpg'
-            ]
+                <div class="demo-guide">
+                    <h4>Características Principales:</h4>
+                    <div class="demo-steps">
+                        <div class="step">
+                            <img src="images/presupuestador/dashboard.jpg" alt="Panel Principal">
+                            <p>Panel de Control</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/presupuestador/nuevo.jpg" alt="Nuevo Presupuesto">
+                            <p>Creación de Presupuestos</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/presupuestador/preview.jpg" alt="Vista Previa">
+                            <p>Vista Previa PDF</p>
+                        </div>
+                    </div>
+                </div>
+            `
         }
     };
 
