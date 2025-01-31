@@ -191,3 +191,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     lazyImages.forEach(img => imageObserver.observe(img));
 }); 
+
+// Agregar al final del archivo scripts.js
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = {
+        nombre: document.getElementById('nombre').value,
+        email: document.getElementById('email').value,
+        mensaje: document.getElementById('mensaje').value
+    };
+
+    // Aquí puedes agregar la lógica para enviar el formulario
+    // Por ahora mostraremos una alerta de éxito
+    Swal.fire({
+        icon: 'success',
+        title: '¡Mensaje Enviado!',
+        text: 'Gracias por contactarme. Te responderé pronto.',
+        confirmButtonColor: '#6200EA'
+    }).then(() => {
+        this.reset();
+    });
+}); 

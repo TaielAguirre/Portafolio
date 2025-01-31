@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <nav>
@@ -24,6 +25,50 @@
     <section class="hero-section">
         <h1>Entrelazando Tecnología y Soluciones</h1>
         <p>Transformamos ideas complejas en soluciones digitales elegantes</p>
+    </section>
+
+    <section id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <div class="about-container">
+            <div class="about-content">
+                <h3>Taiel Aguirre</h3>
+                <p class="role">Desarrollador Full Stack</p>
+                <p class="description">
+                    Soy un desarrollador apasionado por crear soluciones tecnológicas que resuelven problemas reales. 
+                    Me especializo en el desarrollo de aplicaciones web y sistemas de gestión empresarial, 
+                    utilizando tecnologías modernas y mejores prácticas de desarrollo.
+                </p>
+                <div class="tech-stack">
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>HTML5/CSS3</span>
+                    <span>Bootstrap</span>
+                    <span>Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Desarrollo Web</h3>
+                <p>Creación de sitios web y aplicaciones web personalizadas con diseño responsive y experiencia de usuario optimizada.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-database"></i>
+                <h3>Sistemas de Gestión</h3>
+                <p>Desarrollo de sistemas empresariales para optimizar procesos y mejorar la eficiencia operativa.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Aplicaciones Web</h3>
+                <p>Desarrollo de aplicaciones web progresivas y sistemas multiplataforma.</p>
+            </div>
+        </div>
     </section>
 
     <section id="proyectos">
@@ -60,11 +105,51 @@
         </div>
     </div>
 
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>¿Tienes un proyecto en mente?</h3>
+                <p>Estoy disponible para nuevos proyectos. Contáctame y conversemos sobre cómo puedo ayudarte.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:taielaguirre@gmail.com">taielaguirre@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/taielaguirre" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/taielaguirre" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
         <img src="logo.svg" alt="TechWeave" height="30">
         <p>&copy; 2024 TechWeave. Todos los derechos reservados.</p>
     </footer>
 
     <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html> 

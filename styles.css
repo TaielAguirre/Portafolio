@@ -510,4 +510,124 @@ footer {
     max-width: 90%;
     max-height: 90vh;
     object-fit: contain;
+}
+
+/* Estilos para la sección Sobre Mí */
+.about-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(98, 0, 234, 0.05), rgba(0, 229, 255, 0.05));
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(98, 0, 234, 0.1);
+}
+
+.about-content h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.description {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--accent);
+}
+
+/* Estilos para la sección Servicios */
+.service-card {
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, white, #f8f9fa);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(98, 0, 234, 0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: var(--primary);
+    margin: 1rem 0;
+}
+
+/* Estilos para la sección Contacto */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-info {
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.contact-details {
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.contact-item a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-item a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animaciones */
+.about-container,
+.service-card,
+.contact-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 } 
