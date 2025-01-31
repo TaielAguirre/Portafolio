@@ -28,29 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h4>Características Principales:</h4>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="images/gestor de pedidos/main.PNG" alt="Panel Principal">
+                            <img src="./images/gestor de pedidos/main.PNG" alt="Panel Principal" loading="lazy">
                             <p>Panel Principal</p>
                         </div>
                         <div class="step">
-                            <img src="images/gestor de pedidos/crear pedido.PNG" alt="Crear Pedido">
+                            <img src="./images/gestor de pedidos/crear pedido.PNG" alt="Crear Pedido" loading="lazy">
                             <p>Creación de Pedidos</p>
                         </div>
                         <div class="step">
-                            <img src="images/gestor de pedidos/pedidos guardados.PNG" alt="Pedidos Guardados">
+                            <img src="./images/gestor de pedidos/pedidos guardados.PNG" alt="Pedidos Guardados" loading="lazy">
                             <p>Pedidos Guardados</p>
                         </div>
                     </div>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="images/gestor de pedidos/pedidos arribados.PNG" alt="Pedidos Arribados">
+                            <img src="./images/gestor de pedidos/pedidos arribados.PNG" alt="Pedidos Arribados" loading="lazy">
                             <p>Pedidos Arribados</p>
                         </div>
                         <div class="step">
-                            <img src="images/gestor de pedidos/historial de pedidos.PNG" alt="Historial">
+                            <img src="./images/gestor de pedidos/historial de pedidos.PNG" alt="Historial" loading="lazy">
                             <p>Historial de Pedidos</p>
                         </div>
                         <div class="step">
-                            <img src="images/gestor de pedidos/backup.PNG" alt="Sistema de Backup">
+                            <img src="./images/gestor de pedidos/backup.PNG" alt="Sistema de Backup" loading="lazy">
                             <p>Sistema de Respaldo</p>
                         </div>
                     </div>
@@ -79,29 +79,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h4>Características Principales:</h4>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="images/presupuestador/main.PNG" alt="Panel Principal">
+                            <img src="./images/presupuestador/main.PNG" alt="Panel Principal" loading="lazy">
                             <p>Panel de Control</p>
                         </div>
                         <div class="step">
-                            <img src="images/presupuestador/productos.PNG" alt="Gestión de Productos">
+                            <img src="./images/presupuestador/productos.PNG" alt="Gestión de Productos" loading="lazy">
                             <p>Catálogo de Productos</p>
                         </div>
                         <div class="step">
-                            <img src="images/presupuestador/productos1.PNG" alt="Detalles de Productos">
+                            <img src="./images/presupuestador/productos1.PNG" alt="Detalles de Productos" loading="lazy">
                             <p>Detalles de Productos</p>
                         </div>
                     </div>
                     <div class="demo-steps">
                         <div class="step">
-                            <img src="images/presupuestador/clientes1.PNG" alt="Lista de Clientes">
+                            <img src="./images/presupuestador/clientes1.PNG" alt="Lista de Clientes" loading="lazy">
                             <p>Lista de Clientes</p>
                         </div>
                         <div class="step">
-                            <img src="images/presupuestador/clientes2.PNG" alt="Detalles de Cliente">
+                            <img src="./images/presupuestador/clientes2.PNG" alt="Detalles de Cliente" loading="lazy">
                             <p>Detalles de Cliente</p>
                         </div>
                         <div class="step">
-                            <img src="images/presupuestador/config.PNG" alt="Configuración">
+                            <img src="./images/presupuestador/config.PNG" alt="Configuración" loading="lazy">
                             <p>Configuración del Sistema</p>
                         </div>
                     </div>
