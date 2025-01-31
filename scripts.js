@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Datos de los proyectos
     const projectsData = {
-        electroprimaapp: {
+        'gestor-pedidos': {
             title: 'Gestor de Pedidos',
             description: `
                 <h3>Sistema de Gestión de Pedidos</h3>
