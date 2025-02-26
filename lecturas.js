@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
             content: document.getElementById('article-zero-trust').innerHTML
         },
         'trading-algorithms': {
-            title: 'Algoritmos de Trading con Python',
+            title: 'Algoritmos de Trading con Python: Una Guía Completa',
             category: 'Trading & ML',
-            level: 'Intermedio',
-            readTime: '25 min',
-            content: document.getElementById('article-trading-algorithms').innerHTML
+            level: 'Avanzado',
+            readTime: '45 min',
+            content: document.getElementById('trading_article_template').innerHTML
         },
         'cloud-security': {
             title: 'Fundamentos de Seguridad en la Nube',
