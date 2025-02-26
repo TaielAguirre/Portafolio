@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // Estado de los filtros
-    let activeFilters = {
+    // Estado de los filtros activos
+    const activeFilters = {
         search: '',
         level: 'all',
         time: 'all',
@@ -132,51 +132,58 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para filtrar artículos
     function filterArticles() {
         readingCards.forEach(card => {
-            let shouldShow = true;
+            let visible = true;
 
-            // Filtro de búsqueda
+            // Filtrar por búsqueda
             if (activeFilters.search) {
                 const title = card.querySelector('.reading-title').textContent.toLowerCase();
                 const description = card.querySelector('.reading-description').textContent.toLowerCase();
                 const searchTerm = activeFilters.search.toLowerCase();
-                shouldShow = shouldShow && (title.includes(searchTerm) || description.includes(searchTerm));
+                visible = visible && (title.includes(searchTerm) || description.includes(searchTerm));
             }
 
-            // Filtro de nivel
+            // Filtrar por nivel
             if (activeFilters.level !== 'all') {
-                const cardLevel = card.getAttribute('data-level');
-                shouldShow = shouldShow && cardLevel === activeFilters.level;
+                const level = card.dataset.level;
+                visible = visible && level === activeFilters.level;
             }
 
-            // Filtro de tiempo
+            // Filtrar por tiempo
             if (activeFilters.time !== 'all') {
-                const cardTime = parseInt(card.getAttribute('data-time'));
+                const time = parseInt(card.dataset.time);
                 switch (activeFilters.time) {
                     case 'short':
-                        shouldShow = shouldShow && cardTime < 15;
+                        visible = visible && time < 15;
                         break;
                     case 'medium':
-                        shouldShow = shouldShow && cardTime >= 15 && cardTime <= 30;
+                        visible = visible && time >= 15 && time <= 30;
                         break;
                     case 'long':
-                        shouldShow = shouldShow && cardTime > 30;
+                        visible = visible && time > 30;
                         break;
                 }
             }
 
-            // Filtro de categoría
+            // Filtrar por categoría
             if (activeFilters.category !== 'all') {
-                const cardCategory = card.getAttribute('data-category');
-                shouldShow = shouldShow && cardCategory === activeFilters.category;
+                const category = card.dataset.category;
+                visible = visible && category === activeFilters.category;
             }
 
-            // Mostrar u ocultar la tarjeta
-            card.style.display = shouldShow ? 'block' : 'none';
-        });
-
-        // Animación suave para las tarjetas visibles
-        document.querySelectorAll('.reading-card[style="display: block"]').forEach((card, index) => {
-            card.style.animation = `fadeIn 0.3s ease forwards ${index * 0.1}s`;
+            // Aplicar visibilidad con animación
+            if (visible) {
+                card.style.display = 'block';
+                requestAnimationFrame(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                });
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
         });
     }
 
@@ -252,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pill.classList.add('active');
 
             // Actualizar filtros
-            activeFilters.category = pill.getAttribute('data-category');
+            activeFilters.category = pill.dataset.category;
             filterArticles();
         });
     });
@@ -274,16 +281,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll();
 
-    // Animaciones para las tarjetas
+    // Intersection Observer para animaciones de entrada
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, {
+        threshold: 0.1
+    });
 
-    readingCards.forEach(card => observer.observe(card));
+    // Observar las tarjetas para animaciones
+    readingCards.forEach(card => {
+        observer.observe(card);
+    });
 
     // Inicialización
     updateReadingHistory();
