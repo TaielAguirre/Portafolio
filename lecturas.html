@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechWeave - Recursos y Lecturas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo.svg" alt="TechWeave" height="40">
+        </a>
+        <div class="nav-links">
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="index.html#tecnologias">Tecnologías</a>
+            <a href="lecturas.html" class="active">Recursos</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <section class="hero-section resources-hero">
+        <h1>Recursos y Lecturas Técnicas</h1>
+        <p>Explora artículos detallados, guías prácticas y recursos educativos sobre tecnología y desarrollo</p>
+    </section>
+
+    <section id="categorias">
+        <h2>Categorías</h2>
+        <div class="categories-grid">
+            <div class="category-card" data-category="cloud-security">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Cloud Security</h3>
+                <p>Seguridad en la nube y mejores prácticas</p>
+            </div>
+            <div class="category-card" data-category="trading">
+                <i class="fas fa-chart-line"></i>
+                <h3>Trading & ML</h3>
+                <p>Trading algorítmico y análisis de datos</p>
+            </div>
+            <div class="category-card" data-category="development">
+                <i class="fas fa-code"></i>
+                <h3>Desarrollo</h3>
+                <p>Guías de programación y arquitectura</p>
+            </div>
+            <div class="category-card" data-category="devops">
+                <i class="fas fa-server"></i>
+                <h3>DevOps</h3>
+                <p>Automatización y despliegue continuo</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="articulos-destacados">
+        <h2>Artículos Destacados</h2>
+        <div class="featured-articles">
+            <article class="article-card featured">
+                <div class="article-image">
+                    <img src="./images/readings/zero-trust.jpg" alt="Zero Trust Architecture" loading="lazy">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Cloud Security</span>
+                    <h3>Implementando Zero Trust en la Nube</h3>
+                    <p>Una guía completa sobre cómo implementar y mantener una arquitectura Zero Trust en entornos cloud modernos.</p>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 20 min lectura</span>
+                        <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
+                    </div>
+                    <a href="#" class="btn btn-outline" data-article="zero-trust">Leer más</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="ultimos-articulos">
+        <h2>Últimos Artículos</h2>
+        <div class="articles-grid">
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="./images/readings/trading-algorithms.jpg" alt="Trading Algorithms" loading="lazy">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Trading & ML</span>
+                    <h3>Algoritmos de Trading con Python</h3>
+                    <p>Aprende a construir estrategias de trading automatizado utilizando Python y técnicas de Machine Learning.</p>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 25 min lectura</span>
+                        <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    </div>
+                    <a href="#" class="btn btn-outline" data-article="trading-algorithms">Leer más</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="./images/readings/cloud-security.jpg" alt="Cloud Security" loading="lazy">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Cloud Security</span>
+                    <h3>Fundamentos de Seguridad en la Nube</h3>
+                    <p>Explora los conceptos fundamentales y mejores prácticas para asegurar tus aplicaciones en la nube.</p>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 15 min lectura</span>
+                        <span><i class="fas fa-book-reader"></i> Nivel: Básico</span>
+                    </div>
+                    <a href="#" class="btn btn-outline" data-article="cloud-security">Leer más</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="./images/readings/devops.jpg" alt="DevOps" loading="lazy">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">DevOps</span>
+                    <h3>CI/CD con GitHub Actions</h3>
+                    <p>Implementa un pipeline de integración y despliegue continuo utilizando GitHub Actions.</p>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 18 min lectura</span>
+                        <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    </div>
+                    <a href="#" class="btn btn-outline" data-article="github-actions">Leer más</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="recursos">
+        <h2>Recursos Adicionales</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <i class="fas fa-video"></i>
+                <h3>Tutoriales en Video</h3>
+                <p>Colección de tutoriales prácticos sobre desarrollo y seguridad.</p>
+                <a href="#" class="btn btn-outline">Ver Tutoriales</a>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-book"></i>
+                <h3>Guías PDF</h3>
+                <p>Documentación detallada y guías de referencia descargables.</p>
+                <a href="#" class="btn btn-outline">Descargar Guías</a>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-code-branch"></i>
+                <h3>Repositorios</h3>
+                <p>Código fuente y ejemplos prácticos en GitHub.</p>
+                <a href="#" class="btn btn-outline">Ver Repositorios</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="logo.svg" alt="TechWeave" height="30">
+        <p>&copy; 2024 TechWeave. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal para artículos -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content article-content">
+            <span class="close-modal">&times;</span>
+            <div id="articleContent"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html> 
