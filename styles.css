@@ -1092,4 +1092,84 @@ footer {
     background: var(--primary);
     color: white;
     transform: translateY(-2px);
+}
+
+/* Habilidades Técnicas */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.skill-category {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.skill-header i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.skill-header h3 {
+    color: var(--primary);
+    margin: 0;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(98, 0, 234, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* Animación de las barras de habilidades */
+[data-level="95"] .skill-progress { width: 95%; }
+[data-level="90"] .skill-progress { width: 90%; }
+[data-level="85"] .skill-progress { width: 85%; }
+[data-level="80"] .skill-progress { width: 80%; }
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 } 
