@@ -665,22 +665,22 @@ footer {
 }
 
 .tech-stack span {
-    background: var(--bg-card);
-    color: var(--text-primary);
+    background: var(--primary);
+    color: var(--text-light);
     padding: 0.75rem 1.25rem;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 1px solid var(--border);
+    border: 1px solid var(--primary);
     box-shadow: var(--shadow-sm);
 }
 
 .tech-stack span:hover {
     transform: translateY(-2px);
-    background: var(--primary);
+    background: var(--primary-light);
     color: var(--text-light);
-    border-color: var(--primary);
+    border-color: var(--primary-light);
     box-shadow: var(--shadow-md);
 }
 

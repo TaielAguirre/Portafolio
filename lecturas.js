@@ -93,14 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const template = document.getElementById(templateId);
         
         if (!template) {
-            console.error(`Template no encontrado: ${templateId}`);
+            console.error(`Template no encontrado: ${articleId}`);
             return `
                 <article class="full-article">
                     <header class="article-header">
-                        <h2>Error al cargar el artículo</h2>
+                        <h2>Artículo No Disponible</h2>
                     </header>
                     <div class="article-content">
-                        <p>Lo sentimos, el contenido del artículo no está disponible en este momento.</p>
+                        <p>Lo sentimos, el artículo que buscas no está disponible en este momento.</p>
+                        <p>Por favor, intenta con otro artículo o vuelve más tarde.</p>
                     </div>
                 </article>
             `;
