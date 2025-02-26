@@ -301,22 +301,22 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     });
 }); 
 
-// Manejador de artículos del blog
+// Manejador de lecturas
 document.addEventListener('DOMContentLoaded', function() {
-    const articleModal = document.getElementById('articleModal');
-    const articleContent = document.getElementById('articleContent');
-    const closeArticleModal = articleModal.querySelector('.close-modal');
+    const readingModal = document.getElementById('articleModal');
+    const readingContent = document.getElementById('articleContent');
+    const closeReadingModal = readingModal.querySelector('.close-modal');
 
-    // Abrir artículo
-    document.querySelectorAll('[data-article]').forEach(link => {
+    // Abrir lectura
+    document.querySelectorAll('[data-reading]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const articleId = this.dataset.article;
-            const template = document.getElementById(`article-${articleId}`);
+            const readingId = this.dataset.reading;
+            const template = document.getElementById(`reading-${readingId}`);
             
             if (template) {
-                articleContent.innerHTML = template.innerHTML;
-                articleModal.style.display = 'block';
+                readingContent.innerHTML = template.innerHTML;
+                readingModal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
 
                 // Resaltar sintaxis de código si existe Prism.js
@@ -327,23 +327,73 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Cerrar artículo
-    closeArticleModal.addEventListener('click', () => {
-        articleModal.style.display = 'none';
+    // Cerrar lectura
+    closeReadingModal.addEventListener('click', () => {
+        readingModal.style.display = 'none';
         document.body.style.overflow = 'auto';
     });
 
+    // Cerrar al hacer clic fuera
     window.addEventListener('click', (e) => {
-        if (e.target === articleModal) {
-            articleModal.style.display = 'none';
+        if (e.target === readingModal) {
+            readingModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     });
 
     // Navegación con teclado
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && articleModal.style.display === 'block') {
-            articleModal.style.display = 'none';
+        if (e.key === 'Escape' && readingModal.style.display === 'block') {
+            readingModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+// Manejador de proyectos
+document.addEventListener('DOMContentLoaded', function() {
+    const projectModal = document.getElementById('projectModal');
+    const modalContent = document.getElementById('modalContent');
+    const closeProjectModal = projectModal.querySelector('.close-modal');
+
+    // Abrir proyecto
+    document.querySelectorAll('[data-project]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const projectId = this.dataset.project;
+            const template = document.getElementById(`project-${projectId}`);
+            
+            if (template) {
+                modalContent.innerHTML = template.innerHTML;
+                projectModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+
+                // Resaltar sintaxis de código si existe Prism.js
+                if (window.Prism) {
+                    Prism.highlightAll();
+                }
+            }
+        });
+    });
+
+    // Cerrar proyecto
+    closeProjectModal.addEventListener('click', () => {
+        projectModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    // Cerrar al hacer clic fuera
+    window.addEventListener('click', (e) => {
+        if (e.target === projectModal) {
+            projectModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Navegación con teclado
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && projectModal.style.display === 'block') {
+            projectModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     });

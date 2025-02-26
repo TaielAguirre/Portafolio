@@ -586,6 +586,334 @@ def backtest(self, strategy, data):
         </div>
     </div>
 
+    <section id="lecturas">
+        <h2>Lecturas Recomendadas</h2>
+        <div class="readings-grid">
+            <article class="reading-card">
+                <div class="reading-image">
+                    <img src="./images/readings/cloud-security.jpg" alt="Cloud Security" loading="lazy">
+                </div>
+                <div class="reading-content">
+                    <span class="reading-category">Cloud Security</span>
+                    <h3>Fundamentos de Seguridad en la Nube</h3>
+                    <p>Una guía completa sobre los principios fundamentales de la seguridad en entornos cloud...</p>
+                    <div class="reading-meta">
+                        <span><i class="far fa-clock"></i> 20 min lectura</span>
+                        <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    </div>
+                    <a href="#" class="btn btn-outline" data-reading="cloud-security">Leer más</a>
+                </div>
+            </article>
+
+            <article class="reading-card">
+                <div class="reading-image">
+                    <img src="./images/readings/trading-algorithms.jpg" alt="Trading Algorithms" loading="lazy">
+                </div>
+                <div class="reading-content">
+                    <span class="reading-category">Trading & ML</span>
+                    <h3>Algoritmos de Trading con Python</h3>
+                    <p>Introducción al trading algorítmico y su implementación con Python y técnicas de ML...</p>
+                    <div class="reading-meta">
+                        <span><i class="far fa-clock"></i> 25 min lectura</span>
+                        <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
+                    </div>
+                    <a href="#" class="btn btn-outline" data-reading="trading-algorithms">Leer más</a>
+                </div>
+            </article>
+
+            <article class="reading-card">
+                <div class="reading-image">
+                    <img src="./images/readings/zero-trust.jpg" alt="Zero Trust" loading="lazy">
+                </div>
+                <div class="reading-content">
+                    <span class="reading-category">Ciberseguridad</span>
+                    <h3>Arquitectura Zero Trust</h3>
+                    <p>Implementación práctica del modelo Zero Trust en infraestructuras modernas...</p>
+                    <div class="reading-meta">
+                        <span><i class="far fa-clock"></i> 15 min lectura</span>
+                        <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    </div>
+                    <a href="#" class="btn btn-outline" data-reading="zero-trust">Leer más</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Templates para las lecturas -->
+    <template id="reading-cloud-security">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Fundamentos de Seguridad en la Nube</h2>
+                <div class="article-meta">
+                    <span><i class="far fa-clock"></i> 20 min lectura</span>
+                    <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    <span><i class="fas fa-tag"></i> Cloud Security</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Introducción a la Seguridad Cloud</h3>
+                <p>La seguridad en la nube es un aspecto crítico en la era digital actual. Este artículo explora los conceptos fundamentales y mejores prácticas para mantener seguros los entornos cloud.</p>
+            </section>
+
+            <section class="article-section">
+                <h3>Pilares de la Seguridad Cloud</h3>
+                <ul class="article-list">
+                    <li><strong>Identidad y Acceso:</strong> Gestión de identidades y control de acceso</li>
+                    <li><strong>Protección de Datos:</strong> Encriptación y clasificación de datos</li>
+                    <li><strong>Seguridad de Red:</strong> Segmentación y monitoreo</li>
+                    <li><strong>Cumplimiento:</strong> Regulaciones y estándares</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>Implementación Práctica</h3>
+                <div class="code-block">
+                    <pre><code>
+# Ejemplo de política IAM en AWS
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::mi-bucket/*",
+            "Condition": {
+                "Bool": {
+                    "aws:SecureTransport": "true"
+                }
+            }
+        }
+    ]
+}
+                    </code></pre>
+                </div>
+            </section>
+        </article>
+    </template>
+
+    <template id="reading-trading-algorithms">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Algoritmos de Trading con Python</h2>
+                <div class="article-meta">
+                    <span><i class="far fa-clock"></i> 25 min lectura</span>
+                    <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
+                    <span><i class="fas fa-tag"></i> Trading & ML</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Fundamentos del Trading Algorítmico</h3>
+                <p>El trading algorítmico combina análisis financiero con programación para automatizar estrategias de trading. Exploraremos cómo implementar estas estrategias usando Python.</p>
+            </section>
+
+            <section class="article-section">
+                <h3>Implementación de Estrategias</h3>
+                <div class="code-block">
+                    <pre><code>
+import pandas as pd
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+
+class TradingStrategy:
+    def __init__(self):
+        self.model = RandomForestClassifier(
+            n_estimators=100,
+            max_depth=5
+        )
+    
+    def prepare_features(self, data):
+        # Calcular indicadores técnicos
+        data['SMA_20'] = data['close'].rolling(20).mean()
+        data['RSI'] = self.calculate_rsi(data['close'])
+        return data
+
+    def calculate_rsi(self, prices, period=14):
+        delta = prices.diff()
+        gain = (delta.where(delta > 0, 0)).rolling(window=period).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(window=period).mean()
+        rs = gain / loss
+        return 100 - (100 / (1 + rs))
+                    </code></pre>
+                </div>
+            </section>
+        </article>
+    </template>
+
+    <template id="reading-zero-trust">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Arquitectura Zero Trust</h2>
+                <div class="article-meta">
+                    <span><i class="far fa-clock"></i> 15 min lectura</span>
+                    <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    <span><i class="fas fa-tag"></i> Ciberseguridad</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Principios de Zero Trust</h3>
+                <p>El modelo Zero Trust se basa en el principio de "nunca confiar, siempre verificar". Cada acceso debe ser validado, independientemente de dónde provenga la solicitud.</p>
+            </section>
+
+            <section class="article-section">
+                <h3>Implementación Práctica</h3>
+                <ul class="article-list">
+                    <li><strong>Verificación de Identidad:</strong> Autenticación multifactor</li>
+                    <li><strong>Microsegmentación:</strong> División de la red en zonas seguras</li>
+                    <li><strong>Monitoreo Continuo:</strong> Análisis de comportamiento</li>
+                </ul>
+            </section>
+        </article>
+    </template>
+
+    <!-- Templates para los proyectos -->
+    <template id="project-gestor-pedidos">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Gestor de Pedidos</h2>
+                <div class="article-meta">
+                    <span><i class="fas fa-code"></i> PHP, MySQL, JavaScript</span>
+                    <span><i class="fas fa-calendar"></i> 2023</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Descripción del Proyecto</h3>
+                <p>Sistema web integral para la gestión de pedidos, diseñado para optimizar el proceso de seguimiento y control de pedidos en empresas comerciales.</p>
+            </section>
+
+            <section class="article-section">
+                <h3>Características Principales</h3>
+                <ul class="article-list">
+                    <li>Gestión completa del ciclo de vida de pedidos</li>
+                    <li>Sistema de notificaciones en tiempo real</li>
+                    <li>Reportes y estadísticas detalladas</li>
+                    <li>Backup automático de datos</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>Tecnologías Utilizadas</h3>
+                <div class="tech-stack">
+                    <span>PHP 7.4</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>Bootstrap 5</span>
+                    <span>jQuery</span>
+                    <span>AJAX</span>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Arquitectura del Sistema</h3>
+                <div class="code-block">
+                    <pre><code>
+// Estructura del Proyecto
+project/
+├── config/
+│   ├── database.php
+│   └── config.php
+├── controllers/
+│   ├── PedidosController.php
+│   └── UsuariosController.php
+├── models/
+│   ├── Pedido.php
+│   └── Usuario.php
+├── views/
+│   ├── pedidos/
+│   └── usuarios/
+└── public/
+    ├── js/
+    ├── css/
+    └── img/
+                    </code></pre>
+                </div>
+            </section>
+        </article>
+    </template>
+
+    <template id="project-presupuestador">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Sistema Presupuestador</h2>
+                <div class="article-meta">
+                    <span><i class="fas fa-code"></i> PHP, MySQL, JavaScript</span>
+                    <span><i class="fas fa-calendar"></i> 2023</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Descripción del Proyecto</h3>
+                <p>Aplicación web para la generación y gestión de presupuestos profesionales, con enfoque en la facilidad de uso y la personalización.</p>
+            </section>
+
+            <section class="article-section">
+                <h3>Características Principales</h3>
+                <ul class="article-list">
+                    <li>Generación de presupuestos personalizados</li>
+                    <li>Gestión de productos y servicios</li>
+                    <li>Sistema de clientes integrado</li>
+                    <li>Exportación a PDF</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>Tecnologías Utilizadas</h3>
+                <div class="tech-stack">
+                    <span>PHP 7.4</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>Bootstrap 5</span>
+                    <span>FPDF</span>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Ejemplo de Implementación</h3>
+                <div class="code-block">
+                    <pre><code>
+class Presupuesto {
+    private $db;
+    private $items = [];
+    private $cliente;
+
+    public function __construct($db) {
+        $this->db = $db;
+    }
+
+    public function agregarItem($producto, $cantidad) {
+        $this->items[] = [
+            'producto' => $producto,
+            'cantidad' => $cantidad,
+            'subtotal' => $producto->precio * $cantidad
+        ];
+    }
+
+    public function calcularTotal() {
+        return array_reduce($this->items, function($total, $item) {
+            return $total + $item['subtotal'];
+        }, 0);
+    }
+
+    public function generarPDF() {
+        $pdf = new FPDF();
+        // Configuración del PDF
+        $pdf->AddPage();
+        // ... código para generar el PDF
+        return $pdf->Output();
+    }
+}
+                    </code></pre>
+                </div>
+            </section>
+        </article>
+    </template>
+
     <section id="contacto">
         <h2>Contacto</h2>
         <div class="contact-container">
