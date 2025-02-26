@@ -89,25 +89,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para obtener el contenido del artículo
     function getArticleContent(articleId) {
-        const templateId = `article-${articleId}`;
-        const template = document.getElementById(templateId);
-        
+        const template = document.getElementById(`article-${articleId}`);
         if (!template) {
-            console.error(`Template no encontrado: ${articleId}`);
             return `
-                <article class="full-article">
-                    <header class="article-header">
-                        <h2>Artículo No Disponible</h2>
-                    </header>
-                    <div class="article-content">
-                        <p>Lo sentimos, el artículo que buscas no está disponible en este momento.</p>
-                        <p>Por favor, intenta con otro artículo o vuelve más tarde.</p>
-                    </div>
-                </article>
+                <div class="article-header">
+                    <h2>Artículo No Disponible</h2>
+                </div>
+                <div class="article-content">
+                    <p>Lo sentimos, el artículo "${articleId}" no está disponible en este momento.</p>
+                    <p>Por favor, intenta con otro artículo o vuelve más tarde.</p>
+                </div>
             `;
         }
-        
-        return template.innerHTML;
+        return template.content.cloneNode(true).innerHTML;
     }
 
     // Event Listeners para el modal
