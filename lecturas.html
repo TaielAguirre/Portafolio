@@ -221,6 +221,34 @@
                     </button>
                 </div>
             </article>
+
+            <!-- Artículo Redes y Ciberseguridad -->
+            <article class="reading-card" data-category="Cloud Security" data-level="Intermedio" data-time="35">
+                <div class="reading-image">
+                    <img src="https://placehold.co/800x400/2D3250/FFFFFF/png?text=Redes+y+Ciberseguridad" alt="Redes y Ciberseguridad">
+                </div>
+                <div class="reading-content">
+                    <span class="reading-category">
+                        <i class="fas fa-shield-alt"></i> Cloud Security
+                    </span>
+                    <h3 class="reading-title">Fundamentos de Redes y Ciberseguridad en la Era Cloud</h3>
+                    <p class="reading-description">Explora los conceptos esenciales de redes informáticas y su integración con la seguridad en entornos cloud modernos, incluyendo Azure, AWS y tecnologías emergentes.</p>
+                    <div class="reading-meta">
+                        <span class="meta-item">
+                            <i class="far fa-clock"></i>
+                            35 min lectura
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-book-reader"></i>
+                            Intermedio
+                        </span>
+                    </div>
+                    <button class="read-more-btn" onclick="showArticle('redes-seguridad')">
+                        <span>Leer artículo completo</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
         </div>
     </div>
 
@@ -326,6 +354,78 @@
                 <p>La Integración Continua (CI) y el Despliegue Continuo (CD) son prácticas fundamentales 
                 en el desarrollo moderno de software.</p>
                 <!-- ... resto del contenido del artículo ... -->
+            </section>
+        </article>
+    </template>
+
+    <!-- Template del nuevo artículo -->
+    <template id="article-redes-seguridad">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Fundamentos de Redes y Ciberseguridad en la Era Cloud</h2>
+                <div class="article-meta">
+                    <span><i class="far fa-clock"></i> 35 min lectura</span>
+                    <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    <span><i class="fas fa-tag"></i> Cloud Security</span>
+                </div>
+            </header>
+
+            <div class="tech-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+            </div>
+
+            <section class="article-section">
+                <h3>Introducción a Redes y Seguridad Cloud</h3>
+                <p>
+                    En la era actual de la computación en la nube, comprender los fundamentos de las redes informáticas
+                    y la ciberseguridad es esencial. Este artículo explora cómo las redes tradicionales evolucionan
+                    en el contexto cloud y cómo asegurar estos entornos híbridos modernos.
+                </p>
+            </section>
+
+            <section class="article-section">
+                <h3>1. Fundamentos de Redes en la Nube</h3>
+                <ul class="article-list">
+                    <li>Arquitecturas de red en la nube</li>
+                    <li>Redes virtuales y VPCs</li>
+                    <li>Conectividad híbrida</li>
+                    <li>DNS y enrutamiento en la nube</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>2. Seguridad en Entornos Cloud</h3>
+                <ul class="article-list">
+                    <li>Grupos de seguridad y ACLs</li>
+                    <li>Firewalls de nueva generación</li>
+                    <li>WAF y protección de aplicaciones</li>
+                    <li>Monitoreo y logging</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>3. Tecnologías y Herramientas</h3>
+                <ul class="article-list">
+                    <li>Azure Security Center y AWS Security Hub</li>
+                    <li>Scripts de automatización en Python</li>
+                    <li>Herramientas de monitoreo con Node.js</li>
+                    <li>Integración con aplicaciones PHP</li>
+                    <li>Machine Learning para detección de amenazas</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>4. Mejores Prácticas y Casos de Uso</h3>
+                <ul class="article-list">
+                    <li>Diseño de arquitecturas seguras</li>
+                    <li>Implementación de Zero Trust</li>
+                    <li>Gestión de accesos e identidades</li>
+                    <li>Respuesta a incidentes</li>
+                </ul>
             </section>
         </article>
     </template>

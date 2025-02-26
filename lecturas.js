@@ -63,6 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
             level: 'Intermedio',
             category: 'DevOps',
             template: 'article-ci-cd'
+        },
+        {
+            id: 'redes-seguridad',
+            title: 'Fundamentos de Redes y Ciberseguridad en la Era Cloud',
+            description: 'Explora los conceptos esenciales de redes informáticas y su integración con la seguridad en entornos cloud modernos.',
+            image: 'images/readings/redes-seguridad.jpg',
+            readingTime: '35 min',
+            level: 'Intermedio',
+            category: 'Cloud Security',
+            template: 'article-redes-seguridad'
         }
     ];
 
