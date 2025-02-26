@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechWeave - Entrelazando Tecnología y Soluciones</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>TechWeave - Soluciones Tecnológicas Innovadoras</title>
+    <meta name="description" content="Especialista en desarrollo de software, ciberseguridad y soluciones cloud. Creando el futuro digital con innovación y seguridad.">
+    <meta name="keywords" content="desarrollo web, ciberseguridad, cloud computing, machine learning, devops">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav>
         <div class="nav-brand">
-            <img src="logo.svg" alt="TechWeave">
+            <img src="logo.svg" alt="TechWeave Logo">
             <h1>TechWeave</h1>
         </div>
         <div class="nav-links">
+            <a href="#sobre-mi">Sobre Mí</a>
             <a href="#servicios">Servicios</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#tecnologias">Tecnologías</a>
-            <a href="#lecturas">Lecturas</a>
-            <a href="#contacto">Contacto</a>
+            <a href="lecturas.html">Recursos</a>
+            <a href="#contacto" class="nav-cta">Contacto</a>
         </div>
         <div class="menu-toggle">
             <span></span>
@@ -31,510 +34,379 @@
 
     <section class="hero-section">
         <div class="hero-content">
-            <h1>Soluciones Tecnológicas Innovadoras</h1>
-            <p>Desarrollando el futuro digital con experiencia en cloud computing, seguridad y desarrollo de software.</p>
+            <h1>Innovación Digital & Seguridad</h1>
+            <p>Desarrollando soluciones tecnológicas avanzadas con un enfoque en seguridad, escalabilidad y excelencia técnica.</p>
+            <div class="hero-cta">
+                <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                <a href="#contacto" class="btn btn-outline">Contactar</a>
+            </div>
             <div class="tech-stack">
                 <span>Python</span>
+                <span>Cloud Security</span>
                 <span>Machine Learning</span>
-                <span>AWS Security</span>
-                <span>Cloud Native</span>
                 <span>Node.js</span>
                 <span>React</span>
-                <span>Docker</span>
-                <span>Kubernetes</span>
-                <span>IAM/PAM</span>
-                <span>SIEM</span>
+                <span>DevOps</span>
             </div>
         </div>
+        <div class="hero-background"></div>
     </section>
 
-    <section id="sobre-mi">
-        <h2>Sobre Mí</h2>
-        <div class="about-container">
-            <div class="about-content">
-                <h3>Taiel Aguirre</h3>
-                <p class="role">Desarrollador Full Stack & Especialista en Tecnologías Emergentes</p>
-                <p class="description">
-                    Soy un profesional tecnológico multidisciplinario, especializado en desarrollo de software, 
-                    ciberseguridad y soluciones de IA. Mi enfoque combina la innovación en desarrollo web 
-                    con prácticas robustas de seguridad cloud y automatización inteligente, creando soluciones 
-                    escalables y seguras para entornos modernos.
-                </p>
-                <div class="certifications">
-                    <h4>Certificaciones en Progreso</h4>
-                    <div class="cert-grid">
-                        <div class="cert-item">
-                            <i class="fab fa-aws"></i>
-                            <span>AWS Security Specialty</span>
-                        </div>
-                        <div class="cert-item">
+    <section id="sobre-mi" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Mí</h2>
+                <p>Especialista en tecnologías emergentes y seguridad digital</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Taiel Aguirre</h3>
+                    <p class="role">Desarrollador Full Stack & Especialista en Seguridad Cloud</p>
+                    <p class="description">
+                        Soy un profesional tecnológico multidisciplinario con experiencia en desarrollo de software,
+                        ciberseguridad y soluciones cloud. Mi enfoque combina la innovación técnica con prácticas
+                        robustas de seguridad, creando soluciones escalables y seguras para el mundo digital actual.
+                    </p>
+                    <div class="expertise-areas">
+                        <div class="expertise-item">
                             <i class="fas fa-shield-alt"></i>
-                            <span>CompTIA Security+</span>
+                            <h4>Seguridad Cloud</h4>
+                            <p>Implementación de arquitecturas Zero Trust y mejores prácticas de seguridad en la nube</p>
                         </div>
-                        <div class="cert-item">
-                            <i class="fas fa-cloud"></i>
-                            <span>CCSP</span>
+                        <div class="expertise-item">
+                            <i class="fas fa-code"></i>
+                            <h4>Desarrollo Full Stack</h4>
+                            <p>Creación de aplicaciones web modernas y APIs escalables</p>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-robot"></i>
+                            <h4>Automatización & IA</h4>
+                            <p>Desarrollo de soluciones de machine learning y automatización de procesos</p>
                         </div>
                     </div>
                 </div>
-                <div class="cta-buttons">
-                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
-                    <a href="https://github.com/taielaguirre" class="btn btn-github" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="habilidades">
-        <h2>Habilidades Técnicas</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <div class="skill-header">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Seguridad Cloud</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>
-                        <span class="skill-name">Arquitectura Zero Trust</span>
-                        <div class="skill-bar" data-level="90">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">AWS Security Services</span>
-                        <div class="skill-bar" data-level="85">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">IAM/PAM</span>
-                        <div class="skill-bar" data-level="80">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="skill-category">
-                <div class="skill-header">
-                    <i class="fas fa-code"></i>
-                    <h3>Desarrollo</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>
-                        <span class="skill-name">Python</span>
-                        <div class="skill-bar" data-level="95">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">JavaScript/Node.js</span>
-                        <div class="skill-bar" data-level="90">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">React</span>
-                        <div class="skill-bar" data-level="85">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <div class="skill-header">
-                    <i class="fas fa-robot"></i>
-                    <h3>IA y Automatización</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>
-                        <span class="skill-name">Machine Learning</span>
-                        <div class="skill-bar" data-level="85">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Trading Algorítmico</span>
-                        <div class="skill-bar" data-level="90">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Análisis de Datos</span>
-                        <div class="skill-bar" data-level="85">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <div class="skill-header">
-                    <i class="fas fa-server"></i>
-                    <h3>DevOps & Cloud</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>
-                        <span class="skill-name">Docker</span>
-                        <div class="skill-bar" data-level="90">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">Kubernetes</span>
-                        <div class="skill-bar" data-level="85">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="skill-name">CI/CD</span>
-                        <div class="skill-bar" data-level="80">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="proyectos">
-        <h2>Proyectos Destacados</h2>
-        <div class="projects-grid">
-            <article class="project-card featured" data-project="bot-cripto">
-                <img src="./images/bot_cripto/main.jpg" alt="CryptoBot Pro" loading="lazy">
-                <div class="project-info">
-                    <h3>CryptoBot Pro</h3>
-                    <p>Plataforma de trading algorítmico con ML para criptomonedas</p>
-                    <div class="tech-tags">
-                        <span>Python</span>
-                        <span>Machine Learning</span>
-                        <span>APIs</span>
+                <div class="about-sidebar">
+                    <div class="certifications">
+                        <h4>Certificaciones en Progreso</h4>
+                        <ul class="cert-list">
+                            <li><i class="fab fa-aws"></i>AWS Security Specialty</li>
+                            <li><i class="fas fa-shield-alt"></i>CompTIA Security+</li>
+                            <li><i class="fas fa-cloud"></i>CCSP</li>
+                        </ul>
                     </div>
-                    <div class="project-actions">
-                        <a href="#" class="btn-details" data-project="bot-cripto">Ver Detalles</a>
-                        <a href="https://github.com/taielaguirre/cryptobot" class="btn-github" target="_blank">
+                    <div class="social-links">
+                        <a href="https://github.com/taielaguirre" target="_blank" class="social-btn">
                             <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/taielaguirre" target="_blank" class="social-btn">
+                            <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
                     </div>
                 </div>
-            </article>
-
-            <article class="project-card" data-project="gestor-de-pedidos">
-                <img src="./images/gestor-de-pedidos/main.jpg" alt="Gestor de Pedidos" loading="lazy">
-                <div class="project-info">
-                    <h3>Gestor de Pedidos</h3>
-                    <p>Sistema web para gestión y seguimiento de pedidos</p>
-                    <div class="tech-tags">
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="#" class="btn-details" data-project="gestor-de-pedidos">Ver Detalles</a>
-                        <a href="https://demo.techweave.dev/gestor-pedidos" class="btn-demo">Demo en Vivo</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project-card" data-project="presupuestador">
-                <img src="./images/presupuestador/main.jpg" alt="Sistema Presupuestador" loading="lazy">
-                <div class="project-info">
-                    <h3>Sistema Presupuestador</h3>
-                    <p>Aplicación para generar y gestionar presupuestos</p>
-                    <div class="tech-tags">
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>Bootstrap</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="#" class="btn-details" data-project="presupuestador">Ver Detalles</a>
-                        <a href="https://demo.techweave.dev/presupuestador" class="btn-demo">Demo en Vivo</a>
-                    </div>
-                </div>
-            </article>
+            </div>
         </div>
     </section>
 
-    <section id="tecnologias">
-        <h2>Stack Tecnológico</h2>
-        <div class="tech-categories">
-            <div class="tech-category">
-                <h3><i class="fas fa-code"></i> Desarrollo</h3>
-                <div class="tech-grid">
-                    <div class="tech-item">
-                        <img src="https://placehold.co/150x150/svg?text=Python" alt="Python">
-                        <span>Python</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="https://placehold.co/150x150/svg?text=JavaScript" alt="JavaScript">
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="https://placehold.co/150x150/svg?text=React" alt="React">
-                        <span>React</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="https://placehold.co/150x150/svg?text=Node.js" alt="Node.js">
-                        <span>Node.js</span>
-                    </div>
-                </div>
+    <section id="servicios" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Servicios</h2>
+                <p>Soluciones tecnológicas adaptadas a tus necesidades</p>
             </div>
-
-            <div class="tech-category">
-                <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
-                <div class="tech-grid">
-                    <div class="tech-item">
-                        <img src="./images/tech/aws.svg" alt="AWS">
-                        <span>AWS</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="./images/tech/docker.svg" alt="Docker">
-                        <span>Docker</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="./images/tech/kubernetes.svg" alt="Kubernetes">
-                        <span>Kubernetes</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="./images/tech/terraform.svg" alt="Terraform">
-                        <span>Terraform</span>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Seguridad Cloud</h3>
+                    <ul>
+                        <li>Arquitectura Zero Trust</li>
+                        <li>Auditorías de seguridad</li>
+                        <li>Gestión de identidades (IAM)</li>
+                        <li>Protección de datos</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="tech-category">
-                <h3><i class="fas fa-shield-alt"></i> Seguridad</h3>
-                <div class="tech-grid">
-                    <div class="tech-item">
-                        <img src="./images/tech/vault.svg" alt="Vault">
-                        <span>Vault</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="./images/tech/wazuh.svg" alt="Wazuh">
-                        <span>Wazuh</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="./images/tech/cloudflare.svg" alt="Cloudflare">
-                        <span>Cloudflare</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="./images/tech/snyk.svg" alt="Snyk">
-                        <span>Snyk</span>
-                    </div>
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Desarrollo Web</h3>
+                    <ul>
+                        <li>Aplicaciones web modernas</li>
+                        <li>APIs RESTful</li>
+                        <li>Microservicios</li>
+                        <li>Optimización de rendimiento</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Automatización & IA</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Trading algorítmico</li>
+                        <li>Automatización de procesos</li>
+                        <li>Análisis de datos</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-server"></i>
+                    <h3>DevOps & Cloud</h3>
+                    <ul>
+                        <li>CI/CD Pipelines</li>
+                        <li>Containerización</li>
+                        <li>Orquestación Kubernetes</li>
+                        <li>Infraestructura como código</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="lecturas">
-        <h2>Recursos y Lecturas</h2>
-        <div class="readings-preview">
-            <div class="featured-reading">
-                <article class="reading-card featured" data-reading="zero-trust">
-                    <div class="reading-image">
-                        <img src="https://placehold.co/800x400?text=Zero+Trust" alt="Zero Trust Architecture">
-                    </div>
-                    <div class="reading-content">
-                        <span class="reading-category">Cloud Security</span>
-                        <h3>Implementando Zero Trust en la Nube</h3>
-                        <p>Una guía completa sobre cómo implementar y mantener una arquitectura Zero Trust en entornos cloud modernos.</p>
-                        <div class="reading-meta">
-                            <span><i class="far fa-clock"></i> 20 min lectura</span>
-                            <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
-                        </div>
-                    </div>
-                </article>
+    <section id="proyectos" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proyectos Destacados</h2>
+                <p>Soluciones innovadoras que marcan la diferencia</p>
             </div>
-            <div class="readings-grid">
-                <article class="reading-card" data-reading="trading-algorithms">
-                    <div class="reading-image">
-                        <img src="https://placehold.co/800x400?text=Trading+Algorithms" alt="Trading Algorithms">
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <img src="images/bot_cripto/main.jpg" alt="CryptoBot Pro">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="btn-demo">Ver Demo</a>
+                                <a href="https://github.com/taielaguirre/cryptobot" class="btn-github" target="_blank">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="reading-content">
-                        <span class="reading-category">Trading & ML</span>
-                        <h3>Algoritmos de Trading con Python</h3>
-                        <p>Introducción al trading algorítmico y su implementación con Python y técnicas de ML...</p>
-                        <div class="reading-meta">
-                            <span><i class="far fa-clock"></i> 45 min lectura</span>
-                            <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
+                    <div class="project-info">
+                        <h3>CryptoBot Pro</h3>
+                        <p>Plataforma avanzada de trading algorítmico que utiliza machine learning para analizar y ejecutar operaciones en el mercado de criptomonedas.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>MongoDB</span>
+                            <span>Docker</span>
                         </div>
                     </div>
                 </article>
-                <article class="reading-card" data-reading="cloud-security">
-                    <div class="reading-image">
-                        <img src="https://placehold.co/800x400?text=Cloud+Security" alt="Cloud Security">
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/gestor-de-pedidos/main.jpg" alt="Gestor de Pedidos">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="btn-demo">Ver Demo</a>
+                                <a href="#" class="btn-github">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="reading-content">
-                        <span class="reading-category">Cloud Security</span>
-                        <h3>Fundamentos de Seguridad en la Nube</h3>
-                        <p>Explora los conceptos fundamentales y mejores prácticas para asegurar tus aplicaciones en la nube.</p>
-                        <div class="reading-meta">
-                            <span><i class="far fa-clock"></i> 15 min lectura</span>
-                            <span><i class="fas fa-book-reader"></i> Nivel: Básico</span>
+                    <div class="project-info">
+                        <h3>Gestor de Pedidos</h3>
+                        <p>Sistema web integral para la gestión y seguimiento de pedidos, con interfaz moderna y funcionalidades avanzadas de reporting.</p>
+                        <div class="tech-stack">
+                            <span>Node.js</span>
+                            <span>React</span>
+                            <span>PostgreSQL</span>
+                            <span>Docker</span>
                         </div>
                     </div>
                 </article>
-            </div>
-            <div class="cta-buttons">
-                <a href="lecturas.html" class="btn btn-primary">Ver Todos los Recursos</a>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/presupuestador/main.jpg" alt="Sistema Presupuestador">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="btn-demo">Ver Demo</a>
+                                <a href="#" class="btn-github">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sistema Presupuestador</h3>
+                        <p>Aplicación web para la generación y gestión de presupuestos, con características avanzadas de personalización y seguimiento.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MySQL</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>¿Tienes un proyecto en mente?</h3>
-                <p>Estoy disponible para nuevos proyectos. Contáctame y conversemos sobre cómo puedo ayudarte.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:taielaguirre@gmail.com">taielaguirre@gmail.com</a>
+    <section id="tecnologias" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Stack Tecnológico</h2>
+                <p>Herramientas y tecnologías que domino</p>
+            </div>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3><i class="fas fa-code"></i> Desarrollo</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                            <span>Node.js</span>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://linkedin.com/in/taielaguirre" target="_blank">LinkedIn</a>
+                </div>
+
+                <div class="tech-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                            <span>AWS</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
+                            <span>Terraform</span>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/taielaguirre" target="_blank">GitHub</a>
+                </div>
+
+                <div class="tech-category">
+                    <h3><i class="fas fa-shield-alt"></i> Seguridad</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vault/vault-original.svg" alt="Vault">
+                            <span>Vault</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="images/tech/wazuh.svg" alt="Wazuh">
+                            <span>Wazuh</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="images/tech/cloudflare.svg" alt="Cloudflare">
+                            <span>Cloudflare</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="images/tech/snyk.svg" alt="Snyk">
+                            <span>Snyk</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
+        </div>
+    </section>
+
+    <section id="contacto" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contacto</h2>
+                <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email</h4>
+                            <a href="mailto:contacto@techweave.dev">contacto@techweave.dev</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/taielaguirre" target="_blank">linkedin.com/in/taielaguirre</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/taielaguirre" target="_blank">github.com/taielaguirre</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn">Enviar Mensaje</button>
-            </form>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <img src="logo.svg" alt="TechWeave" height="30">
-        <p>&copy; 2024 TechWeave. Todos los derechos reservados.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.svg" alt="TechWeave">
+                    <p>Creando el futuro digital con innovación y seguridad</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a href="#sobre-mi">Sobre Mí</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#proyectos">Proyectos</a></li>
+                            <li><a href="#tecnologias">Tecnologías</a></li>
+                            <li><a href="lecturas.html">Recursos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Recursos</h4>
+                        <ul>
+                            <li><a href="lecturas.html">Blog Técnico</a></li>
+                            <li><a href="#proyectos">Portfolio</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Social</h4>
+                        <div class="social-icons">
+                            <a href="https://github.com/taielaguirre" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/taielaguirre" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://twitter.com/taielaguirre" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechWeave. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="scripts.js"></script>
-    <script src="lecturas.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!-- Modal para proyectos -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modalContent"></div>
-        </div>
-    </div>
-
-    <!-- Modal para artículos -->
-    <div id="articleModal" class="modal">
-        <div class="modal-content article-content">
-            <span class="close-modal">&times;</span>
-            <div id="articleContent"></div>
-        </div>
-    </div>
-
-    <!-- Plantillas de artículos -->
-    <template id="article-zero-trust">
-        <article class="full-article">
-            <header class="article-header">
-                <h2>Implementando Zero Trust en la Nube</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-clock"></i> 20 min lectura</span>
-                    <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
-                    <span><i class="fas fa-tag"></i> Cloud Security</span>
-                </div>
-            </header>
-            <div class="article-content">
-                <p>Una guía completa sobre cómo implementar y mantener una arquitectura Zero Trust en entornos cloud modernos.</p>
-                <!-- Resto del contenido del artículo -->
-            </div>
-        </article>
-    </template>
-
-    <template id="article-cloud-security">
-        <article class="full-article">
-            <header class="article-header">
-                <h2>Fundamentos de Seguridad en la Nube</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-clock"></i> 15 min lectura</span>
-                    <span><i class="fas fa-book-reader"></i> Nivel: Básico</span>
-                    <span><i class="fas fa-tag"></i> Cloud Security</span>
-                </div>
-            </header>
-            <div class="article-content">
-                <p>Explora los conceptos fundamentales y mejores prácticas para asegurar tus aplicaciones en la nube.</p>
-                <!-- Resto del contenido del artículo -->
-            </div>
-        </article>
-    </template>
-
-    <template id="article-trading-algorithms">
-        <article class="full-article">
-            <header class="article-header">
-                <h2>Algoritmos de Trading con Python</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-clock"></i> 45 min lectura</span>
-                    <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
-                    <span><i class="fas fa-tag"></i> Trading & ML</span>
-                </div>
-            </header>
-            <div class="article-content">
-                <p>Introducción al trading algorítmico y su implementación con Python y técnicas de ML.</p>
-                <!-- Resto del contenido del artículo -->
-            </div>
-        </article>
-    </template>
-
-    <template id="article-microservices">
-        <article class="full-article">
-            <header class="article-header">
-                <h2>Arquitectura de Microservicios con Node.js</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-clock"></i> 30 min lectura</span>
-                    <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
-                    <span><i class="fas fa-tag"></i> Desarrollo</span>
-                </div>
-            </header>
-            <div class="article-content">
-                <p>Guía práctica para diseñar, implementar y desplegar una arquitectura de microservicios escalable.</p>
-                <!-- Resto del contenido del artículo -->
-            </div>
-        </article>
-    </template>
-
-    <template id="article-ci-cd">
-        <article class="full-article">
-            <header class="article-header">
-                <h2>Implementando CI/CD con GitHub Actions</h2>
-                <div class="article-meta">
-                    <span><i class="far fa-clock"></i> 25 min lectura</span>
-                    <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
-                    <span><i class="fas fa-tag"></i> DevOps</span>
-                </div>
-            </header>
-            <div class="article-content">
-                <p>Tutorial paso a paso para configurar pipelines de integración y despliegue continuo usando GitHub Actions.</p>
-                <!-- Resto del contenido del artículo -->
-            </div>
-        </article>
-    </template>
     <script src="script.js"></script>
 </body>
 </html> 
