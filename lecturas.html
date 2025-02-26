@@ -75,7 +75,7 @@
                 <h2>Artículos Destacados</h2>
                 <div class="featured-grid">
                     <!-- Zero Trust Article -->
-                    <article class="featured-article" data-article="zero-trust">
+                    <article class="featured-article">
                         <div class="article-image">
                             <img src="images/readings/zero-trust.jpg" alt="Zero Trust Architecture">
                         </div>
@@ -87,12 +87,12 @@
                                 <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
                                 <span><i class="fas fa-tag"></i> Cloud Security</span>
                             </div>
-                            <button class="read-more">Leer más</button>
+                            <button onclick="showArticle('zero-trust')" class="read-more">Leer más</button>
                         </div>
                     </article>
 
                     <!-- Trading Article -->
-                    <article class="featured-article" data-article="trading-algorithms">
+                    <article class="featured-article">
                         <div class="article-image">
                             <img src="images/readings/trading.jpg" alt="Trading Algorithms">
                         </div>
@@ -104,7 +104,7 @@
                                 <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
                                 <span><i class="fas fa-tag"></i> Desarrollo</span>
                             </div>
-                            <button class="read-more">Leer más</button>
+                            <button onclick="showArticle('trading-algorithms')" class="read-more">Leer más</button>
                         </div>
                     </article>
                 </div>
@@ -114,7 +114,7 @@
                 <h2>Últimos Artículos</h2>
                 <div class="articles-grid">
                     <!-- Cloud Security Article -->
-                    <article class="article-card" data-article="cloud-security">
+                    <article class="article-card">
                         <div class="article-image">
                             <img src="images/readings/cloud-security.jpg" alt="Cloud Security">
                         </div>
@@ -126,12 +126,12 @@
                                 <span><i class="fas fa-book-reader"></i> Nivel: Básico</span>
                                 <span><i class="fas fa-tag"></i> Cloud Security</span>
                             </div>
-                            <button class="read-more">Leer más</button>
+                            <button onclick="showArticle('cloud-security')" class="read-more">Leer más</button>
                         </div>
                     </article>
 
                     <!-- Microservices Article -->
-                    <article class="article-card" data-article="microservices">
+                    <article class="article-card">
                         <div class="article-image">
                             <img src="images/readings/microservices.jpg" alt="Microservices Architecture">
                         </div>
@@ -143,12 +143,12 @@
                                 <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
                                 <span><i class="fas fa-tag"></i> Desarrollo</span>
                             </div>
-                            <button class="read-more">Leer más</button>
+                            <button onclick="showArticle('microservices')" class="read-more">Leer más</button>
                         </div>
                     </article>
 
                     <!-- CI/CD Article -->
-                    <article class="article-card" data-article="ci-cd">
+                    <article class="article-card">
                         <div class="article-image">
                             <img src="images/readings/ci-cd.jpg" alt="CI/CD with GitHub Actions">
                         </div>
@@ -160,7 +160,7 @@
                                 <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
                                 <span><i class="fas fa-tag"></i> DevOps</span>
                             </div>
-                            <button class="read-more">Leer más</button>
+                            <button onclick="showArticle('ci-cd')" class="read-more">Leer más</button>
                         </div>
                     </article>
                 </div>
@@ -220,13 +220,13 @@
 
     <!-- Modal para artículos -->
     <div id="articleModal" class="modal">
-        <div class="modal-content article-content">
-            <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <span class="close">&times;</span>
             <div id="articleContent"></div>
         </div>
     </div>
 
-    <!-- Templates de artículos -->
+    <!-- Plantillas de artículos -->
     <template id="article-zero-trust">
         <article class="full-article">
             <header class="article-header">

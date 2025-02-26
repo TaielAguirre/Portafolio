@@ -64,28 +64,38 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Función para mostrar un artículo
-    function showArticle(articleId) {
-        const article = articlesData.find(article => article.id === articleId);
-        if (!article) return;
-
-        const template = document.getElementById(article.template);
-        if (!template) return;
+    window.showArticle = function(articleId) {
+        const template = document.getElementById(articleId === 'trading-algorithms' ? 'trading_article_template' : `article-${articleId}`);
+        if (!template) {
+            console.error('Template no encontrado:', articleId);
+            return;
+        }
 
         const modalContent = document.querySelector('#articleModal .modal-content');
-        modalContent.innerHTML = '';
-        modalContent.appendChild(template.content.cloneNode(true));
+        const articleContent = document.getElementById('articleContent');
+        
+        // Limpiar contenido anterior
+        articleContent.innerHTML = '';
+        
+        // Clonar y agregar el contenido del template
+        articleContent.appendChild(template.content.cloneNode(true));
         
         // Activar resaltado de sintaxis
-        Prism.highlightAll();
+        if (window.Prism) {
+            Prism.highlightAll();
+        }
         
         // Mostrar el modal
         const modal = document.getElementById('articleModal');
         modal.style.display = 'block';
-    }
+        document.body.style.overflow = 'hidden';
+    };
 
     // Cerrar el modal cuando se hace clic en la X
     document.querySelector('.close').addEventListener('click', () => {
-        document.getElementById('articleModal').style.display = 'none';
+        const modal = document.getElementById('articleModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     });
 
     // Cerrar el modal cuando se hace clic fuera del contenido
@@ -93,6 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('articleModal');
         if (event.target === modal) {
             modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Cerrar el modal con la tecla Escape
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            const modal = document.getElementById('articleModal');
+            if (modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
     });
 
