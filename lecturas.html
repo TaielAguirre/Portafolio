@@ -27,107 +27,130 @@
     <section class="hero-section resources-hero">
         <h1>Recursos y Lecturas Técnicas</h1>
         <p>Explora artículos detallados, guías prácticas y recursos educativos sobre tecnología y desarrollo</p>
-    </section>
-
-    <section id="categorias">
-        <h2>Categorías</h2>
-        <div class="categories-grid">
-            <div class="category-card" data-category="cloud-security">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Cloud Security</h3>
-                <p>Seguridad en la nube y mejores prácticas</p>
-            </div>
-            <div class="category-card" data-category="trading">
-                <i class="fas fa-chart-line"></i>
-                <h3>Trading & ML</h3>
-                <p>Trading algorítmico y análisis de datos</p>
-            </div>
-            <div class="category-card" data-category="development">
-                <i class="fas fa-code"></i>
-                <h3>Desarrollo</h3>
-                <p>Guías de programación y arquitectura</p>
-            </div>
-            <div class="category-card" data-category="devops">
-                <i class="fas fa-server"></i>
-                <h3>DevOps</h3>
-                <p>Automatización y despliegue continuo</p>
-            </div>
+        <div class="search-container">
+            <input type="text" id="searchArticles" placeholder="Buscar artículos...">
+            <select id="filterLevel">
+                <option value="all">Todos los niveles</option>
+                <option value="Básico">Básico</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzado">Avanzado</option>
+            </select>
         </div>
     </section>
 
-    <section id="articulos-destacados">
-        <h2>Artículos Destacados</h2>
-        <div class="featured-articles">
-            <article class="article-card featured">
-                <div class="article-image">
-                    <img src="./images/readings/zero-trust.jpg" alt="Zero Trust Architecture" loading="lazy">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Cloud Security</span>
-                    <h3>Implementando Zero Trust en la Nube</h3>
-                    <p>Una guía completa sobre cómo implementar y mantener una arquitectura Zero Trust en entornos cloud modernos.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 20 min lectura</span>
-                        <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
+    <div class="content-wrapper">
+        <main class="main-content">
+            <section id="categorias">
+                <h2>Categorías</h2>
+                <div class="categories-grid">
+                    <div class="category-card active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        <h3>Todos</h3>
+                        <p>Ver todos los artículos</p>
                     </div>
-                    <a href="#" class="btn btn-outline" data-article="zero-trust">Leer más</a>
+                    <div class="category-card" data-category="cloud-security">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Cloud Security</h3>
+                        <p>Seguridad en la nube y mejores prácticas</p>
+                    </div>
+                    <div class="category-card" data-category="trading">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Trading & ML</h3>
+                        <p>Trading algorítmico y análisis de datos</p>
+                    </div>
+                    <div class="category-card" data-category="development">
+                        <i class="fas fa-code"></i>
+                        <h3>Desarrollo</h3>
+                        <p>Guías de programación y arquitectura</p>
+                    </div>
+                    <div class="category-card" data-category="devops">
+                        <i class="fas fa-server"></i>
+                        <h3>DevOps</h3>
+                        <p>Automatización y despliegue continuo</p>
+                    </div>
                 </div>
-            </article>
-        </div>
-    </section>
+            </section>
 
-    <section id="ultimos-articulos">
-        <h2>Últimos Artículos</h2>
-        <div class="articles-grid">
-            <article class="article-card">
-                <div class="article-image">
-                    <img src="./images/readings/trading-algorithms.jpg" alt="Trading Algorithms" loading="lazy">
+            <section id="articulos-destacados">
+                <h2>Artículos Destacados</h2>
+                <div class="featured-articles">
+                    <article class="article-card featured" data-article="zero-trust" data-category="cloud-security">
+                        <div class="article-image">
+                            <img src="./images/readings/zero-trust.jpg" alt="Zero Trust Architecture" loading="lazy">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Cloud Security</span>
+                            <h3>Implementando Zero Trust en la Nube</h3>
+                            <p>Una guía completa sobre cómo implementar y mantener una arquitectura Zero Trust en entornos cloud modernos.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-clock"></i> 20 min lectura</span>
+                                <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">Leer más</a>
+                        </div>
+                    </article>
                 </div>
-                <div class="article-content">
-                    <span class="article-category">Trading & ML</span>
-                    <h3>Algoritmos de Trading con Python</h3>
-                    <p>Aprende a construir estrategias de trading automatizado utilizando Python y técnicas de Machine Learning.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 25 min lectura</span>
-                        <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
-                    </div>
-                    <a href="#" class="btn btn-outline" data-article="trading-algorithms">Leer más</a>
-                </div>
-            </article>
+            </section>
 
-            <article class="article-card">
-                <div class="article-image">
-                    <img src="./images/readings/cloud-security.jpg" alt="Cloud Security" loading="lazy">
-                </div>
-                <div class="article-content">
-                    <span class="article-category">Cloud Security</span>
-                    <h3>Fundamentos de Seguridad en la Nube</h3>
-                    <p>Explora los conceptos fundamentales y mejores prácticas para asegurar tus aplicaciones en la nube.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 15 min lectura</span>
-                        <span><i class="fas fa-book-reader"></i> Nivel: Básico</span>
-                    </div>
-                    <a href="#" class="btn btn-outline" data-article="cloud-security">Leer más</a>
-                </div>
-            </article>
+            <section id="ultimos-articulos">
+                <h2>Últimos Artículos</h2>
+                <div class="articles-grid">
+                    <article class="article-card" data-article="trading-algorithms" data-category="trading">
+                        <div class="article-image">
+                            <img src="./images/readings/trading-algorithms.jpg" alt="Trading Algorithms" loading="lazy">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Trading & ML</span>
+                            <h3>Algoritmos de Trading con Python</h3>
+                            <p>Aprende a construir estrategias de trading automatizado utilizando Python y técnicas de Machine Learning.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-clock"></i> 25 min lectura</span>
+                                <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">Leer más</a>
+                        </div>
+                    </article>
 
-            <article class="article-card">
-                <div class="article-image">
-                    <img src="./images/readings/devops.jpg" alt="DevOps" loading="lazy">
+                    <article class="article-card" data-article="cloud-security" data-category="cloud-security">
+                        <div class="article-image">
+                            <img src="./images/readings/cloud-security.jpg" alt="Cloud Security" loading="lazy">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Cloud Security</span>
+                            <h3>Fundamentos de Seguridad en la Nube</h3>
+                            <p>Explora los conceptos fundamentales y mejores prácticas para asegurar tus aplicaciones en la nube.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-clock"></i> 15 min lectura</span>
+                                <span><i class="fas fa-book-reader"></i> Nivel: Básico</span>
+                            </div>
+                            <a href="#" class="btn btn-outline">Leer más</a>
+                        </div>
+                    </article>
                 </div>
-                <div class="article-content">
-                    <span class="article-category">DevOps</span>
-                    <h3>CI/CD con GitHub Actions</h3>
-                    <p>Implementa un pipeline de integración y despliegue continuo utilizando GitHub Actions.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 18 min lectura</span>
-                        <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
-                    </div>
-                    <a href="#" class="btn btn-outline" data-article="github-actions">Leer más</a>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="reading-history">
+                <h3>Historial de Lectura</h3>
+                <div id="readingHistory">
+                    <!-- El historial se llenará dinámicamente -->
                 </div>
-            </article>
-        </div>
-    </section>
+            </div>
+
+            <div class="popular-tags">
+                <h3>Etiquetas Populares</h3>
+                <div class="tags-cloud">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">DevOps</span>
+                    <span class="tag">Security</span>
+                    <span class="tag">Cloud</span>
+                </div>
+            </div>
+        </aside>
+    </div>
 
     <section id="recursos">
         <h2>Recursos Adicionales</h2>
@@ -169,6 +192,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="lecturas.js"></script>
 </body>
 </html> 
