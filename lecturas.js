@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Elementos del DOM
     const articleCards = document.querySelectorAll('.article-card');
-    const modal = document.querySelector('.modal');
-    const modalContent = document.querySelector('.modal-content');
-    const modalClose = document.querySelector('.close-modal');
+    const modal = document.getElementById('articleModal');
+    const modalContent = document.getElementById('articleContent');
+    const closeBtn = document.querySelector('.close');
     const categoryCards = document.querySelectorAll('.category-card');
     const articlesGrid = document.querySelector('.articles-grid');
     const searchInput = document.querySelector('#searchArticles');
-    const filterSelect = document.querySelector('#filterLevel');
+    const filterLevel = document.querySelector('#filterLevel');
     const timeFilter = document.querySelector('#filterTime');
     const categoryPills = document.querySelectorAll('.category-pill');
     const readingCards = document.querySelectorAll('.reading-card');
@@ -76,56 +76,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar un artículo
     window.showArticle = function(articleId) {
-        const template = document.getElementById(articleId === 'trading-algorithms' ? 'trading_article_template' : `article-${articleId}`);
-        if (!template) {
-            console.error('Template no encontrado:', articleId);
-            return;
-        }
-
-        const modalContent = document.querySelector('#articleModal .modal-content');
-        const articleContent = document.getElementById('articleContent');
+        // Obtener el contenido del artículo basado en el ID
+        const articleContent = getArticleContent(articleId);
         
-        // Limpiar contenido anterior
-        articleContent.innerHTML = '';
-        
-        // Clonar y agregar el contenido del template
-        articleContent.appendChild(template.content.cloneNode(true));
-        
-        // Activar resaltado de sintaxis
-        if (window.Prism) {
-            Prism.highlightAll();
-        }
+        // Actualizar el contenido del modal
+        modalContent.innerHTML = articleContent;
         
         // Mostrar el modal
-        const modal = document.getElementById('articleModal');
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     };
 
-    // Cerrar el modal cuando se hace clic en la X
-    document.querySelector('.close').addEventListener('click', () => {
-        const modal = document.getElementById('articleModal');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
+    // Función para obtener el contenido del artículo
+    function getArticleContent(articleId) {
+        const templateId = `article-${articleId}`;
+        const template = document.getElementById(templateId);
+        
+        if (!template) {
+            console.error(`Template no encontrado: ${templateId}`);
+            return `
+                <article class="full-article">
+                    <header class="article-header">
+                        <h2>Error al cargar el artículo</h2>
+                    </header>
+                    <div class="article-content">
+                        <p>Lo sentimos, el contenido del artículo no está disponible en este momento.</p>
+                    </div>
+                </article>
+            `;
+        }
+        
+        return template.innerHTML;
+    }
 
-    // Cerrar el modal cuando se hace clic fuera del contenido
+    // Event Listeners para el modal
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Cerrar modal al hacer clic fuera
     window.addEventListener('click', (event) => {
-        const modal = document.getElementById('articleModal');
         if (event.target === modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     });
 
-    // Cerrar el modal con la tecla Escape
+    // Cerrar modal con tecla Escape
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            const modal = document.getElementById('articleModal');
-            if (modal.style.display === 'block') {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
     });
 
@@ -213,10 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    modalClose?.addEventListener('click', () => {
-        document.getElementById('articleModal').style.display = 'none';
-    });
-
     // Filtrado por categorías
     categoryCards.forEach(category => {
         category.addEventListener('click', () => {
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filterArticles();
     });
 
-    filterSelect?.addEventListener('change', (e) => {
+    filterLevel?.addEventListener('change', (e) => {
         activeFilters.level = e.target.value;
         filterArticles();
     });
