@@ -255,7 +255,7 @@
     <!-- Modal para artículos completos -->
     <div id="articleModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close-btn" onclick="closeArticle()">&times;</span>
             <div id="articleContent"></div>
         </div>
     </div>
@@ -430,6 +430,71 @@
         </article>
     </template>
 
+    <style>
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+        opacity: 1;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 800px;
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #666;
+        cursor: pointer;
+    }
+
+    .close-btn:hover {
+        color: #000;
+    }
+    </style>
+
     <script src="lecturas.js"></script>
+    <script>
+    // Función para cerrar el modal
+    function closeArticle() {
+        const modal = document.getElementById('articleModal');
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    // Cerrar el modal al hacer clic fuera del contenido
+    window.onclick = function(event) {
+        const modal = document.getElementById('articleModal');
+        if (event.target == modal) {
+            closeArticle();
+        }
+    }
+    </script>
 </body>
 </html> 

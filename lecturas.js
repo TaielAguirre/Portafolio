@@ -86,32 +86,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar un artículo
     window.showArticle = function(articleId) {
-        // Obtener el contenido del artículo basado en el ID
-        const articleContent = getArticleContent(articleId);
+        const modal = document.getElementById('articleModal');
+        const modalContent = document.getElementById('articleContent');
         
-        // Actualizar el contenido del modal
-        modalContent.innerHTML = articleContent;
-        
-        // Mostrar el modal
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        if (!modal || !modalContent) {
+            console.error('Modal elements not found');
+            return;
+        }
+
+        try {
+            // Obtener el contenido del artículo basado en el ID
+            const articleContent = getArticleContent(articleId);
+            
+            if (!articleContent) {
+                console.error('No content found for article:', articleId);
+                return;
+            }
+
+            // Actualizar el contenido del modal
+            modalContent.innerHTML = articleContent;
+            
+            // Mostrar el modal con una pequeña demora para asegurar que el contenido se cargue
+            setTimeout(() => {
+                modal.style.display = 'block';
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }, 100);
+            
+        } catch (error) {
+            console.error('Error showing article:', error);
+        }
     };
 
     // Función para obtener el contenido del artículo
     function getArticleContent(articleId) {
-        const template = document.getElementById(`article-${articleId}`);
-        if (!template) {
-            return `
-                <div class="article-header">
-                    <h2>Artículo No Disponible</h2>
-                </div>
-                <div class="article-content">
-                    <p>Lo sentimos, el artículo "${articleId}" no está disponible en este momento.</p>
-                    <p>Por favor, intenta con otro artículo o vuelve más tarde.</p>
-                </div>
-            `;
+        try {
+            const template = document.getElementById(`article-${articleId}`);
+            console.log('Template found:', template ? 'yes' : 'no');
+            
+            if (!template) {
+                console.warn(`Template not found for article: ${articleId}`);
+                return `
+                    <div class="article-header">
+                        <h2>Artículo No Disponible</h2>
+                    </div>
+                    <div class="article-content">
+                        <p>Lo sentimos, el artículo solicitado no está disponible en este momento.</p>
+                        <p>Por favor, intenta con otro artículo o vuelve más tarde.</p>
+                    </div>
+                `;
+            }
+            
+            return template.content.cloneNode(true).innerHTML;
+        } catch (error) {
+            console.error('Error getting article content:', error);
+            return null;
         }
-        return template.content.cloneNode(true).innerHTML;
     }
 
     // Event Listeners para el modal
