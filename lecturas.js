@@ -10,66 +10,91 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterSelect = document.querySelector('#filterLevel');
 
     // Datos de los artículos
-    const articlesData = {
-        'zero-trust': {
+    const articlesData = [
+        {
+            id: 'zero-trust',
             title: 'Implementando Zero Trust en la Nube',
+            description: 'Una guía completa sobre la implementación de arquitectura Zero Trust en entornos cloud.',
+            image: 'images/readings/zero-trust.jpg',
+            readingTime: '20 min',
+            level: 'Avanzado',
             category: 'Cloud Security',
-            level: 'Avanzado',
-            readTime: '20 min',
-            content: document.getElementById('article-zero-trust').innerHTML
+            template: 'article-zero-trust'
         },
-        'trading-algorithms': {
-            title: 'Algoritmos de Trading con Python: Una Guía Completa',
-            category: 'Trading & ML',
-            level: 'Avanzado',
-            readTime: '45 min',
-            content: document.getElementById('trading_article_template').innerHTML
-        },
-        'cloud-security': {
+        {
+            id: 'cloud-security',
             title: 'Fundamentos de Seguridad en la Nube',
-            category: 'Cloud Security',
+            description: 'Conceptos fundamentales y mejores prácticas para asegurar infraestructuras cloud.',
+            image: 'images/readings/cloud-security.jpg',
+            readingTime: '15 min',
             level: 'Básico',
-            readTime: '15 min',
-            content: document.getElementById('article-cloud-security').innerHTML
+            category: 'Cloud Security',
+            template: 'article-cloud-security'
+        },
+        {
+            id: 'trading-algorithms',
+            title: 'Algoritmos de Trading con Python',
+            description: 'Desarrollo de estrategias automatizadas de trading utilizando Python y APIs financieras.',
+            image: 'images/readings/trading.jpg',
+            readingTime: '45 min',
+            level: 'Avanzado',
+            category: 'Desarrollo',
+            template: 'trading_article_template'
+        },
+        {
+            id: 'microservices',
+            title: 'Arquitectura de Microservicios con Node.js',
+            description: 'Guía práctica para diseñar, implementar y desplegar una arquitectura de microservicios escalable.',
+            image: 'images/readings/microservices.jpg',
+            readingTime: '30 min',
+            level: 'Intermedio',
+            category: 'Desarrollo',
+            template: 'article-microservices'
+        },
+        {
+            id: 'ci-cd',
+            title: 'Implementando CI/CD con GitHub Actions',
+            description: 'Tutorial paso a paso para configurar pipelines de integración y despliegue continuo usando GitHub Actions.',
+            image: 'images/readings/ci-cd.jpg',
+            readingTime: '25 min',
+            level: 'Intermedio',
+            category: 'DevOps',
+            template: 'article-ci-cd'
         }
-    };
+    ];
 
-    // Función para abrir el modal con el contenido del artículo
-    const openArticleModal = (articleId) => {
-        const article = articlesData[articleId];
+    // Función para mostrar un artículo
+    function showArticle(articleId) {
+        const article = articlesData.find(article => article.id === articleId);
         if (!article) return;
 
-        modalContent.innerHTML = `
-            <div class="article-header">
-                <h2>${article.title}</h2>
-                <div class="article-meta">
-                    <span class="article-category">${article.category}</span>
-                    <span><i class="far fa-clock"></i> ${article.readTime}</span>
-                    <span><i class="fas fa-book-reader"></i> Nivel: ${article.level}</span>
-                </div>
-            </div>
-            <div class="article-full-content">
-                ${article.content}
-            </div>
-        `;
+        const template = document.getElementById(article.template);
+        if (!template) return;
 
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        const modalContent = document.querySelector('#articleModal .modal-content');
+        modalContent.innerHTML = '';
+        modalContent.appendChild(template.content.cloneNode(true));
+        
+        // Activar resaltado de sintaxis
+        Prism.highlightAll();
+        
+        // Mostrar el modal
+        const modal = document.getElementById('articleModal');
+        modal.style.display = 'block';
+    }
 
-        // Inicializar Prism.js para resaltado de código
-        if (typeof Prism !== 'undefined') {
-            Prism.highlightAll();
+    // Cerrar el modal cuando se hace clic en la X
+    document.querySelector('.close').addEventListener('click', () => {
+        document.getElementById('articleModal').style.display = 'none';
+    });
+
+    // Cerrar el modal cuando se hace clic fuera del contenido
+    window.addEventListener('click', (event) => {
+        const modal = document.getElementById('articleModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
         }
-
-        // Agregar a historial de lectura
-        addToReadingHistory(articleId);
-    };
-
-    // Función para cerrar el modal
-    const closeModal = () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    };
+    });
 
     // Función para filtrar artículos
     const filterArticles = () => {
@@ -108,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const history = JSON.parse(localStorage.getItem('readingHistory') || '[]');
         historyContainer.innerHTML = history.length ? history.map(id => {
-            const article = articlesData[id];
+            const article = articlesData.find(article => article.id === id);
             return `
                 <div class="history-item">
                     <h4>${article.title}</h4>
@@ -123,23 +148,12 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', (e) => {
             e.preventDefault();
             const articleId = e.currentTarget.dataset.article;
-            openArticleModal(articleId);
+            showArticle(articleId);
         });
     });
 
-    modalClose?.addEventListener('click', closeModal);
-
-    modal?.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    // Cerrar modal con la tecla Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal?.classList.contains('active')) {
-            closeModal();
-        }
+    modalClose?.addEventListener('click', () => {
+        document.getElementById('articleModal').style.display = 'none';
     });
 
     // Filtrado por categorías

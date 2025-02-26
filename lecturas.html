@@ -71,59 +71,96 @@
                 </div>
             </section>
 
-            <section id="articulos-destacados">
+            <section class="featured-articles">
                 <h2>Artículos Destacados</h2>
-                <div class="featured-articles">
-                    <article class="article-card featured" data-article="zero-trust" data-category="cloud-security">
+                <div class="featured-grid">
+                    <!-- Zero Trust Article -->
+                    <article class="featured-article" data-article="zero-trust">
                         <div class="article-image">
-                            <img src="./images/readings/zero-trust.jpg" alt="Zero Trust Architecture" loading="lazy">
+                            <img src="images/readings/zero-trust.jpg" alt="Zero Trust Architecture">
                         </div>
                         <div class="article-content">
-                            <span class="article-category">Cloud Security</span>
                             <h3>Implementando Zero Trust en la Nube</h3>
-                            <p>Una guía completa sobre cómo implementar y mantener una arquitectura Zero Trust en entornos cloud modernos.</p>
+                            <p>Una guía completa sobre la implementación de arquitectura Zero Trust en entornos cloud.</p>
                             <div class="article-meta">
                                 <span><i class="far fa-clock"></i> 20 min lectura</span>
                                 <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
+                                <span><i class="fas fa-tag"></i> Cloud Security</span>
                             </div>
-                            <a href="#" class="btn btn-outline">Leer más</a>
+                            <button class="read-more">Leer más</button>
+                        </div>
+                    </article>
+
+                    <!-- Trading Article -->
+                    <article class="featured-article" data-article="trading-algorithms">
+                        <div class="article-image">
+                            <img src="images/readings/trading.jpg" alt="Trading Algorithms">
+                        </div>
+                        <div class="article-content">
+                            <h3>Algoritmos de Trading con Python</h3>
+                            <p>Desarrollo de estrategias automatizadas de trading utilizando Python y APIs financieras.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-clock"></i> 45 min lectura</span>
+                                <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
+                                <span><i class="fas fa-tag"></i> Desarrollo</span>
+                            </div>
+                            <button class="read-more">Leer más</button>
                         </div>
                     </article>
                 </div>
             </section>
 
-            <section id="ultimos-articulos">
+            <section class="latest-articles">
                 <h2>Últimos Artículos</h2>
                 <div class="articles-grid">
-                    <article class="article-card" data-article="trading-algorithms" data-category="trading">
+                    <!-- Cloud Security Article -->
+                    <article class="article-card" data-article="cloud-security">
                         <div class="article-image">
-                            <img src="./images/readings/trading-algorithms.jpg" alt="Trading Algorithms" loading="lazy">
+                            <img src="images/readings/cloud-security.jpg" alt="Cloud Security">
                         </div>
                         <div class="article-content">
-                            <span class="article-category">Trading & ML</span>
-                            <h3>Algoritmos de Trading con Python</h3>
-                            <p>Introducción al trading algorítmico y su implementación con Python y técnicas de ML...</p>
-                            <div class="reading-meta">
-                                <span><i class="far fa-clock"></i> 45 min lectura</span>
-                                <span><i class="fas fa-book-reader"></i> Nivel: Avanzado</span>
-                            </div>
-                            <a href="#" class="btn btn-outline">Leer más</a>
-                        </div>
-                    </article>
-
-                    <article class="article-card" data-article="cloud-security" data-category="cloud-security">
-                        <div class="article-image">
-                            <img src="./images/readings/cloud-security.jpg" alt="Cloud Security" loading="lazy">
-                        </div>
-                        <div class="article-content">
-                            <span class="article-category">Cloud Security</span>
                             <h3>Fundamentos de Seguridad en la Nube</h3>
-                            <p>Explora los conceptos fundamentales y mejores prácticas para asegurar tus aplicaciones en la nube.</p>
+                            <p>Conceptos fundamentales y mejores prácticas para asegurar infraestructuras cloud.</p>
                             <div class="article-meta">
                                 <span><i class="far fa-clock"></i> 15 min lectura</span>
                                 <span><i class="fas fa-book-reader"></i> Nivel: Básico</span>
+                                <span><i class="fas fa-tag"></i> Cloud Security</span>
                             </div>
-                            <a href="#" class="btn btn-outline">Leer más</a>
+                            <button class="read-more">Leer más</button>
+                        </div>
+                    </article>
+
+                    <!-- Microservices Article -->
+                    <article class="article-card" data-article="microservices">
+                        <div class="article-image">
+                            <img src="images/readings/microservices.jpg" alt="Microservices Architecture">
+                        </div>
+                        <div class="article-content">
+                            <h3>Arquitectura de Microservicios con Node.js</h3>
+                            <p>Guía práctica para diseñar, implementar y desplegar una arquitectura de microservicios escalable.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-clock"></i> 30 min lectura</span>
+                                <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                                <span><i class="fas fa-tag"></i> Desarrollo</span>
+                            </div>
+                            <button class="read-more">Leer más</button>
+                        </div>
+                    </article>
+
+                    <!-- CI/CD Article -->
+                    <article class="article-card" data-article="ci-cd">
+                        <div class="article-image">
+                            <img src="images/readings/ci-cd.jpg" alt="CI/CD with GitHub Actions">
+                        </div>
+                        <div class="article-content">
+                            <h3>Implementando CI/CD con GitHub Actions</h3>
+                            <p>Tutorial paso a paso para configurar pipelines de integración y despliegue continuo usando GitHub Actions.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-clock"></i> 25 min lectura</span>
+                                <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                                <span><i class="fas fa-tag"></i> DevOps</span>
+                            </div>
+                            <button class="read-more">Leer más</button>
                         </div>
                     </article>
                 </div>
@@ -603,6 +640,264 @@ class SecurityCompliance:
                 <p>
                     Recuerda que la seguridad en la nube es un proceso continuo que requiere 
                     atención constante y adaptación a nuevas amenazas y tecnologías.
+                </p>
+            </section>
+        </article>
+    </template>
+
+    <template id="article-microservices">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Arquitectura de Microservicios con Node.js</h2>
+                <div class="article-meta">
+                    <span><i class="far fa-clock"></i> 30 min lectura</span>
+                    <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    <span><i class="fas fa-tag"></i> Desarrollo</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Introducción a los Microservicios</h3>
+                <p>
+                    La arquitectura de microservicios representa un enfoque moderno para construir aplicaciones 
+                    como un conjunto de servicios pequeños, autónomos y altamente mantenibles. En esta guía, 
+                    exploraremos cómo implementar esta arquitectura utilizando Node.js.
+                </p>
+            </section>
+
+            <section class="article-section">
+                <h3>1. Fundamentos de Microservicios</h3>
+                <ul class="article-list">
+                    <li>Servicios independientes y autónomos</li>
+                    <li>Despliegue independiente</li>
+                    <li>Escalabilidad granular</li>
+                    <li>Resiliencia y tolerancia a fallos</li>
+                </ul>
+                <div class="code-block">
+                    <pre><code class="language-javascript">
+// Ejemplo de un microservicio básico con Express
+const express = require('express');
+const app = express();
+
+class UserService {
+    constructor() {
+        this.users = new Map();
+    }
+
+    async createUser(userData) {
+        const userId = Date.now().toString();
+        this.users.set(userId, {
+            id: userId,
+            ...userData,
+            createdAt: new Date()
+        });
+        return userId;
+    }
+
+    async getUser(userId) {
+        return this.users.get(userId);
+    }
+}
+
+const userService = new UserService();
+
+app.post('/users', async (req, res) => {
+    try {
+        const userId = await userService.createUser(req.body);
+        res.status(201).json({ userId });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.get('/users/:id', async (req, res) => {
+    try {
+        const user = await userService.getUser(req.params.id);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.listen(3000, () => console.log('User service running on port 3000'));</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>2. Comunicación entre Servicios</h3>
+                <p>
+                    La comunicación efectiva entre microservicios es crucial. Implementaremos 
+                    diferentes patrones de comunicación:
+                </p>
+                <ul class="article-list">
+                    <li>REST APIs</li>
+                    <li>Message Queues (RabbitMQ)</li>
+                    <li>Event Sourcing</li>
+                    <li>gRPC</li>
+                </ul>
+                <div class="code-block">
+                    <pre><code class="language-javascript">
+// Implementación de un cliente gRPC
+const grpc = require('@grpc/grpc-js');
+const protoLoader = require('@grpc/proto-loader');
+
+const PROTO_PATH = './protos/user.proto';
+const packageDefinition = protoLoader.loadSync(PROTO_PATH);
+const userProto = grpc.loadPackageDefinition(packageDefinition);
+
+const client = new userProto.UserService(
+    'localhost:50051',
+    grpc.credentials.createInsecure()
+);
+
+// Ejemplo de llamada gRPC
+client.getUser({ userId: '123' }, (error, response) => {
+    if (error) {
+        console.error('Error:', error);
+        return;
+    }
+    console.log('User:', response);
+});</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>3. Patrones de Diseño y Mejores Prácticas</h3>
+                <ul class="article-list">
+                    <li>Circuit Breaker Pattern</li>
+                    <li>Service Discovery</li>
+                    <li>API Gateway</li>
+                    <li>Distributed Tracing</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>Conclusiones</h3>
+                <p>
+                    La arquitectura de microservicios ofrece grandes beneficios en términos de 
+                    escalabilidad y mantenibilidad, pero también introduce complejidad. Es importante 
+                    evaluar cuidadosamente si esta arquitectura es adecuada para tu proyecto.
+                </p>
+            </section>
+        </article>
+    </template>
+
+    <template id="article-ci-cd">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Implementando CI/CD con GitHub Actions</h2>
+                <div class="article-meta">
+                    <span><i class="far fa-clock"></i> 25 min lectura</span>
+                    <span><i class="fas fa-book-reader"></i> Nivel: Intermedio</span>
+                    <span><i class="fas fa-tag"></i> DevOps</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Introducción a CI/CD</h3>
+                <p>
+                    La Integración Continua (CI) y el Despliegue Continuo (CD) son prácticas fundamentales 
+                    en el desarrollo moderno de software. GitHub Actions nos permite implementar estos 
+                    flujos de trabajo de manera eficiente y automatizada.
+                </p>
+            </section>
+
+            <section class="article-section">
+                <h3>1. Configuración Básica de GitHub Actions</h3>
+                <p>
+                    Comenzaremos creando un flujo de trabajo básico para una aplicación Node.js:
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-yaml">
+name: Node.js CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run build
+    - run: npm test
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy to Production
+      uses: some-deploy-action@v1
+      with:
+        deploy-key: ${{ secrets.DEPLOY_KEY }}</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>2. Pruebas Automatizadas</h3>
+                <p>
+                    Configuración de pruebas unitarias y de integración:
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-yaml">
+    steps:
+    - name: Run Tests
+      run: |
+        npm run test:unit
+        npm run test:integration
+    - name: Upload Coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: coverage/</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>3. Despliegue Automático</h3>
+                <ul class="article-list">
+                    <li>Configuración de entornos</li>
+                    <li>Gestión de secretos</li>
+                    <li>Estrategias de rollback</li>
+                    <li>Monitoreo post-despliegue</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>4. Mejores Prácticas</h3>
+                <ul class="article-list">
+                    <li>Cacheo de dependencias</li>
+                    <li>Paralelización de jobs</li>
+                    <li>Manejo de errores</li>
+                    <li>Notificaciones</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>Conclusiones</h3>
+                <p>
+                    GitHub Actions proporciona una plataforma poderosa para implementar flujos de CI/CD. 
+                    La clave está en encontrar el balance adecuado entre automatización y control manual, 
+                    asegurando la calidad del código y la velocidad de entrega.
                 </p>
             </section>
         </article>

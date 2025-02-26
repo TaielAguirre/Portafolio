@@ -18,6 +18,7 @@
             <a href="#servicios">Servicios</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#tecnologias">Tecnologías</a>
+            <a href="#lecturas">Lecturas</a>
             <a href="#contacto">Contacto</a>
         </div>
     </nav>
@@ -256,19 +257,19 @@
                 <h3><i class="fas fa-code"></i> Desarrollo</h3>
                 <div class="tech-grid">
                     <div class="tech-item">
-                        <img src="./images/tech/python.svg" alt="Python">
+                        <img src="https://via.placeholder.com/150x150.svg?text=Python" alt="Python">
                         <span>Python</span>
                     </div>
                     <div class="tech-item">
-                        <img src="./images/tech/javascript.svg" alt="JavaScript">
+                        <img src="https://via.placeholder.com/150x150.svg?text=JavaScript" alt="JavaScript">
                         <span>JavaScript</span>
                     </div>
                     <div class="tech-item">
-                        <img src="./images/tech/react.svg" alt="React">
+                        <img src="https://via.placeholder.com/150x150.svg?text=React" alt="React">
                         <span>React</span>
                     </div>
                     <div class="tech-item">
-                        <img src="./images/tech/node.svg" alt="Node.js">
+                        <img src="https://via.placeholder.com/150x150.svg?text=Node.js" alt="Node.js">
                         <span>Node.js</span>
                     </div>
                 </div>
@@ -326,7 +327,7 @@
             <div class="featured-reading">
                 <article class="reading-card featured" data-reading="zero-trust">
                     <div class="reading-image">
-                        <img src="./images/readings/zero-trust.jpg" alt="Zero Trust Architecture">
+                        <img src="https://via.placeholder.com/800x400.jpg?text=Zero+Trust" alt="Zero Trust Architecture">
                     </div>
                     <div class="reading-content">
                         <span class="reading-category">Cloud Security</span>
@@ -342,7 +343,7 @@
             <div class="readings-grid">
                 <article class="reading-card" data-reading="trading-algorithms">
                     <div class="reading-image">
-                        <img src="./images/readings/trading-algorithms.jpg" alt="Trading Algorithms">
+                        <img src="https://via.placeholder.com/800x400.jpg?text=Trading+Algorithms" alt="Trading Algorithms">
                     </div>
                     <div class="reading-content">
                         <span class="reading-category">Trading & ML</span>
@@ -356,7 +357,7 @@
                 </article>
                 <article class="reading-card" data-reading="cloud-security">
                     <div class="reading-image">
-                        <img src="./images/readings/cloud-security.jpg" alt="Cloud Security">
+                        <img src="https://via.placeholder.com/800x400.jpg?text=Cloud+Security" alt="Cloud Security">
                     </div>
                     <div class="reading-content">
                         <span class="reading-category">Cloud Security</span>
@@ -420,6 +421,9 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script src="lecturas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Modal para proyectos -->
@@ -438,17 +442,20 @@
         </div>
     </div>
 
-    <!-- Templates de artículos -->
+    <!-- Plantillas de artículos -->
     <template id="article-zero-trust">
-        <!-- El contenido del artículo Zero Trust -->
+        <!-- Contenido del artículo Zero Trust -->
+        ${document.getElementById('article-zero-trust.html').innerHTML}
     </template>
 
     <template id="article-cloud-security">
-        <!-- El contenido del artículo Cloud Security -->
+        <!-- Contenido del artículo Cloud Security -->
+        ${document.getElementById('article-cloud-security.html').innerHTML}
     </template>
 
     <template id="trading_article_template">
-        <!-- El contenido del artículo Trading -->
+        <!-- Contenido del artículo Trading -->
+        ${document.getElementById('trading_article_template.html').innerHTML}
     </template>
 </body>
 </html> 

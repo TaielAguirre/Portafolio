@@ -1,0 +1,29 @@
+{
+    "tech": {
+        "development": [
+            "python.svg",
+            "javascript.svg",
+            "react.svg",
+            "node.svg"
+        ],
+        "cloud_devops": [
+            "aws.svg",
+            "docker.svg",
+            "kubernetes.svg",
+            "terraform.svg"
+        ],
+        "security": [
+            "vault.svg",
+            "wazuh.svg",
+            "cloudflare.svg",
+            "snyk.svg"
+        ]
+    },
+    "readings": {
+        "articles": [
+            "zero-trust.jpg",
+            "trading-algorithms.jpg",
+            "cloud-security.jpg"
+        ]
+    }
+} 
