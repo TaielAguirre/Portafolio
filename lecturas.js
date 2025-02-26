@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const articlesGrid = document.querySelector('.articles-grid');
     const searchInput = document.querySelector('#searchArticles');
     const filterSelect = document.querySelector('#filterLevel');
+    const timeFilter = document.querySelector('#filterTime');
+    const categoryPills = document.querySelectorAll('.category-pill');
+    const readingCards = document.querySelectorAll('.reading-card');
 
     // Datos de los artículos
     const articlesData = [
@@ -62,6 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
             template: 'article-ci-cd'
         }
     ];
+
+    // Estado de los filtros
+    let activeFilters = {
+        search: '',
+        level: 'all',
+        time: 'all',
+        category: 'all'
+    };
 
     // Función para mostrar un artículo
     window.showArticle = function(articleId) {
@@ -119,24 +130,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Función para filtrar artículos
-    const filterArticles = () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const selectedLevel = filterSelect.value;
-        const selectedCategory = document.querySelector('.category-card.active')?.dataset.category;
+    function filterArticles() {
+        readingCards.forEach(card => {
+            let shouldShow = true;
 
-        articleCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const category = card.querySelector('.article-category').textContent;
-            const level = card.querySelector('.article-meta').textContent.includes(selectedLevel);
-            
-            const matchesSearch = title.includes(searchTerm);
-            const matchesLevel = selectedLevel === 'all' || level;
-            const matchesCategory = !selectedCategory || selectedCategory === 'all' || 
-                                  category.toLowerCase().includes(selectedCategory);
+            // Filtro de búsqueda
+            if (activeFilters.search) {
+                const title = card.querySelector('.reading-title').textContent.toLowerCase();
+                const description = card.querySelector('.reading-description').textContent.toLowerCase();
+                const searchTerm = activeFilters.search.toLowerCase();
+                shouldShow = shouldShow && (title.includes(searchTerm) || description.includes(searchTerm));
+            }
 
-            card.style.display = (matchesSearch && matchesLevel && matchesCategory) ? '' : 'none';
+            // Filtro de nivel
+            if (activeFilters.level !== 'all') {
+                const cardLevel = card.getAttribute('data-level');
+                shouldShow = shouldShow && cardLevel === activeFilters.level;
+            }
+
+            // Filtro de tiempo
+            if (activeFilters.time !== 'all') {
+                const cardTime = parseInt(card.getAttribute('data-time'));
+                switch (activeFilters.time) {
+                    case 'short':
+                        shouldShow = shouldShow && cardTime < 15;
+                        break;
+                    case 'medium':
+                        shouldShow = shouldShow && cardTime >= 15 && cardTime <= 30;
+                        break;
+                    case 'long':
+                        shouldShow = shouldShow && cardTime > 30;
+                        break;
+                }
+            }
+
+            // Filtro de categoría
+            if (activeFilters.category !== 'all') {
+                const cardCategory = card.getAttribute('data-category');
+                shouldShow = shouldShow && cardCategory === activeFilters.category;
+            }
+
+            // Mostrar u ocultar la tarjeta
+            card.style.display = shouldShow ? 'block' : 'none';
         });
-    };
+
+        // Animación suave para las tarjetas visibles
+        document.querySelectorAll('.reading-card[style="display: block"]').forEach((card, index) => {
+            card.style.animation = `fadeIn 0.3s ease forwards ${index * 0.1}s`;
+        });
+    }
 
     // Función para agregar al historial de lectura
     const addToReadingHistory = (articleId) => {
@@ -188,8 +230,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Búsqueda y filtros
-    searchInput?.addEventListener('input', filterArticles);
-    filterSelect?.addEventListener('change', filterArticles);
+    searchInput?.addEventListener('input', (e) => {
+        activeFilters.search = e.target.value;
+        filterArticles();
+    });
+
+    filterSelect?.addEventListener('change', (e) => {
+        activeFilters.level = e.target.value;
+        filterArticles();
+    });
+
+    timeFilter?.addEventListener('change', (e) => {
+        activeFilters.time = e.target.value;
+        filterArticles();
+    });
+
+    categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            // Actualizar UI
+            categoryPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            // Actualizar filtros
+            activeFilters.category = pill.getAttribute('data-category');
+            filterArticles();
+        });
+    });
 
     // Animaciones al hacer scroll
     const animateOnScroll = () => {
@@ -208,6 +274,18 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll();
 
+    // Animaciones para las tarjetas
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    readingCards.forEach(card => observer.observe(card));
+
     // Inicialización
     updateReadingHistory();
+    filterArticles();
 }); 
