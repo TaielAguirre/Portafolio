@@ -144,30 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Filtrar por nivel
             if (activeFilters.level !== 'all') {
-                const level = card.dataset.level;
-                visible = visible && level === activeFilters.level;
+                const level = card.querySelector('.meta-item:nth-child(2)').textContent.toLowerCase();
+                visible = visible && level.includes(activeFilters.level.toLowerCase());
             }
 
             // Filtrar por tiempo
             if (activeFilters.time !== 'all') {
-                const time = parseInt(card.dataset.time);
-                switch (activeFilters.time) {
-                    case 'short':
-                        visible = visible && time < 15;
-                        break;
-                    case 'medium':
-                        visible = visible && time >= 15 && time <= 30;
-                        break;
-                    case 'long':
-                        visible = visible && time > 30;
-                        break;
-                }
+                const time = card.querySelector('.meta-item:nth-child(1)').textContent.toLowerCase();
+                visible = visible && time.includes(activeFilters.time.toLowerCase());
             }
 
             // Filtrar por categoría
             if (activeFilters.category !== 'all') {
-                const category = card.dataset.category;
-                visible = visible && category === activeFilters.category;
+                const category = card.querySelector('.reading-category').textContent.toLowerCase();
+                visible = visible && category.includes(activeFilters.category.toLowerCase());
             }
 
             // Aplicar visibilidad con animación
