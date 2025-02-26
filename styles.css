@@ -1928,10 +1928,6 @@ blockquote {
     transition: transform 0.3s ease;
 }
 
-.reading-card:hover .reading-image img {
-    transform: scale(1.05);
-}
-
 .reading-content {
     padding: 1.5rem;
 }
@@ -2224,5 +2220,96 @@ blockquote {
     .section-image {
         height: 200px;
         margin: 1.5rem 0;
+    }
+}
+
+/* Estilos para la portada de artículos */
+.article-cover {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 500px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.article-cover:hover .cover-image {
+    transform: scale(1.05);
+}
+
+.cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+}
+
+.cover-content {
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cover-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cover-content .article-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.cover-content .article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cover-content .article-meta i {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .article-cover {
+        height: 40vh;
+        min-height: 300px;
+    }
+
+    .cover-overlay {
+        padding: 1.5rem;
+    }
+
+    .cover-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .cover-content .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.9rem;
     }
 } 
