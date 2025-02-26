@@ -11,15 +11,21 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="logo">
-            <img src="logo.svg" alt="TechWeave" height="40">
-        </a>
+        <div class="nav-brand">
+            <img src="logo.svg" alt="TechWeave">
+            <h1>TechWeave</h1>
+        </div>
         <div class="nav-links">
             <a href="#servicios">Servicios</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#tecnologias">Tecnologías</a>
             <a href="#lecturas">Lecturas</a>
             <a href="#contacto">Contacto</a>
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
@@ -457,5 +463,6 @@
         <!-- Contenido del artículo Trading -->
         ${document.getElementById('trading_article_template.html').innerHTML}
     </template>
+    <script src="script.js"></script>
 </body>
 </html> 
