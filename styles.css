@@ -131,67 +131,93 @@ section h2 {
 /* Proyectos */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 2rem 0;
 }
 
 .project-card {
-    position: relative;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: var(--transition);
-    height: 300px;
-    background: var(--bg-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.project-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, 
-        rgba(18, 18, 18, 0.95) 0%,
-        rgba(18, 18, 18, 0.8) 60%,
-        rgba(18, 18, 18, 0.4) 100%);
-    color: var(--bg-light);
-    padding: 2rem;
-    transform: translateY(70%);
-    transition: var(--transition);
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project-card:hover .project-info {
-    transform: translateY(0);
+.project-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 }
 
 .project-card img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
-    transition: var(--transition);
-    opacity: 0.8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.project-card:hover img {
-    transform: scale(1.05);
-    opacity: 1;
+.project-card.featured img {
+    height: 100%;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.project-info p {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--accent-color);
 }
 
 .project-actions {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
 }
 
-.btn-demo {
-    background: var(--secondary);
-    color: var(--bg-dark);
+.btn-github {
+    background: #24292e;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
 }
 
-.btn-details {
-    background: transparent;
-    border: 2px solid var(--secondary);
-    color: var(--bg-light);
+.btn-github:hover {
+    background: #2c3238;
 }
 
 /* Formulario */
@@ -293,6 +319,14 @@ footer {
     .tech-stack span {
         font-size: 0.8rem;
         padding: 0.4rem 0.8rem;
+    }
+
+    .project-card.featured {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card.featured img {
+        height: 200px;
     }
 }
 
@@ -695,5 +729,84 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(98, 0, 234, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-item i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.achievement-item h4 {
+    color: var(--primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.achievement-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--accent);
+    line-height: 1.4;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    background: #7c00ff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(98, 0, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+    .achievements {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-github {
+        width: 100%;
+        justify-content: center;
     }
 } 

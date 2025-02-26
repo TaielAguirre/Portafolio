@@ -4,5 +4,5 @@ const CONFIG = {
         presupuestador: 'http://tuservidor.local/demos/presupuestador'
     },
     GITHUB_REPO: 'https://github.com/taielaguirre/Portafolio',
-    CONTACT_EMAIL: 'taielaguirr@gmail.com'
+    CONTACT_EMAIL: 'tu@email.com'
 }; 

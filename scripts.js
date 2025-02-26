@@ -107,6 +107,46 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             `
+        },
+        'bot-cripto': {
+            title: 'CryptoBot Pro',
+            description: `
+                <h3>🚀 Plataforma Profesional de Trading Automatizado</h3>
+                <p>CryptoBot Pro es una solución avanzada de trading que combina análisis técnico, machine learning y automatización para el mercado de criptomonedas.</p>
+                
+                <h4>✨ Características Principales:</h4>
+                <ul>
+                    <li>Análisis técnico en tiempo real con múltiples indicadores (RSI, MACD, SMA)</li>
+                    <li>Sistema de trading automatizado con estrategias personalizables</li>
+                    <li>Gestión de portfolio y seguimiento de inversiones</li>
+                    <li>Sistema de alertas por email y Telegram</li>
+                    <li>Backtesting de estrategias</li>
+                    <li>Dashboard interactivo con gráficos en tiempo real</li>
+                </ul>
+
+                <h4>🛠️ Tecnologías Utilizadas:</h4>
+                <ul>
+                    <li>Python (Backend y Análisis)</li>
+                    <li>Streamlit (Frontend)</li>
+                    <li>APIs de Exchange (Binance)</li>
+                    <li>Machine Learning (Sklearn, TensorFlow)</li>
+                    <li>Base de Datos (SQLite/PostgreSQL)</li>
+                    <li>WebSockets para datos en tiempo real</li>
+                </ul>
+
+                <h4>📊 Resultados:</h4>
+                <ul>
+                    <li>Más de 1000 operaciones exitosas simuladas</li>
+                    <li>Precisión promedio del 68% en señales de trading</li>
+                    <li>Tiempo de respuesta < 100ms para análisis en tiempo real</li>
+                    <li>Sistema de gestión de riesgo integrado</li>
+                </ul>
+            `,
+            images: [
+                './images/bot_cripto/dashboard.png',
+                './images/bot_cripto/analysis.png',
+                './images/bot_cripto/portfolio.png'
+            ]
         }
     };
 
