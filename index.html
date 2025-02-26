@@ -191,31 +191,7 @@
         </div>
     </section>
 
-    <section id="estadisticas">
-        <h2>Impacto y Métricas</h2>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <i class="fas fa-code-branch"></i>
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Commits en GitHub</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-project-diagram"></i>
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Proyectos Completados</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-code"></i>
-                <div class="stat-number">3</div>
-                <div class="stat-label">Lenguajes Principales</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-award"></i>
-                <div class="stat-number">3</div>
-                <div class="stat-label">Certificaciones en Curso</div>
-            </div>
-        </div>
-    </section>
+    
 
     <section id="blog">
         <h2>Blog Técnico</h2>
@@ -231,7 +207,7 @@
                         <span><i class="far fa-calendar"></i> Marzo 2024</span>
                         <span><i class="far fa-clock"></i> 10 min lectura</span>
                     </div>
-                    <a href="#" class="btn btn-outline">Leer más</a>
+                    <a href="#" class="btn btn-outline" data-article="zero-trust">Leer más</a>
                 </div>
             </article>
             <article class="blog-card">
@@ -245,11 +221,261 @@
                         <span><i class="far fa-calendar"></i> Febrero 2024</span>
                         <span><i class="far fa-clock"></i> 15 min lectura</span>
                     </div>
-                    <a href="#" class="btn btn-outline">Leer más</a>
+                    <a href="#" class="btn btn-outline" data-article="trading-bot">Leer más</a>
                 </div>
             </article>
         </div>
     </section>
+
+    <!-- Modal para artículos del blog -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content article-content">
+            <span class="close-modal">&times;</span>
+            <div id="articleContent">
+                <!-- El contenido del artículo se cargará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido de los artículos (oculto) -->
+    <template id="article-zero-trust">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Implementando Zero Trust en la Nube: Una Guía Práctica</h2>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> Marzo 2024</span>
+                    <span><i class="far fa-clock"></i> 10 min lectura</span>
+                    <span><i class="fas fa-tag"></i> Cloud Security</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Introducción al Modelo Zero Trust</h3>
+                <p>
+                    El modelo de seguridad Zero Trust parte de la premisa "nunca confiar, siempre verificar". 
+                    En un mundo donde los perímetros de red tradicionales se desvanecen, este enfoque se vuelve 
+                    crucial para proteger los activos en la nube.
+                </p>
+            </section>
+
+            <section class="article-section">
+                <h3>Principios Fundamentales</h3>
+                <ul class="article-list">
+                    <li>
+                        <strong>Verificación Continua:</strong> Cada solicitud debe ser autenticada y autorizada, 
+                        independientemente de su origen.
+                    </li>
+                    <li>
+                        <strong>Mínimo Privilegio:</strong> Los usuarios y sistemas solo deben tener acceso a los 
+                        recursos necesarios para su función.
+                    </li>
+                    <li>
+                        <strong>Microsegmentación:</strong> División de la red en zonas pequeñas y aisladas para 
+                        contener brechas.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>Implementación Práctica</h3>
+                <h4>1. Identidad y Acceso</h4>
+                <div class="code-block">
+                    <pre><code>
+# Ejemplo de política IAM en AWS
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": ["s3:GetObject"],
+            "Resource": "arn:aws:s3:::bucket-name/*",
+            "Condition": {
+                "Bool": {"aws:SecureTransport": "true"},
+                "IpAddress": {"aws:SourceIp": ["192.0.2.0/24"]}
+            }
+        }
+    ]
+}
+                    </code></pre>
+                </div>
+
+                <h4>2. Segmentación de Red</h4>
+                <p>
+                    Implementar grupos de seguridad y ACLs de red para crear perímetros micro-segmentados:
+                </p>
+                <div class="code-block">
+                    <pre><code>
+# Ejemplo de reglas de Security Group
+aws ec2 create-security-group \
+    --group-name "app-tier" \
+    --description "App Tier Security Group"
+
+aws ec2 authorize-security-group-ingress \
+    --group-name "app-tier" \
+    --protocol tcp \
+    --port 443 \
+    --source-group "web-tier"
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Monitoreo y Auditoría</h3>
+                <p>
+                    El monitoreo continuo es esencial en Zero Trust. Implementar:
+                </p>
+                <ul class="article-list">
+                    <li>CloudWatch Logs para análisis de acceso</li>
+                    <li>CloudTrail para auditoría de API</li>
+                    <li>GuardDuty para detección de amenazas</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>Conclusión</h3>
+                <p>
+                    La implementación de Zero Trust es un viaje, no un destino. Requiere un cambio cultural 
+                    y tecnológico, pero los beneficios en seguridad y control valen el esfuerzo.
+                </p>
+            </section>
+        </article>
+    </template>
+
+    <template id="article-trading-bot">
+        <article class="full-article">
+            <header class="article-header">
+                <h2>Trading Algorítmico con Python: Construyendo un Bot Rentable</h2>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> Febrero 2024</span>
+                    <span><i class="far fa-clock"></i> 15 min lectura</span>
+                    <span><i class="fas fa-tag"></i> Machine Learning, Trading</span>
+                </div>
+            </header>
+
+            <section class="article-section">
+                <h3>Introducción al Trading Algorítmico</h3>
+                <p>
+                    El trading algorítmico automatiza las decisiones de trading basándose en reglas predefinidas 
+                    y análisis de datos. Python, con su rico ecosistema de librerías, es ideal para esta tarea.
+                </p>
+            </section>
+
+            <section class="article-section">
+                <h3>Arquitectura del Bot</h3>
+                <div class="code-block">
+                    <pre><code>
+# Estructura básica del bot
+class TradingBot:
+    def __init__(self):
+        self.exchange = ccxt.binance({
+            'apiKey': os.getenv('API_KEY'),
+            'secret': os.getenv('API_SECRET')
+        })
+        self.model = self.load_model()
+        
+    def analyze_market(self, symbol):
+        data = self.get_historical_data(symbol)
+        signals = self.generate_signals(data)
+        return self.predict_movement(signals)
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Análisis Técnico</h3>
+                <p>
+                    Implementación de indicadores técnicos comunes:
+                </p>
+                <div class="code-block">
+                    <pre><code>
+def calculate_indicators(self, df):
+    # RSI
+    df['RSI'] = ta.momentum.RSIIndicator(
+        df['close'], window=14
+    ).rsi()
+    
+    # MACD
+    macd = ta.trend.MACD(
+        df['close']
+    )
+    df['MACD'] = macd.macd()
+    df['Signal'] = macd.macd_signal()
+    
+    return df
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Machine Learning en Trading</h3>
+                <p>
+                    Uso de modelos de ML para mejorar las predicciones:
+                </p>
+                <div class="code-block">
+                    <pre><code>
+def train_model(self, X, y):
+    model = XGBClassifier(
+        n_estimators=100,
+        max_depth=3,
+        learning_rate=0.1
+    )
+    model.fit(
+        X_train, y_train,
+        eval_set=[(X_val, y_val)],
+        early_stopping_rounds=10
+    )
+    return model
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Gestión de Riesgos</h3>
+                <ul class="article-list">
+                    <li>
+                        <strong>Stop Loss:</strong> Limitar pérdidas potenciales
+                    </li>
+                    <li>
+                        <strong>Position Sizing:</strong> Calcular tamaño óptimo de posiciones
+                    </li>
+                    <li>
+                        <strong>Diversificación:</strong> Trading en múltiples pares
+                    </li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h3>Backtesting y Optimización</h3>
+                <div class="code-block">
+                    <pre><code>
+def backtest(self, strategy, data):
+    portfolio = 10000  # Capital inicial
+    positions = []
+    
+    for i in range(len(data)):
+        signal = strategy(data.iloc[i])
+        if signal == 1:  # Señal de compra
+            size = self.calculate_position_size(
+                portfolio, data.iloc[i]['close']
+            )
+            positions.append({
+                'type': 'buy',
+                'price': data.iloc[i]['close'],
+                'size': size
+            })
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Conclusión</h3>
+                <p>
+                    El trading algorítmico requiere una combinación de conocimientos técnicos y comprensión 
+                    del mercado. La clave está en la gestión de riesgos y la mejora continua del sistema.
+                </p>
+            </section>
+        </article>
+    </template>
 
     <section id="servicios">
         <h2>Servicios</h2>

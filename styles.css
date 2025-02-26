@@ -1172,4 +1172,108 @@ footer {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Estilos para artículos completos */
+.article-content {
+    max-width: 900px;
+    padding: 3rem;
+}
+
+.full-article {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.article-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.article-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.article-section {
+    margin-bottom: 3rem;
+}
+
+.article-section h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-section h4 {
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+}
+
+.article-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.article-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.article-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.code-block {
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+.code-block code {
+    color: #d4d4d4;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .article-content {
+        padding: 1.5rem;
+    }
+
+    .article-header h2 {
+        font-size: 2rem;
+    }
+
+    .article-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .code-block {
+        padding: 1rem;
+    }
 } 

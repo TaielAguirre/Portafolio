@@ -300,3 +300,51 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         this.reset();
     });
 }); 
+
+// Manejador de artículos del blog
+document.addEventListener('DOMContentLoaded', function() {
+    const articleModal = document.getElementById('articleModal');
+    const articleContent = document.getElementById('articleContent');
+    const closeArticleModal = articleModal.querySelector('.close-modal');
+
+    // Abrir artículo
+    document.querySelectorAll('[data-article]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const articleId = this.dataset.article;
+            const template = document.getElementById(`article-${articleId}`);
+            
+            if (template) {
+                articleContent.innerHTML = template.innerHTML;
+                articleModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+
+                // Resaltar sintaxis de código si existe Prism.js
+                if (window.Prism) {
+                    Prism.highlightAll();
+                }
+            }
+        });
+    });
+
+    // Cerrar artículo
+    closeArticleModal.addEventListener('click', () => {
+        articleModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === articleModal) {
+            articleModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Navegación con teclado
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && articleModal.style.display === 'block') {
+            articleModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+}); 
