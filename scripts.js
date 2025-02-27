@@ -398,3 +398,156 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 }); 
+
+// Configuración de proyectos y sus imágenes
+const projectImages = {
+    'bot_cripto': [
+        'images/bot_cripto/main.jpg',
+        'images/bot_cripto/dashboard.jpg',
+        'images/bot_cripto/trading.jpg',
+        'images/bot_cripto/stats.jpg'
+    ],
+    'gestor-de-pedidos': [
+        'images/gestor-de-pedidos/main.jpg',
+        'images/gestor-de-pedidos/pedidos.jpg',
+        'images/gestor-de-pedidos/clientes.jpg',
+        'images/gestor-de-pedidos/reportes.jpg'
+    ],
+    'presupuestador': [
+        'images/presupuestador/main.jpg',
+        'images/presupuestador/nuevo.jpg',
+        'images/presupuestador/lista.jpg',
+        'images/presupuestador/detalles.jpg'
+    ]
+};
+
+// Función para mostrar detalles del proyecto
+function showProjectDetails(projectId) {
+    const modal = document.getElementById('projectModal');
+    const gallery = document.getElementById('projectGallery');
+    const images = projectImages[projectId];
+
+    // Limpiar galería existente
+    gallery.innerHTML = '';
+
+    // Agregar imágenes al modal
+    images.forEach(imageSrc => {
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = 'Captura de pantalla del proyecto';
+        img.onclick = () => openFullImage(imageSrc);
+        gallery.appendChild(img);
+    });
+
+    // Mostrar modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevenir scroll
+}
+
+// Función para abrir imagen en tamaño completo
+function openFullImage(imageSrc) {
+    const fullImageModal = document.createElement('div');
+    fullImageModal.className = 'modal';
+    fullImageModal.style.display = 'block';
+    fullImageModal.innerHTML = `
+        <div class="modal-content" style="background: none; padding: 0;">
+            <span class="close" onclick="closeFullImage(this)">&times;</span>
+            <img src="${imageSrc}" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain;">
+        </div>
+    `;
+    document.body.appendChild(fullImageModal);
+}
+
+// Función para cerrar imagen en tamaño completo
+function closeFullImage(closeButton) {
+    closeButton.parentElement.parentElement.remove();
+}
+
+// Inicialización cuando el DOM está listo
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('projectModal');
+    const closeBtn = modal.querySelector('.close');
+
+    // Cerrar con el botón X
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+
+    // Cerrar al hacer click fuera del modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+    });
+}); 
+
+// Función para mostrar un artículo
+function showArticle(articleId) {
+    const modal = document.getElementById('articleModal');
+    const content = document.getElementById('articleContent');
+    const template = document.getElementById(`article-${articleId}`);
+
+    if (template) {
+        content.innerHTML = template.innerHTML;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    } else {
+        console.error(`No se encontró el template para el artículo: ${articleId}`);
+    }
+}
+
+// Función para cerrar el artículo
+function closeArticle() {
+    const modal = document.getElementById('articleModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Inicialización de los manejadores de eventos para artículos
+document.addEventListener('DOMContentLoaded', function() {
+    // Manejador para abrir artículos
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            const articleId = this.getAttribute('data-article');
+            if (articleId) {
+                showArticle(articleId);
+            }
+        });
+    });
+
+    // Manejador para cerrar el modal de artículos
+    const modal = document.getElementById('articleModal');
+    const closeBtn = modal.querySelector('.close');
+
+    closeBtn.addEventListener('click', closeArticle);
+
+    // Cerrar al hacer click fuera del modal
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeArticle();
+        }
+    });
+
+    // Cerrar con la tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeArticle();
+        }
+    });
+}); 

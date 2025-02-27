@@ -32,24 +32,25 @@
         </div>
     </nav>
 
-    <section class="hero-section">
+    <section class="hero-section" id="inicio">
         <div class="hero-content">
-            <h1>Desarrollo Web & Soluciones Digitales</h1>
-            <p>Creando aplicaciones web modernas y funcionales con enfoque en la experiencia del usuario y buenas prácticas de desarrollo.</p>
+            <h1>Desarrollador de Aplicaciones & Cloud Security</h1>
+            <p>Especializado en desarrollo de aplicaciones empresariales con PHP y Python. Experto en implementación de soluciones seguras en la nube y automatización con Python. Apasionado por la ciberseguridad y las tecnologías cloud.</p>
             <div class="hero-cta">
-                <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
-                <a href="#contacto" class="btn btn-outline">Contactar</a>
+                <a href="#proyectos" class="btn-primary">Ver Proyectos</a>
+                <a href="#contacto" class="btn-outline">Contactar</a>
             </div>
             <div class="tech-stack">
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Node.js</span>
                 <span>PHP</span>
-                <span>MySQL</span>
-                <span>Git</span>
+                <span>Python</span>
+                <span>Azure</span>
+                <span>AWS</span>
+                <span>Cloud Security</span>
             </div>
         </div>
-        <div class="hero-background"></div>
+        <div class="hero-background">
+            <!-- Mantener elementos de fondo si existen -->
+        </div>
     </section>
 
     <section id="sobre-mi" class="section-padding">
@@ -157,7 +158,9 @@
                         <img src="images/bot_cripto/main.jpg" alt="CryptoBot Pro">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="btn-demo">Ver Demo</a>
+                                <a href="#" class="btn-details" onclick="showProjectDetails('bot_cripto')">
+                                    <i class="fas fa-images"></i> Ver más
+                                </a>
                                 <a href="https://github.com/taielaguirre/cryptobot" class="btn-github" target="_blank">
                                     <i class="fab fa-github"></i> Código
                                 </a>
@@ -181,8 +184,10 @@
                         <img src="images/gestor-de-pedidos/main.jpg" alt="Gestor de Pedidos">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="btn-demo">Ver Demo</a>
-                                <a href="#" class="btn-github">
+                                <a href="#" class="btn-details" onclick="showProjectDetails('gestor-de-pedidos')">
+                                    <i class="fas fa-images"></i> Ver más
+                                </a>
+                                <a href="https://github.com/taielaguirre/gestor-pedidos" class="btn-github" target="_blank">
                                     <i class="fab fa-github"></i> Código
                                 </a>
                             </div>
@@ -190,11 +195,11 @@
                     </div>
                     <div class="project-info">
                         <h3>Gestor de Pedidos</h3>
-                        <p>Sistema web integral para la gestión y seguimiento de pedidos, con interfaz moderna y funcionalidades avanzadas de reporting.</p>
+                        <p>Sistema de gestión de pedidos empresarial con integración de pagos, seguimiento en tiempo real y reportes automatizados.</p>
                         <div class="tech-stack">
-                            <span>Node.js</span>
-                            <span>React</span>
-                            <span>PostgreSQL</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>AWS</span>
                             <span>Docker</span>
                         </div>
                     </div>
@@ -205,8 +210,10 @@
                         <img src="images/presupuestador/main.jpg" alt="Sistema Presupuestador">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="btn-demo">Ver Demo</a>
-                                <a href="#" class="btn-github">
+                                <a href="#" class="btn-details" onclick="showProjectDetails('presupuestador')">
+                                    <i class="fas fa-images"></i> Ver más
+                                </a>
+                                <a href="https://github.com/taielaguirre/presupuestador" class="btn-github" target="_blank">
                                     <i class="fab fa-github"></i> Código
                                 </a>
                             </div>
@@ -216,13 +223,23 @@
                         <h3>Sistema Presupuestador</h3>
                         <p>Aplicación web para la generación y gestión de presupuestos, con características avanzadas de personalización y seguimiento.</p>
                         <div class="tech-stack">
-                            <span>React</span>
-                            <span>Node.js</span>
+                            <span>PHP</span>
                             <span>MySQL</span>
-                            <span>AWS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
                         </div>
                     </div>
                 </article>
+
+                <!-- Modal para mostrar las imágenes -->
+                <div id="projectModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="project-gallery" id="projectGallery">
+                            <!-- Las imágenes se cargarán dinámicamente aquí -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
