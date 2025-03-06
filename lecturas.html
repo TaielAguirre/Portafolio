@@ -137,6 +137,48 @@
                     </div>
                 </div>
             </article>
+
+            <article class="article-card" data-article="web-moderno">
+                <div class="article-image">
+                    <img src="images/readings/web-moderno.jpg" alt="Desarrollo Web Moderno">
+                </div>
+                <div class="article-info">
+                    <h3>Desarrollo Web Moderno: JavaScript y HTML Avanzado</h3>
+                    <p>Técnicas avanzadas de desarrollo web, patrones modernos y mejores prácticas con JavaScript y HTML.</p>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 45 min lectura</span>
+                        <span><i class="fas fa-tag"></i> Desarrollo</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-card" data-article="frameworks-modernos">
+                <div class="article-image">
+                    <img src="images/readings/frameworks.jpg" alt="Frameworks Frontend Modernos">
+                </div>
+                <div class="article-info">
+                    <h3>Frameworks Frontend Modernos: React, Vue y Angular</h3>
+                    <p>Análisis comparativo y mejores prácticas en el desarrollo con frameworks modernos de JavaScript.</p>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 55 min lectura</span>
+                        <span><i class="fas fa-tag"></i> Desarrollo</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-card" data-article="integracion-frontend-backend">
+                <div class="article-image">
+                    <img src="images/readings/integration.jpg" alt="Integración Frontend-Backend">
+                </div>
+                <div class="article-info">
+                    <h3>Integración Frontend-Backend: Arquitecturas Modernas</h3>
+                    <p>Guía completa sobre la integración efectiva entre frontend y backend, incluyendo APIs, WebSockets y más.</p>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 50 min lectura</span>
+                        <span><i class="fas fa-tag"></i> Desarrollo</span>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 
@@ -531,47 +573,214 @@
                 <div class="scripts-grid">
                     <div class="script-item">
                         <h4>Monitoreo de Recursos</h4>
-                        <pre><code>
+                        <pre><code class="language-python">
 import boto3
 from azure.identity import DefaultAzureCredential
 from azure.mgmt.monitor import MonitorManagementClient
 
-def monitor_resources():
-    # Código de ejemplo para monitoreo
-    pass
+def monitor_cloud_resources():
+    # AWS Monitoring
+    cloudwatch = boto3.client('cloudwatch')
+    ec2 = boto3.client('ec2')
+    
+    # Obtener métricas de EC2
+    instances = ec2.describe_instances()
+    for reservation in instances['Reservations']:
+        for instance in reservation['Instances']:
+            response = cloudwatch.get_metric_statistics(
+                Namespace='AWS/EC2',
+                MetricName='CPUUtilization',
+                Dimensions=[{'Name': 'InstanceId', 'Value': instance['InstanceId']}],
+                StartTime=datetime.utcnow() - timedelta(hours=1),
+                EndTime=datetime.utcnow(),
+                Period=300,
+                Statistics=['Average']
+            )
+            # Procesar métricas
+            process_metrics(response)
+
+    # Azure Monitoring
+    credential = DefaultAzureCredential()
+    monitor_client = MonitorManagementClient(credential, subscription_id)
+    
+    # Obtener métricas de VMs
+    for vm in monitor_client.virtual_machines.list():
+        metrics = monitor_client.metrics.list(
+            resource_uri=vm.id,
+            timespan=f"{start_time}/{end_time}",
+            interval='PT5M',
+            metricnames='Percentage CPU'
+        )
+        # Procesar métricas
+        process_azure_metrics(metrics)
                         </code></pre>
                     </div>
                     <div class="script-item">
                         <h4>Auditoría de Seguridad</h4>
-                        <pre><code>
+                        <pre><code class="language-python">
 def audit_security_groups():
-    # Código de ejemplo para auditoría
-    pass
+    # AWS Security Groups Audit
+    ec2 = boto3.client('ec2')
+    security_groups = ec2.describe_security_groups()
+    
+    for sg in security_groups['SecurityGroups']:
+        # Verificar reglas de entrada
+        for rule in sg['IpPermissions']:
+            if rule.get('IpRanges'):
+                for ip_range in rule['IpRanges']:
+                    if ip_range['CidrIp'] == '0.0.0.0/0':
+                        log_security_issue(
+                            f"Security Group {sg['GroupId']} permite acceso desde cualquier IP"
+                        )
+
+    # Azure NSG Audit
+    network_client = NetworkManagementClient(credential, subscription_id)
+    nsgs = network_client.network_security_groups.list_all()
+    
+    for nsg in nsgs:
+        for rule in nsg.security_rules:
+            if rule.source_address_prefix == '*':
+                log_security_issue(
+                    f"NSG {nsg.name} tiene regla permisiva: {rule.name}"
+                )
                         </code></pre>
                     </div>
                 </div>
             </section>
 
             <section class="article-section">
-                <h3>Integración con APIs de Seguridad</h3>
-                <div class="api-integration">
-                    <div class="api-item">
-                        <h4>AWS Security Hub</h4>
-                        <ul>
-                            <li>Recopilación de hallazgos</li>
-                            <li>Análisis de amenazas</li>
-                            <li>Respuesta automatizada</li>
-                            <li>Informes de cumplimiento</li>
-                        </ul>
+                <h3>Automatización de Respuesta a Incidentes</h3>
+                <div class="automation-grid">
+                    <div class="automation-item">
+                        <h4>Detección y Respuesta</h4>
+                        <pre><code class="language-python">
+from concurrent.futures import ThreadPoolExecutor
+import json
+import logging
+
+class SecurityIncidentHandler:
+    def __init__(self):
+        self.aws_client = boto3.client('securityhub')
+        self.azure_client = SecurityCenter(credential, subscription_id)
+        self.incident_queue = Queue()
+        self.logger = logging.getLogger('security_incidents')
+
+    def process_security_findings(self):
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            # Procesar hallazgos de AWS Security Hub
+            aws_findings = self.aws_client.get_findings()
+            executor.submit(self.handle_aws_findings, aws_findings)
+
+            # Procesar alertas de Azure Security Center
+            azure_alerts = self.azure_client.alerts.list()
+            executor.submit(self.handle_azure_alerts, azure_alerts)
+
+    def handle_aws_findings(self, findings):
+        for finding in findings['Findings']:
+            if finding['Severity']['Label'] == 'CRITICAL':
+                self.incident_queue.put({
+                    'source': 'AWS',
+                    'type': finding['Types'][0],
+                    'resource': finding['Resources'][0]['Id'],
+                    'action_required': self.determine_action(finding)
+                })
+
+    def handle_azure_alerts(self, alerts):
+        for alert in alerts:
+            if alert.severity == 'High':
+                self.incident_queue.put({
+                    'source': 'Azure',
+                    'type': alert.alert_type,
+                    'resource': alert.target_resource_id,
+                    'action_required': self.determine_action(alert)
+                })
+
+    def automated_response(self):
+        while True:
+            incident = self.incident_queue.get()
+            try:
+                if incident['action_required'] == 'isolate':
+                    self.isolate_resource(incident)
+                elif incident['action_required'] == 'backup':
+                    self.create_backup(incident)
+                elif incident['action_required'] == 'patch':
+                    self.apply_security_patch(incident)
+            except Exception as e:
+                self.logger.error(f"Error handling incident: {str(e)}")
+                        </code></pre>
                     </div>
-                    <div class="api-item">
-                        <h4>Azure Security Center</h4>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Mejores Prácticas de Automatización</h3>
+                <div class="best-practices">
+                    <div class="practice-item">
+                        <h4>Gestión de Credenciales</h4>
                         <ul>
-                            <li>Evaluación de vulnerabilidades</li>
-                            <li>Políticas de seguridad</li>
-                            <li>Alertas y recomendaciones</li>
-                            <li>Protección contra amenazas</li>
+                            <li>Usar servicios de gestión de secretos (AWS Secrets Manager, Azure Key Vault)</li>
+                            <li>Rotación automática de credenciales</li>
+                            <li>Principio de mínimo privilegio</li>
+                            <li>Monitoreo de uso de credenciales</li>
                         </ul>
+                        <pre><code class="language-python">
+from azure.keyvault.secrets import SecretClient
+from aws_secretsmanager_caching import SecretCache
+
+class SecureCredentialManager:
+    def __init__(self):
+        self.azure_secret_client = SecretClient(
+            vault_url="https://your-vault.vault.azure.net/",
+            credential=DefaultAzureCredential()
+        )
+        self.aws_secret_cache = SecretCache()
+
+    def get_credential(self, secret_name, provider):
+        if provider == 'azure':
+            return self.azure_secret_client.get_secret(secret_name)
+        elif provider == 'aws':
+            return self.aws_secret_cache.get_secret_string(secret_name)
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Integración con DevSecOps</h3>
+                <div class="devsecops-grid">
+                    <div class="devsecops-item">
+                        <h4>Pipeline de Seguridad</h4>
+                        <pre><code class="language-yaml">
+# Azure DevOps Pipeline
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: SecurityScanning
+  jobs:
+  - job: SecurityChecks
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.9'
+    
+    - script: |
+        pip install safety bandit
+        safety check
+        bandit -r .
+      displayName: 'Run Security Checks'
+
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'Azure subscription'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          python security_automation.py --scan
+                        </code></pre>
                     </div>
                 </div>
             </section>
@@ -619,21 +828,87 @@ def audit_security_groups():
                 <div class="implementation-grid">
                     <div class="impl-item">
                         <h4>Azure AD Conditional Access</h4>
-                        <ul>
-                            <li>Políticas de acceso</li>
-                            <li>Evaluación de riesgos</li>
-                            <li>Cumplimiento de dispositivos</li>
-                            <li>Restricciones de ubicación</li>
-                        </ul>
+                        <pre><code class="language-python">
+from azure.identity import DefaultAzureCredential
+from azure.mgmt.authorization import AuthorizationManagementClient
+
+def configure_conditional_access():
+    # Configurar política de acceso condicional
+    credential = DefaultAzureCredential()
+    auth_client = AuthorizationManagementClient(credential, subscription_id)
+    
+    policy = {
+        "conditions": {
+            "users": {
+                "includeUsers": ["all"],
+                "excludeUsers": ["emergency-access"]
+            },
+            "applications": {
+                "includeApplications": ["all"]
+            },
+            "locations": {
+                "includeLocations": ["all"],
+                "excludeLocations": ["trusted"]
+            }
+        },
+        "controls": {
+            "requireMfa": True,
+            "deviceCompliance": True,
+            "signInRiskLevels": ["high", "medium"]
+        }
+    }
+    
+    # Aplicar política
+    auth_client.policies.create_or_update(
+        policy_name="ZeroTrust-Base",
+        parameters=policy
+    )
+                        </code></pre>
                     </div>
                     <div class="impl-item">
                         <h4>Network Security</h4>
-                        <ul>
-                            <li>NSGs avanzados</li>
-                            <li>Azure Firewall</li>
-                            <li>Private Link</li>
-                            <li>WAF policies</li>
-                        </ul>
+                        <pre><code class="language-python">
+from azure.mgmt.network import NetworkManagementClient
+
+def configure_network_security():
+    network_client = NetworkManagementClient(credential, subscription_id)
+    
+    # Configurar NSG con reglas Zero Trust
+    nsg_params = {
+        "location": "eastus",
+        "security_rules": [
+            {
+                "name": "DenyAllInbound",
+                "protocol": "*",
+                "source_port_range": "*",
+                "destination_port_range": "*",
+                "source_address_prefix": "*",
+                "destination_address_prefix": "*",
+                "access": "Deny",
+                "priority": 4096,
+                "direction": "Inbound"
+            },
+            {
+                "name": "AllowSpecificPorts",
+                "protocol": "Tcp",
+                "source_port_range": "*",
+                "destination_port_range": "443",
+                "source_address_prefix": "VirtualNetwork",
+                "destination_address_prefix": "VirtualNetwork",
+                "access": "Allow",
+                "priority": 100,
+                "direction": "Inbound"
+            }
+        ]
+    }
+    
+    # Crear NSG
+    nsg = network_client.network_security_groups.begin_create_or_update(
+        resource_group_name,
+        "ZeroTrust-NSG",
+        nsg_params
+    ).result()
+                        </code></pre>
                     </div>
                 </div>
             </section>
@@ -643,21 +918,85 @@ def audit_security_groups():
                 <div class="implementation-grid">
                     <div class="impl-item">
                         <h4>IAM Avanzado</h4>
-                        <ul>
-                            <li>Roles y políticas</li>
-                            <li>Service Control Policies</li>
-                            <li>Permission boundaries</li>
-                            <li>Identity Center</li>
-                        </ul>
+                        <pre><code class="language-python">
+import boto3
+from botocore.exceptions import ClientError
+
+def configure_iam_policies():
+    iam = boto3.client('iam')
+    
+    # Política de mínimo privilegio
+    policy_document = {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "ZeroTrustAccess",
+                "Effect": "Allow",
+                "Action": [
+                    "s3:GetObject",
+                    "s3:PutObject"
+                ],
+                "Resource": "arn:aws:s3:::my-bucket/*",
+                "Condition": {
+                    "Bool": {
+                        "aws:MultiFactorAuthPresent": "true"
+                    },
+                    "IpAddress": {
+                        "aws:SourceIp": ["10.0.0.0/8"]
+                    }
+                }
+            }
+        ]
+    }
+    
+    try:
+        response = iam.create_policy(
+            PolicyName='ZeroTrustPolicy',
+            PolicyDocument=json.dumps(policy_document)
+        )
+        print(f"Created policy: {response['Policy']['Arn']}")
+    except ClientError as e:
+        print(f"Error creating policy: {e}")
+                        </code></pre>
                     </div>
                     <div class="impl-item">
                         <h4>Seguridad de Red</h4>
-                        <ul>
-                            <li>Security Groups</li>
-                            <li>Network Firewall</li>
-                            <li>PrivateLink</li>
-                            <li>Transit Gateway</li>
-                        </ul>
+                        <pre><code class="language-python">
+def configure_vpc_security():
+    ec2 = boto3.client('ec2')
+    
+    # Crear VPC con segmentación
+    vpc = ec2.create_vpc(CidrBlock='10.0.0.0/16')
+    
+    # Crear subredes aisladas
+    subnet_private = ec2.create_subnet(
+        VpcId=vpc['Vpc']['VpcId'],
+        CidrBlock='10.0.1.0/24'
+    )
+    
+    # Configurar Security Groups
+    sg = ec2.create_security_group(
+        GroupName='ZeroTrust-SG',
+        Description='Zero Trust Security Group'
+    )
+    
+    # Reglas restrictivas
+    ec2.authorize_security_group_ingress(
+        GroupId=sg['GroupId'],
+        IpPermissions=[
+            {
+                'IpProtocol': 'tcp',
+                'FromPort': 443,
+                'ToPort': 443,
+                'UserIdGroupPairs': [
+                    {
+                        'GroupId': sg['GroupId']
+                    }
+                ]
+            }
+        ]
+    )
+                        </code></pre>
                     </div>
                 </div>
             </section>
@@ -666,22 +1005,911 @@ def audit_security_groups():
                 <h3>Monitoreo y Respuesta</h3>
                 <div class="monitoring-grid">
                     <div class="mon-item">
-                        <h4>Detección de Amenazas</h4>
-                        <ul>
-                            <li>SIEM integration</li>
-                            <li>Behavioral analytics</li>
-                            <li>Threat intelligence</li>
-                            <li>Automated response</li>
-                        </ul>
+                        <h4>Sistema de Detección de Amenazas</h4>
+                        <pre><code class="language-python">
+class ThreatDetectionSystem:
+    def __init__(self):
+        self.aws_client = boto3.client('guardduty')
+        self.azure_client = SecurityCenter(credential, subscription_id)
+        self.alert_threshold = 7.0
+        
+    def monitor_threats(self):
+        # AWS GuardDuty
+        findings = self.aws_client.list_findings()
+        for finding in findings['FindingIds']:
+            details = self.aws_client.get_findings(
+                FindingIds=[finding]
+            )
+            if details['Severity'] >= self.alert_threshold:
+                self.handle_threat(details)
+        
+        # Azure Security Center
+        alerts = self.azure_client.alerts.list()
+        for alert in alerts:
+            if alert.severity >= self.alert_threshold:
+                self.handle_azure_threat(alert)
+    
+    def handle_threat(self, threat_details):
+        # Análisis de amenaza
+        risk_score = self.calculate_risk(threat_details)
+        
+        # Respuesta automatizada
+        if risk_score > 8.0:
+            self.isolate_resource(threat_details['resource'])
+            self.notify_security_team(threat_details)
+        
+        # Logging y auditoría
+        self.log_threat_event(threat_details)
+                        </code></pre>
                     </div>
                     <div class="mon-item">
                         <h4>Auditoría Continua</h4>
+                        <pre><code class="language-python">
+class SecurityAuditor:
+    def __init__(self):
+        self.findings = []
+        self.compliance_status = {}
+        
+    def audit_security_posture(self):
+        # Verificar configuraciones
+        self.audit_network_config()
+        self.audit_identity_config()
+        self.audit_data_protection()
+        
+        # Generar informe
+        report = self.generate_audit_report()
+        
+        # Actualizar estado de cumplimiento
+        self.update_compliance_status()
+        
+    def audit_network_config(self):
+        # Verificar segmentación
+        self.verify_network_isolation()
+        
+        # Verificar reglas de firewall
+        self.audit_firewall_rules()
+        
+        # Verificar exposición pública
+        self.check_public_exposure()
+    
+    def generate_audit_report(self):
+        return {
+            'timestamp': datetime.now(),
+            'findings': self.findings,
+            'compliance': self.compliance_status,
+            'recommendations': self.generate_recommendations()
+        }
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </template>
+
+    <template id="article-web-moderno">
+        <article class="article-content">
+            <h2>Desarrollo Web Moderno: JavaScript y HTML Avanzado</h2>
+            
+            <div class="article-meta-header">
+                <span><i class="far fa-clock"></i> 45 min lectura</span>
+                <span><i class="fas fa-layer-group"></i> Nivel: Avanzado</span>
+                <span><i class="fas fa-tag"></i> Desarrollo</span>
+            </div>
+
+            <section class="article-section">
+                <h3>JavaScript Moderno y APIs Web</h3>
+                <p>El desarrollo web moderno aprovecha las últimas características de JavaScript y las APIs web más potentes.</p>
+                
+                <div class="concept-grid">
+                    <div class="concept-item">
+                        <h4>APIs Web Modernas</h4>
+                        <pre><code class="language-javascript">
+// Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+// Web Workers para tareas pesadas
+const worker = new Worker('worker.js');
+worker.postMessage({ data: complexData });
+worker.onmessage = (e) => {
+    console.log('Resultado:', e.data);
+};
+
+// Service Workers para PWA
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+            console.log('SW registrado:', registration);
+        })
+        .catch(error => {
+            console.error('Error SW:', error);
+        });
+}
+                        </code></pre>
+                    </div>
+                    <div class="concept-item">
+                        <h4>Manipulación del DOM Moderna</h4>
+                        <pre><code class="language-javascript">
+// Sistema de componentes moderno
+class CustomComponent extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+        this.setupEvents();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <style>
+                :host {
+                    display: block;
+                    padding: 20px;
+                }
+                .component {
+                    background: var(--bg-color);
+                    border-radius: 8px;
+                }
+            </style>
+            <div class="component">
+                <slot></slot>
+            </div>
+        `;
+    }
+
+    setupEvents() {
+        this.addEventListener('click', this.handleClick);
+    }
+}
+
+customElements.define('custom-component', CustomComponent);
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>HTML Semántico y Accesibilidad</h3>
+                <div class="code-example">
+                    <pre><code class="language-html">
+<!-- Estructura semántica moderna -->
+<article class="product-card" role="article" aria-labelledby="product-title">
+    <header>
+        <h2 id="product-title">Producto Premium</h2>
+        <p role="doc-subtitle">Descripción corta del producto</p>
+    </header>
+    
+    <div class="product-gallery" role="region" aria-label="Galería de producto">
+        <figure>
+            <img src="product.jpg" alt="Detalle del producto" loading="lazy">
+            <figcaption>Vista detallada del producto</figcaption>
+        </figure>
+    </div>
+    
+    <div class="product-details">
+        <dl>
+            <dt>Características:</dt>
+            <dd>Característica 1</dd>
+            <dd>Característica 2</dd>
+        </dl>
+    </div>
+    
+    <footer>
+        <button class="cta" 
+                aria-label="Agregar al carrito"
+                data-action="add-to-cart">
+            Comprar
+        </button>
+    </footer>
+</article>
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Optimización y Rendimiento</h3>
+                <div class="performance-grid">
+                    <div class="perf-item">
+                        <h4>Lazy Loading y Code Splitting</h4>
+                        <pre><code class="language-javascript">
+// Lazy loading de módulos
+const loadModule = async () => {
+    try {
+        const module = await import('./heavy-module.js');
+        module.init();
+    } catch (error) {
+        console.error('Error cargando módulo:', error);
+    }
+};
+
+// Intersection Observer para imágenes
+document.querySelectorAll('img[data-src]').forEach(img => {
+    const imageObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            });
+        },
+        { rootMargin: '50px' }
+    );
+    
+    imageObserver.observe(img);
+});
+                        </code></pre>
+                    </div>
+                    <div class="perf-item">
+                        <h4>Caché y Estado</h4>
+                        <pre><code class="language-javascript">
+// Sistema de caché moderno
+class CacheManager {
+    constructor() {
+        this.storage = new Map();
+        this.maxAge = 5 * 60 * 1000; // 5 minutos
+    }
+
+    set(key, value, ttl = this.maxAge) {
+        this.storage.set(key, {
+            value,
+            timestamp: Date.now(),
+            ttl
+        });
+    }
+
+    get(key) {
+        const item = this.storage.get(key);
+        if (!item) return null;
+
+        if (Date.now() - item.timestamp > item.ttl) {
+            this.storage.delete(key);
+            return null;
+        }
+
+        return item.value;
+    }
+}
+
+// Uso del caché
+const cache = new CacheManager();
+cache.set('user-data', userData);
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Seguridad en el Frontend</h3>
+                <div class="security-grid">
+                    <div class="sec-item">
+                        <h4>Protección XSS y CSRF</h4>
+                        <pre><code class="language-javascript">
+// Sanitización de HTML
+const sanitizeHTML = (dirty) => {
+    const template = document.createElement('template');
+    template.innerHTML = dirty;
+    return template.content.textContent || template.content.firstChild?.nodeValue;
+};
+
+// Headers de seguridad
+fetch('/api/data', {
+    headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': csrfToken,
+        'X-Requested-With': 'XMLHttpRequest'
+    },
+    credentials: 'same-origin'
+})
+.then(response => response.json())
+.then(data => {
+    const sanitizedData = sanitizeHTML(data.content);
+    document.querySelector('.content').textContent = sanitizedData;
+});
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Testing y Debugging</h3>
+                <div class="testing-grid">
+                    <div class="test-item">
+                        <h4>Testing Moderno</h4>
+                        <pre><code class="language-javascript">
+// Jest + Testing Library
+import { render, fireEvent, waitFor } from '@testing-library/dom';
+
+describe('Component Tests', () => {
+    test('renders correctly', async () => {
+        const { getByRole, queryByText } = render(`
+            <custom-component>
+                <h1>Test Content</h1>
+            </custom-component>
+        `);
+
+        const heading = getByRole('heading');
+        expect(heading).toHaveTextContent('Test Content');
+
+        await fireEvent.click(heading);
+        await waitFor(() => {
+            expect(queryByText('Clicked!')).toBeInTheDocument();
+        });
+    });
+});
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </template>
+
+    <template id="article-frameworks-modernos">
+        <article class="article-content">
+            <h2>Frameworks Frontend Modernos: React, Vue y Angular</h2>
+            
+            <div class="article-meta-header">
+                <span><i class="far fa-clock"></i> 55 min lectura</span>
+                <span><i class="fas fa-layer-group"></i> Nivel: Intermedio-Avanzado</span>
+                <span><i class="fas fa-tag"></i> Desarrollo</span>
+            </div>
+
+            <section class="article-section">
+                <h3>Comparativa de Frameworks</h3>
+                <div class="framework-comparison">
+                    <div class="framework-item">
+                        <h4>React</h4>
                         <ul>
-                            <li>Compliance checking</li>
-                            <li>Configuration audit</li>
-                            <li>Access reviews</li>
-                            <li>Security posture</li>
+                            <li>Virtual DOM eficiente</li>
+                            <li>Ecosistema extenso</li>
+                            <li>Curva de aprendizaje moderada</li>
+                            <li>Ideal para aplicaciones grandes</li>
                         </ul>
+                        <pre><code class="language-javascript">
+// Componente React moderno
+import { useState, useEffect } from 'react';
+
+const UserDashboard = () => {
+    const [userData, setUserData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/user');
+                const data = await response.json();
+                setUserData(data);
+            } catch (error) {
+                console.error('Error:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) return <LoadingSpinner />;
+
+    return (
+        <div className="dashboard">
+            <h1>Bienvenido, {userData.name}</h1>
+            <UserStats stats={userData.stats} />
+            <ActivityFeed activities={userData.activities} />
+        </div>
+    );
+};
+                        </code></pre>
+                    </div>
+
+                    <div class="framework-item">
+                        <h4>Vue.js</h4>
+                        <ul>
+                            <li>Sintaxis intuitiva</li>
+                            <li>Excelente documentación</li>
+                            <li>Curva de aprendizaje suave</li>
+                            <li>Perfecto para aplicaciones medianas</li>
+                        </ul>
+                        <pre><code class="language-javascript">
+<!-- Componente Vue 3 con Composition API -->
+<template>
+    <div class="dashboard" v-if="!loading">
+        <h1>Bienvenido, {{ userData.name }}</h1>
+        <user-stats :stats="userData.stats" />
+        <activity-feed :activities="userData.activities" />
+    </div>
+    <loading-spinner v-else />
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const userData = ref(null);
+const loading = ref(true);
+
+onMounted(async () => {
+    try {
+        const response = await fetch('/api/user');
+        userData.value = await response.json();
+    } catch (error) {
+        console.error('Error:', error);
+    } finally {
+        loading.value = false;
+    }
+});
+</script>
+                        </code></pre>
+                    </div>
+
+                    <div class="framework-item">
+                        <h4>Angular</h4>
+                        <ul>
+                            <li>Framework completo</li>
+                            <li>TypeScript por defecto</li>
+                            <li>Curva de aprendizaje pronunciada</li>
+                            <li>Óptimo para empresas grandes</li>
+                        </ul>
+                        <pre><code class="language-typescript">
+// Componente Angular moderno
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './user.service';
+
+@Component({
+    selector: 'app-dashboard',
+    template: `
+        <div class="dashboard" *ngIf="!loading">
+            <h1>Bienvenido, {{userData?.name}}</h1>
+            <app-user-stats [stats]="userData?.stats">
+            </app-user-stats>
+            <app-activity-feed 
+                [activities]="userData?.activities">
+            </app-activity-feed>
+        </div>
+        <app-loading-spinner *ngIf="loading">
+        </app-loading-spinner>
+    `
+})
+export class DashboardComponent implements OnInit {
+    userData: any = null;
+    loading = true;
+
+    constructor(private userService: UserService) {}
+
+    ngOnInit() {
+        this.userService.getUserData()
+            .subscribe({
+                next: (data) => {
+                    this.userData = data;
+                    this.loading = false;
+                },
+                error: (error) => {
+                    console.error('Error:', error);
+                    this.loading = false;
+                }
+            });
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Integración con PHP Backend</h3>
+                <div class="integration-examples">
+                    <div class="example-item">
+                        <h4>API REST con PHP y React</h4>
+                        <pre><code class="language-php">
+// Backend PHP (usando Slim Framework)
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
+$app->get('/api/users', function (Request $request, Response $response) {
+    $users = $this->get('db')->query('SELECT * FROM users');
+    $response->getBody()->write(json_encode($users));
+    return $response->withHeader('Content-Type', 'application/json');
+});
+                        </code></pre>
+                        <pre><code class="language-javascript">
+// Frontend React
+const UserList = () => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetch('/api/users')
+            .then(res => res.json())
+            .then(data => setUsers(data))
+            .catch(err => console.error(err));
+    }, []);
+
+    return (
+        <div className="user-list">
+            {users.map(user => (
+                <UserCard key={user.id} user={user} />
+            ))}
+        </div>
+    );
+};
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Patrones de Diseño Frontend</h3>
+                <div class="patterns-grid">
+                    <div class="pattern-item">
+                        <h4>Gestión de Estado</h4>
+                        <pre><code class="language-javascript">
+// Redux con React
+import { createSlice, configureStore } from '@reduxjs/toolkit';
+
+const userSlice = createSlice({
+    name: 'user',
+    initialState: {
+        data: null,
+        loading: false,
+        error: null
+    },
+    reducers: {
+        fetchUserStart: (state) => {
+            state.loading = true;
+        },
+        fetchUserSuccess: (state, action) => {
+            state.data = action.payload;
+            state.loading = false;
+        },
+        fetchUserError: (state, action) => {
+            state.error = action.payload;
+            state.loading = false;
+        }
+    }
+});
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </template>
+
+    <template id="article-integracion-frontend-backend">
+        <article class="article-content">
+            <h2>Integración Frontend-Backend: Arquitecturas Modernas</h2>
+            
+            <div class="article-meta-header">
+                <span><i class="far fa-clock"></i> 50 min lectura</span>
+                <span><i class="fas fa-layer-group"></i> Nivel: Avanzado</span>
+                <span><i class="fas fa-tag"></i> Desarrollo</span>
+            </div>
+
+            <section class="article-section">
+                <h3>APIs RESTful Modernas</h3>
+                <div class="api-examples">
+                    <div class="example-item">
+                        <h4>Diseño de API REST</h4>
+                        <pre><code class="language-php">
+// API REST en PHP moderno
+class UserController {
+    public function getUser(int $id): JsonResponse {
+        try {
+            $user = $this->userRepository->find($id);
+            
+            if (!$user) {
+                return new JsonResponse([
+                    'error' => 'Usuario no encontrado'
+                ], 404);
+            }
+
+            return new JsonResponse([
+                'data' => $user->toArray(),
+                'links' => [
+                    'self' => "/api/users/{$id}",
+                    'posts' => "/api/users/{$id}/posts",
+                    'followers' => "/api/users/{$id}/followers"
+                ]
+            ]);
+        } catch (Exception $e) {
+            return new JsonResponse([
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
+}
+                        </code></pre>
+                    </div>
+
+                    <div class="example-item">
+                        <h4>Consumo de API en Frontend</h4>
+                        <pre><code class="language-javascript">
+// Clase de servicio moderna
+class ApiService {
+    constructor(baseUrl) {
+        this.baseUrl = baseUrl;
+        this.headers = {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        };
+    }
+
+    async request(endpoint, options = {}) {
+        const url = `${this.baseUrl}${endpoint}`;
+        const config = {
+            ...options,
+            headers: {
+                ...this.headers,
+                ...options.headers
+            }
+        };
+
+        try {
+            const response = await fetch(url, config);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('API Error:', error);
+            throw error;
+        }
+    }
+
+    async getUser(id) {
+        return this.request(`/users/${id}`);
+    }
+
+    async updateUser(id, data) {
+        return this.request(`/users/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(data)
+        });
+    }
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>WebSockets y Tiempo Real</h3>
+                <div class="websocket-examples">
+                    <div class="example-item">
+                        <h4>Servidor WebSocket con PHP</h4>
+                        <pre><code class="language-php">
+// Usando Ratchet para WebSockets
+use Ratchet\MessageComponentInterface;
+use Ratchet\ConnectionInterface;
+
+class ChatServer implements MessageComponentInterface {
+    protected $clients;
+
+    public function __construct() {
+        $this->clients = new \SplObjectStorage;
+    }
+
+    public function onMessage(ConnectionInterface $from, $msg) {
+        $numRecv = count($this->clients) - 1;
+        echo sprintf('Conexión %d enviando mensaje "%s" a %d otros clientes' . "\n"
+            , $from->resourceId, $msg, $numRecv);
+
+        foreach ($this->clients as $client) {
+            if ($from !== $client) {
+                $client->send($msg);
+            }
+        }
+    }
+}
+                        </code></pre>
+                    </div>
+
+                    <div class="example-item">
+                        <h4>Cliente WebSocket en JavaScript</h4>
+                        <pre><code class="language-javascript">
+class WebSocketClient {
+    constructor(url) {
+        this.url = url;
+        this.reconnectAttempts = 0;
+        this.maxReconnectAttempts = 5;
+        this.listeners = new Map();
+        
+        this.connect();
+    }
+
+    connect() {
+        this.ws = new WebSocket(this.url);
+        
+        this.ws.onopen = () => {
+            console.log('Conectado al servidor WebSocket');
+            this.reconnectAttempts = 0;
+            this.emit('connected');
+        };
+
+        this.ws.onmessage = (event) => {
+            try {
+                const data = JSON.parse(event.data);
+                this.emit('message', data);
+            } catch (error) {
+                console.error('Error parsing message:', error);
+            }
+        };
+
+        this.ws.onclose = () => {
+            console.log('Conexión cerrada');
+            this.handleReconnect();
+        };
+
+        this.ws.onerror = (error) => {
+            console.error('Error de WebSocket:', error);
+            this.emit('error', error);
+        };
+    }
+
+    handleReconnect() {
+        if (this.reconnectAttempts < this.maxReconnectAttempts) {
+            this.reconnectAttempts++;
+            console.log(`Intentando reconectar... Intento ${this.reconnectAttempts}`);
+            setTimeout(() => this.connect(), 1000 * this.reconnectAttempts);
+        } else {
+            console.error('Máximo número de intentos de reconexión alcanzado');
+            this.emit('maxReconnectAttemptsReached');
+        }
+    }
+
+    on(event, callback) {
+        if (!this.listeners.has(event)) {
+            this.listeners.set(event, new Set());
+        }
+        this.listeners.get(event).add(callback);
+    }
+
+    emit(event, data) {
+        if (this.listeners.has(event)) {
+            this.listeners.get(event).forEach(callback => callback(data));
+        }
+    }
+
+    send(data) {
+        if (this.ws.readyState === WebSocket.OPEN) {
+            this.ws.send(JSON.stringify(data));
+        } else {
+            console.error('WebSocket no está conectado');
+        }
+    }
+}
+
+// Uso del cliente WebSocket
+const chat = new WebSocketClient('ws://localhost:8080');
+
+chat.on('connected', () => {
+    console.log('Conectado al chat');
+});
+
+chat.on('message', (data) => {
+    console.log('Nuevo mensaje:', data);
+    updateChatUI(data);
+});
+
+chat.on('error', (error) => {
+    showErrorNotification(error);
+});
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h3>Autenticación y Autorización</h3>
+                <div class="auth-examples">
+                    <div class="example-item">
+                        <h4>JWT Authentication</h4>
+                        <pre><code class="language-javascript">
+class AuthService {
+    constructor() {
+        this.tokenKey = 'auth_token';
+        this.refreshTokenKey = 'refresh_token';
+    }
+
+    async login(credentials) {
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(credentials)
+            });
+
+            if (!response.ok) {
+                throw new Error('Login failed');
+            }
+
+            const { token, refreshToken } = await response.json();
+            
+            this.setTokens(token, refreshToken);
+            return true;
+        } catch (error) {
+            console.error('Login error:', error);
+            throw error;
+        }
+    }
+
+    async refreshToken() {
+        const refreshToken = this.getRefreshToken();
+        
+        if (!refreshToken) {
+            throw new Error('No refresh token available');
+        }
+
+        try {
+            const response = await fetch('/api/refresh-token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${refreshToken}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Token refresh failed');
+            }
+
+            const { token, newRefreshToken } = await response.json();
+            this.setTokens(token, newRefreshToken);
+            
+            return token;
+        } catch (error) {
+            console.error('Token refresh error:', error);
+            this.logout();
+            throw error;
+        }
+    }
+
+    setTokens(token, refreshToken) {
+        localStorage.setItem(this.tokenKey, token);
+        localStorage.setItem(this.refreshTokenKey, refreshToken);
+    }
+
+    getToken() {
+        return localStorage.getItem(this.tokenKey);
+    }
+
+    getRefreshToken() {
+        return localStorage.getItem(this.refreshTokenKey);
+    }
+
+    logout() {
+        localStorage.removeItem(this.tokenKey);
+        localStorage.removeItem(this.refreshTokenKey);
+    }
+
+    isAuthenticated() {
+        const token = this.getToken();
+        if (!token) return false;
+
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            return payload.exp > Date.now() / 1000;
+        } catch (error) {
+            return false;
+        }
+    }
+}
+                        </code></pre>
                     </div>
                 </div>
             </section>
@@ -951,7 +2179,131 @@ def audit_security_groups():
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Estilos para código */
+        pre {
+            background: var(--code-bg, #1e1e1e);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--code-text, #d4d4d4);
+        }
+
+        .language-python {
+            color: #569cd6;
+        }
+
+        .language-yaml {
+            color: #ce9178;
+        }
+
+        /* Resaltado de sintaxis */
+        .keyword { color: #569cd6; }
+        .string { color: #ce9178; }
+        .comment { color: #6a9955; }
+        .number { color: #b5cea8; }
+        .function { color: #dcdcaa; }
+        .class { color: #4ec9b0; }
+
+        /* Mejoras para artículos */
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .article-section {
+            margin-bottom: 3rem;
+        }
+
+        .article-meta-header {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .implementation-grid,
+        .monitoring-grid,
+        .automation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .impl-item,
+        .mon-item,
+        .automation-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .impl-item h4,
+        .mon-item h4,
+        .automation-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Estilos para ejemplos de código */
+        .code-example {
+            background: var(--code-bg);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .code-example pre {
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+
+        .code-example-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .implementation-grid,
+            .monitoring-grid,
+            .automation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-content {
+                padding: 1rem;
+            }
+
+            pre {
+                font-size: 0.8rem;
+            }
+        }
     </style>
+
+    <!-- Agregar Prism.js para resaltado de sintaxis -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-yaml.min.js"></script>
 
     <script src="scripts.js"></script>
 </body>
