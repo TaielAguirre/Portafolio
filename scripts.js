@@ -506,6 +506,11 @@ function showArticle(articleId) {
         content.innerHTML = template.innerHTML;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        
+        // Resaltar sintaxis de código si existe Prism.js
+        if (window.Prism) {
+            Prism.highlightAll();
+        }
     } else {
         console.error(`No se encontró el template para el artículo: ${articleId}`);
     }
@@ -533,9 +538,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Manejador para cerrar el modal de artículos
     const modal = document.getElementById('articleModal');
-    const closeBtn = modal.querySelector('.close');
+    const closeBtn = modal.querySelector('.close-modal');
 
-    closeBtn.addEventListener('click', closeArticle);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeArticle);
+    }
 
     // Cerrar al hacer click fuera del modal
     window.addEventListener('click', function(e) {

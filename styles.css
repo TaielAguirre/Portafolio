@@ -1124,7 +1124,7 @@ footer::after {
     opacity: 1;
 }
 
-.close {
+.close-modal {
     position: absolute;
     right: 1.5rem;
     top: 1.5rem;
@@ -1135,7 +1135,7 @@ footer::after {
     z-index: 1;
 }
 
-.close:hover {
+.close-modal:hover {
     color: var(--accent);
 }
 
@@ -1174,37 +1174,81 @@ footer::after {
     gap: 0.5rem;
 }
 
+/* Estilos para el contenido del artículo */
 .article-content {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-primary);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
+.article-section {
+    margin-bottom: 3rem;
+}
+
+.article-section h3 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.article-section p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.article-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.article-section ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.article-section ul li:before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Estilos para código */
+pre {
+    background: var(--code-bg, #1e1e1e);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--code-text, #d4d4d4);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .modal-content {
-        padding: 1.5rem;
         margin: 1rem;
+        padding: 1rem;
     }
 
     .article-header h2 {
         font-size: 2rem;
     }
 
-    .article-meta {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
+    .article-section h3 {
+        font-size: 1.5rem;
     }
-}
 
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.3s ease-in;
+    pre {
+        font-size: 0.8rem;
+    }
 }
 
 /* Estilos adicionales para mejorar la UX */
