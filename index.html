@@ -24,6 +24,9 @@
             <a href="#tecnologias">Tecnologías</a>
             <a href="lecturas.html">Recursos</a>
             <a href="#contacto" class="nav-cta">Contacto</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
         <div class="menu-toggle">
             <span></span>
@@ -305,6 +308,208 @@
         </div>
     </section>
 
+    <section id="certificaciones" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certificaciones y Logros</h2>
+                <p>Credenciales que respaldan mi experiencia y conocimientos técnicos</p>
+            </div>
+            
+            <div class="certifications-container">
+                <div class="certification-tabs">
+                    <button class="tab-btn active" data-tab="cloud">Cloud & Seguridad</button>
+                    <button class="tab-btn" data-tab="development">Desarrollo</button>
+                    <button class="tab-btn" data-tab="management">Gestión de Proyectos</button>
+                </div>
+                
+                <div class="certification-content">
+                    <!-- Cloud & Seguridad -->
+                    <div class="tab-content active" id="cloud-tab">
+                        <div class="certifications-grid">
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/azure-security.png" alt="Microsoft Azure Security">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>Microsoft Certified: Azure Security Engineer Associate</h3>
+                                    <p class="issuer">Microsoft</p>
+                                    <p class="cert-date">Expedición: Enero 2023 · Validez: 2 años</p>
+                                    <div class="cert-skills">
+                                        <span>Azure AD</span>
+                                        <span>Seguridad en la Nube</span>
+                                        <span>Identidad</span>
+                                    </div>
+                                    <a href="#" class="btn-verify">Verificar <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/aws-security.png" alt="AWS Security Specialty">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>AWS Certified Security - Specialty</h3>
+                                    <p class="issuer">Amazon Web Services</p>
+                                    <p class="cert-date">Expedición: Marzo 2022 · Validez: 3 años</p>
+                                    <div class="cert-skills">
+                                        <span>AWS IAM</span>
+                                        <span>Seguridad de Datos</span>
+                                        <span>Infraestructura</span>
+                                    </div>
+                                    <a href="#" class="btn-verify">Verificar <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/comptia-security.png" alt="CompTIA Security+">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>CompTIA Security+</h3>
+                                    <p class="issuer">CompTIA</p>
+                                    <p class="cert-date">Expedición: Junio 2021 · Validez: 3 años</p>
+                                    <div class="cert-skills">
+                                        <span>Seguridad de Red</span>
+                                        <span>Criptografía</span>
+                                        <span>Gestión de Riesgos</span>
+                                    </div>
+                                    <a href="#" class="btn-verify">Verificar <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desarrollo -->
+                    <div class="tab-content" id="development-tab">
+                        <div class="certifications-grid">
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/zend-php.png" alt="Zend PHP Certification">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>Zend Certified PHP Engineer</h3>
+                                    <p class="issuer">Zend by Perforce</p>
+                                    <p class="cert-date">Expedición: Septiembre 2022</p>
+                                    <div class="cert-skills">
+                                        <span>PHP 8</span>
+                                        <span>OOP</span>
+                                        <span>Frameworks</span>
+                                    </div>
+                                    <a href="#" class="btn-verify">Verificar <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/python-institute.png" alt="PCAP">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>PCAP: Certified Associate in Python Programming</h3>
+                                    <p class="issuer">Python Institute</p>
+                                    <p class="cert-date">Expedición: Mayo 2022</p>
+                                    <div class="cert-skills">
+                                        <span>Python 3</span>
+                                        <span>Algoritmos</span>
+                                        <span>Programación OOP</span>
+                                    </div>
+                                    <a href="#" class="btn-verify">Verificar <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gestión de Proyectos -->
+                    <div class="tab-content" id="management-tab">
+                        <div class="certifications-grid">
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/scrum-master.png" alt="Professional Scrum Master">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>Professional Scrum Master I (PSM I)</h3>
+                                    <p class="issuer">Scrum.org</p>
+                                    <p class="cert-date">Expedición: Febrero 2023</p>
+                                    <div class="cert-skills">
+                                        <span>Scrum</span>
+                                        <span>Agile</span>
+                                        <span>Gestión de Equipos</span>
+                                    </div>
+                                    <a href="#" class="btn-verify">Verificar <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section id="testimonios" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que Dicen Mis Clientes</h2>
+                <p>Opiniones de personas y empresas con las que he colaborado</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Su experiencia en seguridad cloud transformó nuestra infraestructura. Implementó soluciones robustas que nos permitieron cumplir con normativas estrictas y proteger datos sensibles. Un profesional excepcional."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonials/client1.jpg" alt="María Rodríguez">
+                            <div>
+                                <h4>María Rodríguez</h4>
+                                <p>CTO, TechSolutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Desarrolló una aplicación PHP empresarial que optimizó nuestros procesos internos y redujo costos operativos en un 30%. Su enfoque en seguridad y rendimiento fue clave para el éxito del proyecto."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonials/client2.jpg" alt="Carlos Méndez">
+                            <div>
+                                <h4>Carlos Méndez</h4>
+                                <p>Director de Operaciones, LogisticsPro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Su capacidad para automatizar procesos de seguridad en Azure nos permitió escalar nuestras operaciones sin comprometer la protección de datos. Un consultor que realmente entiende tanto el negocio como la tecnología."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonials/client3.jpg" alt="Laura Sánchez">
+                            <div>
+                                <h4>Laura Sánchez</h4>
+                                <p>CISO, FinTech Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots"></div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
     <section id="contacto" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -397,5 +602,36 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Sección de Estadísticas -->
+    <section id="estadisticas" class="section-padding stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Proyectos Completados</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label">Auditorías de Seguridad</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-cloud"></i>
+                    <div class="stat-number" data-count="30">0</div>
+                    <div class="stat-label">Migraciones Cloud</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-code"></i>
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Aplicaciones Enterprise</div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html> 

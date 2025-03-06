@@ -503,14 +503,42 @@ function showArticle(articleId) {
     const template = document.getElementById(`article-${articleId}`);
 
     if (template) {
-        content.innerHTML = template.innerHTML;
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        // Limpiar contenido anterior
+        content.innerHTML = '';
         
-        // Resaltar sintaxis de código si existe Prism.js
-        if (window.Prism) {
-            Prism.highlightAll();
-        }
+        // Añadir animación de carga
+        content.classList.add('loading');
+        
+        // Simular carga de contenido
+        setTimeout(() => {
+            // Quitar animación de carga
+            content.classList.remove('loading');
+            
+            // Insertar contenido del artículo
+            content.innerHTML = template.innerHTML;
+            
+            // Mostrar modal con animación
+            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+            
+            // Calcular tiempo de lectura
+            calculateReadingTime();
+            
+            // Añadir funcionalidad para copiar código
+            setupCodeCopy();
+            
+            // Resaltar sintaxis de código si existe Prism.js
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // Registrar vista del artículo
+            trackArticleView(articleId);
+        }, 500);
     } else {
         console.error(`No se encontró el template para el artículo: ${articleId}`);
     }
@@ -519,8 +547,90 @@ function showArticle(articleId) {
 // Función para cerrar el artículo
 function closeArticle() {
     const modal = document.getElementById('articleModal');
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    
+    // Animar cierre
+    modal.classList.remove('show');
+    
+    // Esperar a que termine la animación
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+// Calcular tiempo de lectura
+function calculateReadingTime() {
+    const articleContent = document.querySelector('#articleContent');
+    if (!articleContent) return;
+    
+    // Contar palabras (aproximado)
+    const text = articleContent.textContent || articleContent.innerText;
+    const wordCount = text.split(/\s+/).length;
+    
+    // Calcular minutos (promedio 200 palabras por minuto)
+    const minutes = Math.ceil(wordCount / 200);
+    
+    // Actualizar elemento de tiempo de lectura si existe
+    const readingTimeElement = document.querySelector('.reading-time');
+    if (readingTimeElement) {
+        readingTimeElement.innerHTML = `<i class="far fa-clock"></i> ${minutes} min lectura`;
+    }
+}
+
+// Configurar botones para copiar código
+function setupCodeCopy() {
+    const codeBlocks = document.querySelectorAll('pre code');
+    
+    codeBlocks.forEach(block => {
+        // Crear botón de copia
+        const copyButton = document.createElement('button');
+        copyButton.className = 'copy-code-btn';
+        copyButton.innerHTML = '<i class="far fa-copy"></i>';
+        copyButton.title = 'Copiar código';
+        
+        // Añadir botón al bloque de código
+        const pre = block.parentNode;
+        pre.style.position = 'relative';
+        pre.appendChild(copyButton);
+        
+        // Añadir evento de clic
+        copyButton.addEventListener('click', () => {
+            const code = block.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                // Cambiar ícono temporalmente para indicar éxito
+                copyButton.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    copyButton.innerHTML = '<i class="far fa-copy"></i>';
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+                copyButton.innerHTML = '<i class="fas fa-times"></i>';
+                setTimeout(() => {
+                    copyButton.innerHTML = '<i class="far fa-copy"></i>';
+                }, 2000);
+            });
+        });
+    });
+}
+
+// Registrar vista de artículo
+function trackArticleView(articleId) {
+    // Obtener historial de vistas del localStorage
+    let viewedArticles = JSON.parse(localStorage.getItem('viewedArticles') || '[]');
+    
+    // Añadir artículo actual si no está ya
+    if (!viewedArticles.includes(articleId)) {
+        viewedArticles.push(articleId);
+        // Limitar a los últimos 10 artículos
+        if (viewedArticles.length > 10) {
+            viewedArticles = viewedArticles.slice(-10);
+        }
+        localStorage.setItem('viewedArticles', JSON.stringify(viewedArticles));
+    }
+    
+    // Actualizar contador de vistas (simulado)
+    const viewCount = parseInt(localStorage.getItem(`article_${articleId}_views`) || '0');
+    localStorage.setItem(`article_${articleId}_views`, viewCount + 1);
 }
 
 // Inicialización de los manejadores de eventos para artículos
@@ -557,4 +667,226 @@ document.addEventListener('DOMContentLoaded', function() {
             closeArticle();
         }
     });
+}); 
+
+// Manejador de pestañas de certificaciones
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (tabButtons.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Quitar clase activa de todos los botones
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Añadir clase activa al botón actual
+                button.classList.add('active');
+                
+                // Ocultar todos los contenidos
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Mostrar el contenido correspondiente
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+    }
+}); 
+
+// Manejador del cambio de tema (oscuro/claro)
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    if (themeToggle) {
+        // Verificar si hay un tema guardado en localStorage
+        const savedTheme = localStorage.getItem('theme');
+        
+        // Aplicar tema guardado o detectar preferencia del sistema
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        } else {
+            // Detectar preferencia del sistema
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            
+            if (prefersDarkScheme.matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                updateThemeIcon('dark');
+            }
+        }
+        
+        // Manejar clic en el botón de tema
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            // Cambiar tema
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            // Guardar preferencia
+            localStorage.setItem('theme', newTheme);
+            
+            // Actualizar icono
+            updateThemeIcon(newTheme);
+        });
+    }
+});
+
+// Función para actualizar el icono del botón de tema
+function updateThemeIcon(theme) {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    if (themeToggle) {
+        if (theme === 'dark') {
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    }
+} 
+
+// Manejador del slider de testimonios
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.testimonials-slider');
+    
+    if (slider) {
+        const slides = slider.querySelectorAll('.testimonial-slide');
+        const dotsContainer = document.querySelector('.testimonial-dots');
+        const prevBtn = document.querySelector('.testimonial-prev');
+        const nextBtn = document.querySelector('.testimonial-next');
+        
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        
+        // Crear puntos indicadores
+        for (let i = 0; i < slideCount; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('testimonial-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('data-slide', i);
+            dotsContainer.appendChild(dot);
+            
+            // Evento de clic en el punto
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+            });
+        }
+        
+        // Función para ir a una diapositiva específica
+        function goToSlide(index) {
+            // Validar índice
+            if (index < 0) index = slideCount - 1;
+            if (index >= slideCount) index = 0;
+            
+            // Actualizar posición del slider
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Actualizar puntos activos
+            document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            
+            // Actualizar índice actual
+            currentSlide = index;
+        }
+        
+        // Eventos de botones
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentSlide - 1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentSlide + 1);
+        });
+        
+        // Cambio automático cada 5 segundos
+        let interval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5000);
+        
+        // Detener cambio automático al pasar el mouse
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(interval);
+        });
+        
+        // Reanudar cambio automático al quitar el mouse
+        slider.addEventListener('mouseleave', () => {
+            interval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 5000);
+        });
+        
+        // Soporte para gestos táctiles
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Deslizar a la izquierda
+                goToSlide(currentSlide + 1);
+            }
+            
+            if (touchEndX > touchStartX + swipeThreshold) {
+                // Deslizar a la derecha
+                goToSlide(currentSlide - 1);
+            }
+        }
+    }
+}); 
+
+// Animación de contadores de estadísticas
+document.addEventListener('DOMContentLoaded', function() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    if (statNumbers.length > 0) {
+        // Función para animar contadores
+        function animateCounters() {
+            statNumbers.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000; // 2 segundos
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Observador de intersección para activar animación cuando sea visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Observar la sección de estadísticas
+        const statsSection = document.getElementById('estadisticas');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    }
 }); 
