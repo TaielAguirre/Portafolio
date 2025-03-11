@@ -155,7 +155,6 @@ nav.scrolled {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    position: relative;
 }
 
 .nav-brand::after {
@@ -175,19 +174,19 @@ nav.scrolled {
     transform: scaleX(1);
 }
 
-.nav-brand img {
+.nav-logo {
     height: 40px;
     width: auto;
+    transition: var(--transition-normal);
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
 .nav-brand h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
+    display: none; /* Ocultamos el texto ya que está en el logo */
 }
 
 .nav-links {
@@ -300,8 +299,8 @@ nav.scrolled {
         padding: 0 var(--spacing-sm);
     }
     
-    .nav-brand h1 {
-        font-size: 1.2rem;
+    .nav-logo {
+        height: 35px;
     }
     
     .nav-links {
@@ -407,6 +406,14 @@ nav.scrolled {
     .certification-logo {
         width: 100%;
         padding: var(--spacing-sm);
+    }
+    
+    .nav-logo {
+        height: 30px;
+    }
+    
+    .footer-logo {
+        height: 35px;
     }
 }
 
@@ -1172,6 +1179,17 @@ footer::after {
     display: flex;
         flex-direction: column;
     gap: var(--spacing-md);
+}
+
+.footer-logo {
+    height: 45px;
+    width: auto;
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-normal);
+}
+
+[data-theme="dark"] .footer-logo {
+    filter: brightness(1.2);
 }
 
 .footer-brand img {
