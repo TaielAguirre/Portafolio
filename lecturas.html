@@ -3,2376 +3,808 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lecturas - TechWeave</title>
+    <title>Biblioteca Técnica - TechWeave</title>
+    <meta name="description" content="Recursos técnicos y artículos sobre desarrollo, ciberseguridad y tecnología">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <nav>
-        <div class="nav-brand">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjUgNDVDMzYuMDQ1NyA0NSA0NSAzNi4wNDU3IDQ1IDI1QzQ1IDEzLjk1NDMgMzYuMDQ1NyA1IDI1IDVDMTMuOTU0MyA1IDUgMTMuOTU0MyA1IDI1QzUgMzYuMDQ1NyAxMy45NTQzIDQ1IDI1IDQ1WiIgc3Ryb2tlPSIjMDBBM0UwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=" alt="TechWeave Logo">
-            <h1>TechWeave</h1>
-        </div>
-        <div class="nav-links">
-            <a href="index.html#servicios">Servicios</a>
-            <a href="index.html#proyectos">Proyectos</a>
-            <a href="index.html#tecnologias">Tecnologías</a>
-            <a href="lecturas.html" class="active">Recursos</a>
-            <a href="index.html#contacto">Contacto</a>
-        </div>
-        <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <div class="readings-container">
-        <header class="readings-header">
-            <h1>Biblioteca de Conocimiento Técnico</h1>
-            <p>Explora nuestra colección de artículos, guías y recursos sobre desarrollo, seguridad y tecnologías emergentes.</p>
-        </header>
-
-        <!-- Nueva sección de Blog Técnico -->
-        <section class="blog-section">
-            <div class="section-header">
-                <h2>Blog Técnico</h2>
-                <p>Publicaciones recientes sobre tecnología, desarrollo y seguridad</p>
-            </div>
-            
-            <div class="blog-featured">
-                <article class="featured-post">
-                    <div class="featured-image">
-                        <img src="images/blog/featured-post.jpg" alt="Post Destacado">
-                        <span class="post-category">Seguridad Cloud</span>
-                    </div>
-                    <div class="featured-content">
-                        <span class="post-date"><i class="far fa-calendar-alt"></i> Publicado: 15 de Julio, 2023</span>
-                        <h3>Implementando Arquitecturas Seguras en Entornos Multi-Cloud</h3>
-                        <p>Estrategias prácticas para diseñar e implementar arquitecturas que mantengan la seguridad y el cumplimiento normativo en entornos que utilizan múltiples proveedores cloud.</p>
-                        <a href="#" class="btn-read">Leer artículo <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-            
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog/post-1.jpg" alt="PHP Moderno">
-                        <span class="post-category">Desarrollo</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="post-date"><i class="far fa-calendar-alt"></i> 10 de Julio, 2023</span>
-                        <h3>PHP 8.2: Características que Todo Desarrollador Debería Conocer</h3>
-                        <p>Explorando las nuevas funcionalidades y mejoras de rendimiento en PHP 8.2 y cómo implementarlas en tus proyectos.</p>
-                        <a href="#" class="btn-read">Leer más</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog/post-2.jpg" alt="Seguridad API">
-                        <span class="post-category">Seguridad</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="post-date"><i class="far fa-calendar-alt"></i> 5 de Julio, 2023</span>
-                        <h3>Protegiendo APIs REST: Más Allá de OAuth</h3>
-                        <p>Estrategias avanzadas para asegurar tus APIs REST, incluyendo JWT, rate limiting y detección de anomalías.</p>
-                        <a href="#" class="btn-read">Leer más</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog/post-3.jpg" alt="DevOps">
-                        <span class="post-category">DevOps</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="post-date"><i class="far fa-calendar-alt"></i> 28 de Junio, 2023</span>
-                        <h3>Automatización de Seguridad en Pipelines CI/CD</h3>
-                        <p>Cómo integrar pruebas de seguridad automatizadas en tus pipelines de CI/CD para detectar vulnerabilidades temprano.</p>
-                        <a href="#" class="btn-read">Leer más</a>
-                    </div>
-                </article>
-            </div>
-            
-            <div class="blog-cta">
-                <a href="#" class="btn-primary">Ver todos los artículos</a>
-            </div>
-        </section>
-
-        <section class="readings-filters">
-            <div class="filters-row">
-                <div class="filter-group">
-                    <label for="searchArticles">
-                        <i class="fas fa-search"></i> Buscar artículos
-                    </label>
-                    <input type="text" id="searchArticles" placeholder="Buscar por título o contenido...">
-                </div>
-                <div class="filter-group">
-                    <label for="filterLevel">
-                        <i class="fas fa-layer-group"></i> Nivel de experiencia
-                    </label>
-                    <select id="filterLevel">
-                        <option value="all">Todos los niveles</option>
-                        <option value="Básico">Básico</option>
-                        <option value="Intermedio">Intermedio</option>
-                        <option value="Avanzado">Avanzado</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="filterTime">
-                        <i class="far fa-clock"></i> Tiempo de lectura
-                    </label>
-                    <select id="filterTime">
-                        <option value="all">Cualquier duración</option>
-                        <option value="short">Corto (< 15 min)</option>
-                        <option value="medium">Medio (15-30 min)</option>
-                        <option value="long">Largo (> 30 min)</option>
-                    </select>
-                </div>
-            </div>
-        </section>
-
-        <div class="readings-categories">
-            <button class="category-pill active" data-category="all">
-                <i class="fas fa-th-large"></i> Todos los artículos
-            </button>
-            <button class="category-pill" data-category="Desarrollo">
-                <i class="fas fa-code"></i> Desarrollo
-            </button>
-            <button class="category-pill" data-category="Cloud Security">
-                <i class="fas fa-shield-alt"></i> Cloud Security
-            </button>
-            <button class="category-pill" data-category="DevOps">
-                <i class="fas fa-server"></i> DevOps
-            </button>
-        </div>
-
-        <div class="articles-grid">
-            <article class="article-card" data-article="redes-seguridad">
-                <div class="article-image">
-                    <img src="images/readings/redes-seguridad.jpg" alt="Redes y Seguridad Cloud">
-                </div>
-                <div class="article-info">
-                    <h3>Fundamentos de Redes y Ciberseguridad en la Era Cloud</h3>
-                    <p>Explora los conceptos esenciales de redes informáticas y su integración con la seguridad en entornos cloud modernos.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 35 min lectura</span>
-                        <span><i class="fas fa-tag"></i> Cloud Security</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-article="php-enterprise">
-                <div class="article-image">
-                    <img src="images/readings/php-enterprise.jpg" alt="PHP Enterprise">
-                </div>
-                <div class="article-info">
-                    <h3>Desarrollo de Aplicaciones Enterprise con PHP Moderno</h3>
-                    <p>Guía completa sobre arquitecturas modernas, patrones de diseño y mejores prácticas para aplicaciones PHP empresariales.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 45 min lectura</span>
-                        <span><i class="fas fa-tag"></i> Desarrollo</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-article="cloud-automation">
-                <div class="article-image">
-                    <img src="images/readings/cloud-automation.jpg" alt="Cloud Automation">
-                </div>
-                <div class="article-info">
-                    <h3>Automatización de Seguridad en la Nube con Python</h3>
-                    <p>Implementación de scripts y herramientas de automatización para seguridad en Azure y AWS usando Python.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 40 min lectura</span>
-                        <span><i class="fas fa-tag"></i> DevOps</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-article="zero-trust">
-                <div class="article-image">
-                    <img src="images/readings/zero-trust.jpg" alt="Zero Trust Architecture">
-                </div>
-                <div class="article-info">
-                    <h3>Implementando Zero Trust en Entornos Cloud</h3>
-                    <p>Estrategias y herramientas para implementar arquitecturas Zero Trust en Azure y AWS.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 50 min lectura</span>
-                        <span><i class="fas fa-tag"></i> Cloud Security</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-article="web-moderno">
-                <div class="article-image">
-                    <img src="images/readings/web-moderno.jpg" alt="Desarrollo Web Moderno">
-                </div>
-                <div class="article-info">
-                    <h3>Desarrollo Web Moderno: JavaScript y HTML Avanzado</h3>
-                    <p>Técnicas avanzadas de desarrollo web, patrones modernos y mejores prácticas con JavaScript y HTML.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 45 min lectura</span>
-                        <span><i class="fas fa-tag"></i> Desarrollo</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-article="frameworks-modernos">
-                <div class="article-image">
-                    <img src="images/readings/frameworks.jpg" alt="Frameworks Frontend Modernos">
-                </div>
-                <div class="article-info">
-                    <h3>Frameworks Frontend Modernos: React, Vue y Angular</h3>
-                    <p>Análisis comparativo y mejores prácticas en el desarrollo con frameworks modernos de JavaScript.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 55 min lectura</span>
-                        <span><i class="fas fa-tag"></i> Desarrollo</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-article="integracion-frontend-backend">
-                <div class="article-image">
-                    <img src="images/readings/integration.jpg" alt="Integración Frontend-Backend">
-                </div>
-                <div class="article-info">
-                    <h3>Integración Frontend-Backend: Arquitecturas Modernas</h3>
-                    <p>Guía completa sobre la integración efectiva entre frontend y backend, incluyendo APIs, WebSockets y más.</p>
-                    <div class="article-meta">
-                        <span><i class="far fa-clock"></i> 50 min lectura</span>
-                        <span><i class="fas fa-tag"></i> Desarrollo</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </div>
-
-    <!-- Modal para mostrar artículos -->
-    <div id="articleModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="articleContent">
-                <!-- El contenido del artículo se cargará aquí dinámicamente -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Templates de artículos -->
-    <template id="article-redes-seguridad">
-        <article class="article-content">
-            <h2>Fundamentos de Redes y Ciberseguridad en la Era Cloud</h2>
-            
-            <div class="article-meta-header">
-                <span><i class="far fa-clock"></i> 35 min lectura</span>
-                <span><i class="fas fa-layer-group"></i> Nivel: Intermedio</span>
-                <span><i class="fas fa-tag"></i> Cloud Security</span>
-            </div>
-
-            <section class="article-section">
-                <h3>Introducción a las Redes Modernas</h3>
-                <p>En la era actual de la computación en la nube, las redes informáticas han evolucionado significativamente. La integración de servicios cloud ha transformado la arquitectura tradicional de redes, introduciendo nuevos conceptos y desafíos de seguridad.</p>
-                <p>Las redes modernas deben adaptarse a:</p>
-                <ul>
-                    <li>Entornos híbridos (on-premise + cloud)</li>
-                    <li>Acceso remoto seguro</li>
-                    <li>Microservicios y contenedores</li>
-                    <li>Edge computing</li>
-                </ul>
-            </section>
-
-            <section class="article-section">
-                <h3>Conceptos Fundamentales de Cloud Networking</h3>
-                <div class="concept-grid">
-                    <div class="concept-item">
-                        <h4>Redes Virtuales (VNets)</h4>
-                        <p>Las redes virtuales permiten aislar recursos en la nube y crear segmentos de red seguros. Características principales:</p>
-                        <ul>
-                            <li>Subredes personalizadas</li>
-                            <li>Enrutamiento definido por software</li>
-                            <li>Integración con servicios cloud</li>
-                        </ul>
-                    </div>
-                    <div class="concept-item">
-                        <h4>Software-Defined Networking (SDN)</h4>
-                        <p>SDN separa el plano de control del plano de datos, permitiendo:</p>
-                        <ul>
-                            <li>Automatización de la red</li>
-                            <li>Políticas centralizadas</li>
-                            <li>Mayor flexibilidad</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Seguridad en Entornos Cloud</h3>
-                <p>La seguridad en la nube requiere un enfoque diferente al tradicional. Implementamos múltiples capas de protección:</p>
-                
-                <div class="security-layer">
-                    <h4>1. Identity and Access Management (IAM)</h4>
-                    <ul>
-                        <li>Autenticación multifactor (MFA)</li>
-                        <li>Control de acceso basado en roles (RBAC)</li>
-                        <li>Gestión de identidades privilegiadas</li>
-                        <li>Single Sign-On (SSO)</li>
-                    </ul>
-                </div>
-
-                <div class="security-layer">
-                    <h4>2. Network Security Groups (NSG)</h4>
-                    <ul>
-                        <li>Reglas de entrada y salida</li>
-                        <li>Microsegmentación</li>
-                        <li>Filtrado de tráfico por puerto/protocolo</li>
-                        <li>Políticas de seguridad granulares</li>
-                    </ul>
-                </div>
-
-                <div class="security-layer">
-                    <h4>3. Protección de Aplicaciones</h4>
-                    <ul>
-                        <li>Web Application Firewalls (WAF)</li>
-                        <li>DDoS Protection</li>
-                        <li>SSL/TLS encryption</li>
-                        <li>API Security</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Mejores Prácticas de Seguridad</h3>
-                <div class="best-practices">
-                    <div class="practice-item">
-                        <h4>Zero Trust Architecture</h4>
-                        <p>Implementación del principio "nunca confiar, siempre verificar":</p>
-                        <ul>
-                            <li>Verificación continua de identidad</li>
-                            <li>Acceso con privilegios mínimos</li>
-                            <li>Microsegmentación de recursos</li>
-                            <li>Monitoreo constante</li>
-                        </ul>
-                    </div>
-
-                    <div class="practice-item">
-                        <h4>Monitoreo y Logging</h4>
-                        <p>Estrategias de observabilidad completa:</p>
-                        <ul>
-                            <li>Logs centralizados</li>
-                            <li>Análisis de comportamiento</li>
-                            <li>Alertas en tiempo real</li>
-                            <li>Auditoría de seguridad</li>
-                        </ul>
-                    </div>
-
-                    <div class="practice-item">
-                        <h4>Automatización de Seguridad</h4>
-                        <p>Implementación de respuestas automatizadas:</p>
-                        <ul>
-                            <li>Security Orchestration (SOAR)</li>
-                            <li>Respuesta a incidentes</li>
-                            <li>Remediación automática</li>
-                            <li>Actualizaciones de seguridad</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Herramientas y Tecnologías</h3>
-                <div class="tools-section">
-                    <div class="tool-category">
-                        <h4>Microsoft Azure</h4>
-                        <div class="tech-grid">
-                            <div class="tech-item">
-                                <img src="images/tech/azure-security.svg" alt="Azure Security Center">
-                                <span>Azure Security Center</span>
-                                <p>Monitoreo y protección unificada</p>
-                            </div>
-                            <div class="tech-item">
-                                <img src="images/tech/azure-sentinel.svg" alt="Azure Sentinel">
-                                <span>Azure Sentinel</span>
-                                <p>SIEM y SOAR en la nube</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tool-category">
-                        <h4>Amazon Web Services</h4>
-                        <div class="tech-grid">
-                            <div class="tech-item">
-                                <img src="images/tech/aws-security.svg" alt="AWS Security Hub">
-                                <span>AWS Security Hub</span>
-                                <p>Centro de seguridad unificado</p>
-                            </div>
-                            <div class="tech-item">
-                                <img src="images/tech/aws-guard.svg" alt="AWS GuardDuty">
-                                <span>AWS GuardDuty</span>
-                                <p>Detección de amenazas</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tool-category">
-                        <h4>Herramientas de Automatización</h4>
-                        <div class="tech-grid">
-                            <div class="tech-item">
-                                <img src="images/tech/python.svg" alt="Python">
-                                <span>Python Security Tools</span>
-                                <p>Scripts y automatización</p>
-                            </div>
-                            <div class="tech-item">
-                                <img src="images/tech/terraform.svg" alt="Terraform">
-                                <span>Terraform</span>
-                                <p>Infraestructura como código</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Conclusiones y Próximos Pasos</h3>
-                <div class="conclusion">
-                    <p>La seguridad en la nube es un viaje continuo que requiere adaptación constante a nuevas amenazas y tecnologías. Recomendaciones clave:</p>
-                    <ul>
-                        <li>Mantener una estrategia de seguridad actualizada</li>
-                        <li>Implementar múltiples capas de protección</li>
-                        <li>Automatizar procesos de seguridad</li>
-                        <li>Formar al equipo continuamente</li>
-                    </ul>
-                    <div class="next-steps">
-                        <h4>Recursos Adicionales</h4>
-                        <ul>
-                            <li>Documentación oficial de Azure y AWS</li>
-                            <li>Certificaciones de seguridad cloud</li>
-                            <li>Comunidades de seguridad</li>
-                            <li>Laboratorios prácticos</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </template>
-
-    <template id="article-php-enterprise">
-        <article class="article-content">
-            <h2>Desarrollo de Aplicaciones Enterprise con PHP Moderno</h2>
-            
-            <div class="article-meta-header">
-                <span><i class="far fa-clock"></i> 45 min lectura</span>
-                <span><i class="fas fa-layer-group"></i> Nivel: Avanzado</span>
-                <span><i class="fas fa-tag"></i> Desarrollo</span>
-            </div>
-
-            <section class="article-section">
-                <h3>Arquitectura Moderna en PHP</h3>
-                <p>El desarrollo enterprise con PHP ha evolucionado significativamente. Las aplicaciones modernas requieren arquitecturas robustas y escalables que puedan manejar cargas empresariales.</p>
-                
-                <div class="concept-grid">
-                    <div class="concept-item">
-                        <h4>Domain-Driven Design (DDD)</h4>
-                        <ul>
-                            <li>Bounded Contexts y Agregados</li>
-                            <li>Value Objects y Entidades</li>
-                            <li>Servicios de Dominio</li>
-                            <li>Eventos de Dominio</li>
-                        </ul>
-                    </div>
-                    <div class="concept-item">
-                        <h4>Clean Architecture</h4>
-                        <ul>
-                            <li>Capas de aplicación</li>
-                            <li>Inversión de dependencias</li>
-                            <li>Use Cases</li>
-                            <li>Adaptadores y Puertos</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Patrones de Diseño Esenciales</h3>
-                <div class="patterns-grid">
-                    <div class="pattern-item">
-                        <h4>Patrones Creacionales</h4>
-                        <ul>
-                            <li>Abstract Factory para familias de objetos</li>
-                            <li>Builder para objetos complejos</li>
-                            <li>Dependency Injection</li>
-                            <li>Factory Method para creación flexible</li>
-                        </ul>
-                    </div>
-                    <div class="pattern-item">
-                        <h4>Patrones Estructurales</h4>
-                        <ul>
-                            <li>Adapter para compatibilidad</li>
-                            <li>Decorator para funcionalidad adicional</li>
-                            <li>Facade para subsistemas complejos</li>
-                            <li>Proxy para control de acceso</li>
-                        </ul>
-                    </div>
-                    <div class="pattern-item">
-                        <h4>Patrones de Comportamiento</h4>
-                        <ul>
-                            <li>Command para operaciones</li>
-                            <li>Observer para eventos</li>
-                            <li>Strategy para algoritmos</li>
-                            <li>Chain of Responsibility</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Gestión de Datos y Persistencia</h3>
-                <div class="data-management">
-                    <div class="data-item">
-                        <h4>ORM y Doctrine</h4>
-                        <ul>
-                            <li>Mapeo de entidades</li>
-                            <li>Relaciones y asociaciones</li>
-                            <li>Repositorios personalizados</li>
-                            <li>Caché y optimización</li>
-                        </ul>
-                    </div>
-                    <div class="data-item">
-                        <h4>CQRS</h4>
-                        <ul>
-                            <li>Separación de lecturas y escrituras</li>
-                            <li>Optimización de consultas</li>
-                            <li>Event Sourcing</li>
-                            <li>Proyecciones de datos</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Testing y Calidad</h3>
-                <div class="testing-grid">
-                    <div class="test-item">
-                        <h4>PHPUnit</h4>
-                        <ul>
-                            <li>Tests unitarios</li>
-                            <li>Mocking y stubs</li>
-                            <li>Data providers</li>
-                            <li>Cobertura de código</li>
-                        </ul>
-                    </div>
-                    <div class="test-item">
-                        <h4>Integración Continua</h4>
-                        <ul>
-                            <li>GitHub Actions</li>
-                            <li>Jenkins pipelines</li>
-                            <li>Análisis estático</li>
-                            <li>Métricas de calidad</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Seguridad y Rendimiento</h3>
-                <div class="security-performance">
-                    <div class="sec-perf-item">
-                        <h4>Seguridad Aplicativa</h4>
-                        <ul>
-                            <li>OWASP Top 10</li>
-                            <li>Autenticación y autorización</li>
-                            <li>Sanitización de datos</li>
-                            <li>Auditoría y logging</li>
-                        </ul>
-                    </div>
-                    <div class="sec-perf-item">
-                        <h4>Optimización</h4>
-                        <ul>
-                            <li>Caché de aplicación</li>
-                            <li>Optimización de queries</li>
-                            <li>Profiling y debugging</li>
-                            <li>Escalabilidad horizontal</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </template>
-
-    <template id="article-cloud-automation">
-        <article class="article-content">
-            <h2>Automatización de Seguridad en la Nube con Python</h2>
-            
-            <div class="article-meta-header">
-                <span><i class="far fa-clock"></i> 40 min lectura</span>
-                <span><i class="fas fa-layer-group"></i> Nivel: Intermedio</span>
-                <span><i class="fas fa-tag"></i> DevOps</span>
-            </div>
-
-            <section class="article-section">
-                <h3>Fundamentos de Automatización en la Nube</h3>
-                <p>La automatización de seguridad es crucial en entornos cloud modernos. Python se ha convertido en el lenguaje preferido para estas tareas debido a su simplicidad y potentes bibliotecas.</p>
-                
-                <div class="concept-grid">
-                    <div class="concept-item">
-                        <h4>SDK de Nubes</h4>
-                        <ul>
-                            <li>Boto3 para AWS</li>
-                            <li>Azure SDK para Python</li>
-                            <li>Google Cloud Client</li>
-                            <li>Gestión de credenciales</li>
-                        </ul>
-                    </div>
-                    <div class="concept-item">
-                        <h4>Herramientas de Automatización</h4>
-                        <ul>
-                            <li>Ansible con Python</li>
-                            <li>Fabric para SSH</li>
-                            <li>Paramiko</li>
-                            <li>Click para CLIs</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Scripts de Seguridad Esenciales</h3>
-                <div class="scripts-grid">
-                    <div class="script-item">
-                        <h4>Monitoreo de Recursos</h4>
-                        <pre><code class="language-python">
-import boto3
-from azure.identity import DefaultAzureCredential
-from azure.mgmt.monitor import MonitorManagementClient
-
-def monitor_cloud_resources():
-    # AWS Monitoring
-    cloudwatch = boto3.client('cloudwatch')
-    ec2 = boto3.client('ec2')
-    
-    # Obtener métricas de EC2
-    instances = ec2.describe_instances()
-    for reservation in instances['Reservations']:
-        for instance in reservation['Instances']:
-            response = cloudwatch.get_metric_statistics(
-                Namespace='AWS/EC2',
-                MetricName='CPUUtilization',
-                Dimensions=[{'Name': 'InstanceId', 'Value': instance['InstanceId']}],
-                StartTime=datetime.utcnow() - timedelta(hours=1),
-                EndTime=datetime.utcnow(),
-                Period=300,
-                Statistics=['Average']
-            )
-            # Procesar métricas
-            process_metrics(response)
-
-    # Azure Monitoring
-    credential = DefaultAzureCredential()
-    monitor_client = MonitorManagementClient(credential, subscription_id)
-    
-    # Obtener métricas de VMs
-    for vm in monitor_client.virtual_machines.list():
-        metrics = monitor_client.metrics.list(
-            resource_uri=vm.id,
-            timespan=f"{start_time}/{end_time}",
-            interval='PT5M',
-            metricnames='Percentage CPU'
-        )
-        # Procesar métricas
-        process_azure_metrics(metrics)
-                        </code></pre>
-                    </div>
-                    <div class="script-item">
-                        <h4>Auditoría de Seguridad</h4>
-                        <pre><code class="language-python">
-def audit_security_groups():
-    # AWS Security Groups Audit
-    ec2 = boto3.client('ec2')
-    security_groups = ec2.describe_security_groups()
-    
-    for sg in security_groups['SecurityGroups']:
-        # Verificar reglas de entrada
-        for rule in sg['IpPermissions']:
-            if rule.get('IpRanges'):
-                for ip_range in rule['IpRanges']:
-                    if ip_range['CidrIp'] == '0.0.0.0/0':
-                        log_security_issue(
-                            f"Security Group {sg['GroupId']} permite acceso desde cualquier IP"
-                        )
-
-    # Azure NSG Audit
-    network_client = NetworkManagementClient(credential, subscription_id)
-    nsgs = network_client.network_security_groups.list_all()
-    
-    for nsg in nsgs:
-        for rule in nsg.security_rules:
-            if rule.source_address_prefix == '*':
-                log_security_issue(
-                    f"NSG {nsg.name} tiene regla permisiva: {rule.name}"
-                )
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Automatización de Respuesta a Incidentes</h3>
-                <div class="automation-grid">
-                    <div class="automation-item">
-                        <h4>Detección y Respuesta</h4>
-                        <pre><code class="language-python">
-from concurrent.futures import ThreadPoolExecutor
-import json
-import logging
-
-class SecurityIncidentHandler:
-    def __init__(self):
-        self.aws_client = boto3.client('securityhub')
-        self.azure_client = SecurityCenter(credential, subscription_id)
-        self.incident_queue = Queue()
-        self.logger = logging.getLogger('security_incidents')
-
-    def process_security_findings(self):
-        with ThreadPoolExecutor(max_workers=5) as executor:
-            # Procesar hallazgos de AWS Security Hub
-            aws_findings = self.aws_client.get_findings()
-            executor.submit(self.handle_aws_findings, aws_findings)
-
-            # Procesar alertas de Azure Security Center
-            azure_alerts = self.azure_client.alerts.list()
-            executor.submit(self.handle_azure_alerts, azure_alerts)
-
-    def handle_aws_findings(self, findings):
-        for finding in findings['Findings']:
-            if finding['Severity']['Label'] == 'CRITICAL':
-                self.incident_queue.put({
-                    'source': 'AWS',
-                    'type': finding['Types'][0],
-                    'resource': finding['Resources'][0]['Id'],
-                    'action_required': self.determine_action(finding)
-                })
-
-    def handle_azure_alerts(self, alerts):
-        for alert in alerts:
-            if alert.severity == 'High':
-                self.incident_queue.put({
-                    'source': 'Azure',
-                    'type': alert.alert_type,
-                    'resource': alert.target_resource_id,
-                    'action_required': self.determine_action(alert)
-                })
-
-    def automated_response(self):
-        while True:
-            incident = self.incident_queue.get()
-            try:
-                if incident['action_required'] == 'isolate':
-                    self.isolate_resource(incident)
-                elif incident['action_required'] == 'backup':
-                    self.create_backup(incident)
-                elif incident['action_required'] == 'patch':
-                    self.apply_security_patch(incident)
-            except Exception as e:
-                self.logger.error(f"Error handling incident: {str(e)}")
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Mejores Prácticas de Automatización</h3>
-                <div class="best-practices">
-                    <div class="practice-item">
-                        <h4>Gestión de Credenciales</h4>
-                        <ul>
-                            <li>Usar servicios de gestión de secretos (AWS Secrets Manager, Azure Key Vault)</li>
-                            <li>Rotación automática de credenciales</li>
-                            <li>Principio de mínimo privilegio</li>
-                            <li>Monitoreo de uso de credenciales</li>
-                        </ul>
-                        <pre><code class="language-python">
-from azure.keyvault.secrets import SecretClient
-from aws_secretsmanager_caching import SecretCache
-
-class SecureCredentialManager:
-    def __init__(self):
-        self.azure_secret_client = SecretClient(
-            vault_url="https://your-vault.vault.azure.net/",
-            credential=DefaultAzureCredential()
-        )
-        self.aws_secret_cache = SecretCache()
-
-    def get_credential(self, secret_name, provider):
-        if provider == 'azure':
-            return self.azure_secret_client.get_secret(secret_name)
-        elif provider == 'aws':
-            return self.aws_secret_cache.get_secret_string(secret_name)
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Integración con DevSecOps</h3>
-                <div class="devsecops-grid">
-                    <div class="devsecops-item">
-                        <h4>Pipeline de Seguridad</h4>
-                        <pre><code class="language-yaml">
-# Azure DevOps Pipeline
-trigger:
-  - main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-stages:
-- stage: SecurityScanning
-  jobs:
-  - job: SecurityChecks
-    steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.9'
-    
-    - script: |
-        pip install safety bandit
-        safety check
-        bandit -r .
-      displayName: 'Run Security Checks'
-
-    - task: AzureCLI@2
-      inputs:
-        azureSubscription: 'Azure subscription'
-        scriptType: 'bash'
-        scriptLocation: 'inlineScript'
-        inlineScript: |
-          python security_automation.py --scan
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </template>
-
-    <template id="article-zero-trust">
-        <article class="article-content">
-            <h2>Implementando Zero Trust en Entornos Cloud</h2>
-            
-            <div class="article-meta-header">
-                <span><i class="far fa-clock"></i> 50 min lectura</span>
-                <span><i class="fas fa-layer-group"></i> Nivel: Avanzado</span>
-                <span><i class="fas fa-tag"></i> Cloud Security</span>
-            </div>
-
-            <section class="article-section">
-                <h3>Principios de Zero Trust</h3>
-                <p>Zero Trust es un modelo de seguridad que requiere verificación estricta de cada usuario y dispositivo, independientemente de su ubicación.</p>
-                
-                <div class="concept-grid">
-                    <div class="concept-item">
-                        <h4>Verificación Continua</h4>
-                        <ul>
-                            <li>Autenticación multifactor</li>
-                            <li>Evaluación de riesgos</li>
-                            <li>Monitoreo de comportamiento</li>
-                            <li>Políticas adaptativas</li>
-                        </ul>
-                    </div>
-                    <div class="concept-item">
-                        <h4>Microsegmentación</h4>
-                        <ul>
-                            <li>Segmentación de red</li>
-                            <li>Políticas granulares</li>
-                            <li>Aislamiento de workloads</li>
-                            <li>Control de acceso</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Implementación en Azure</h3>
-                <div class="implementation-grid">
-                    <div class="impl-item">
-                        <h4>Azure AD Conditional Access</h4>
-                        <pre><code class="language-python">
-from azure.identity import DefaultAzureCredential
-from azure.mgmt.authorization import AuthorizationManagementClient
-
-def configure_conditional_access():
-    # Configurar política de acceso condicional
-    credential = DefaultAzureCredential()
-    auth_client = AuthorizationManagementClient(credential, subscription_id)
-    
-    policy = {
-        "conditions": {
-            "users": {
-                "includeUsers": ["all"],
-                "excludeUsers": ["emergency-access"]
-            },
-            "applications": {
-                "includeApplications": ["all"]
-            },
-            "locations": {
-                "includeLocations": ["all"],
-                "excludeLocations": ["trusted"]
-            }
-        },
-        "controls": {
-            "requireMfa": True,
-            "deviceCompliance": True,
-            "signInRiskLevels": ["high", "medium"]
-        }
-    }
-    
-    # Aplicar política
-    auth_client.policies.create_or_update(
-        policy_name="ZeroTrust-Base",
-        parameters=policy
-    )
-                        </code></pre>
-                    </div>
-                    <div class="impl-item">
-                        <h4>Network Security</h4>
-                        <pre><code class="language-python">
-from azure.mgmt.network import NetworkManagementClient
-
-def configure_network_security():
-    network_client = NetworkManagementClient(credential, subscription_id)
-    
-    # Configurar NSG con reglas Zero Trust
-    nsg_params = {
-        "location": "eastus",
-        "security_rules": [
-            {
-                "name": "DenyAllInbound",
-                "protocol": "*",
-                "source_port_range": "*",
-                "destination_port_range": "*",
-                "source_address_prefix": "*",
-                "destination_address_prefix": "*",
-                "access": "Deny",
-                "priority": 4096,
-                "direction": "Inbound"
-            },
-            {
-                "name": "AllowSpecificPorts",
-                "protocol": "Tcp",
-                "source_port_range": "*",
-                "destination_port_range": "443",
-                "source_address_prefix": "VirtualNetwork",
-                "destination_address_prefix": "VirtualNetwork",
-                "access": "Allow",
-                "priority": 100,
-                "direction": "Inbound"
-            }
-        ]
-    }
-    
-    # Crear NSG
-    nsg = network_client.network_security_groups.begin_create_or_update(
-        resource_group_name,
-        "ZeroTrust-NSG",
-        nsg_params
-    ).result()
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Implementación en AWS</h3>
-                <div class="implementation-grid">
-                    <div class="impl-item">
-                        <h4>IAM Avanzado</h4>
-                        <pre><code class="language-python">
-import boto3
-from botocore.exceptions import ClientError
-
-def configure_iam_policies():
-    iam = boto3.client('iam')
-    
-    # Política de mínimo privilegio
-    policy_document = {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "ZeroTrustAccess",
-                "Effect": "Allow",
-                "Action": [
-                    "s3:GetObject",
-                    "s3:PutObject"
-                ],
-                "Resource": "arn:aws:s3:::my-bucket/*",
-                "Condition": {
-                    "Bool": {
-                        "aws:MultiFactorAuthPresent": "true"
-                    },
-                    "IpAddress": {
-                        "aws:SourceIp": ["10.0.0.0/8"]
-                    }
-                }
-            }
-        ]
-    }
-    
-    try:
-        response = iam.create_policy(
-            PolicyName='ZeroTrustPolicy',
-            PolicyDocument=json.dumps(policy_document)
-        )
-        print(f"Created policy: {response['Policy']['Arn']}")
-    except ClientError as e:
-        print(f"Error creating policy: {e}")
-                        </code></pre>
-                    </div>
-                    <div class="impl-item">
-                        <h4>Seguridad de Red</h4>
-                        <pre><code class="language-python">
-def configure_vpc_security():
-    ec2 = boto3.client('ec2')
-    
-    # Crear VPC con segmentación
-    vpc = ec2.create_vpc(CidrBlock='10.0.0.0/16')
-    
-    # Crear subredes aisladas
-    subnet_private = ec2.create_subnet(
-        VpcId=vpc['Vpc']['VpcId'],
-        CidrBlock='10.0.1.0/24'
-    )
-    
-    # Configurar Security Groups
-    sg = ec2.create_security_group(
-        GroupName='ZeroTrust-SG',
-        Description='Zero Trust Security Group'
-    )
-    
-    # Reglas restrictivas
-    ec2.authorize_security_group_ingress(
-        GroupId=sg['GroupId'],
-        IpPermissions=[
-            {
-                'IpProtocol': 'tcp',
-                'FromPort': 443,
-                'ToPort': 443,
-                'UserIdGroupPairs': [
-                    {
-                        'GroupId': sg['GroupId']
-                    }
-                ]
-            }
-        ]
-    )
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Monitoreo y Respuesta</h3>
-                <div class="monitoring-grid">
-                    <div class="mon-item">
-                        <h4>Sistema de Detección de Amenazas</h4>
-                        <pre><code class="language-python">
-class ThreatDetectionSystem:
-    def __init__(self):
-        self.aws_client = boto3.client('guardduty')
-        self.azure_client = SecurityCenter(credential, subscription_id)
-        self.alert_threshold = 7.0
-        
-    def monitor_threats(self):
-        # AWS GuardDuty
-        findings = self.aws_client.list_findings()
-        for finding in findings['FindingIds']:
-            details = self.aws_client.get_findings(
-                FindingIds=[finding]
-            )
-            if details['Severity'] >= self.alert_threshold:
-                self.handle_threat(details)
-        
-        # Azure Security Center
-        alerts = self.azure_client.alerts.list()
-        for alert in alerts:
-            if alert.severity >= self.alert_threshold:
-                self.handle_azure_threat(alert)
-    
-    def handle_threat(self, threat_details):
-        # Análisis de amenaza
-        risk_score = self.calculate_risk(threat_details)
-        
-        # Respuesta automatizada
-        if risk_score > 8.0:
-            self.isolate_resource(threat_details['resource'])
-            self.notify_security_team(threat_details)
-        
-        # Logging y auditoría
-        self.log_threat_event(threat_details)
-                        </code></pre>
-                    </div>
-                    <div class="mon-item">
-                        <h4>Auditoría Continua</h4>
-                        <pre><code class="language-python">
-class SecurityAuditor:
-    def __init__(self):
-        self.findings = []
-        self.compliance_status = {}
-        
-    def audit_security_posture(self):
-        # Verificar configuraciones
-        self.audit_network_config()
-        self.audit_identity_config()
-        self.audit_data_protection()
-        
-        # Generar informe
-        report = self.generate_audit_report()
-        
-        # Actualizar estado de cumplimiento
-        self.update_compliance_status()
-        
-    def audit_network_config(self):
-        # Verificar segmentación
-        self.verify_network_isolation()
-        
-        # Verificar reglas de firewall
-        self.audit_firewall_rules()
-        
-        # Verificar exposición pública
-        self.check_public_exposure()
-    
-    def generate_audit_report(self):
-        return {
-            'timestamp': datetime.now(),
-            'findings': self.findings,
-            'compliance': self.compliance_status,
-            'recommendations': self.generate_recommendations()
-        }
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </template>
-
-    <template id="article-web-moderno">
-        <article class="article-content">
-            <h2>Desarrollo Web Moderno: JavaScript y HTML Avanzado</h2>
-            
-            <div class="article-meta-header">
-                <span><i class="far fa-clock"></i> 45 min lectura</span>
-                <span><i class="fas fa-layer-group"></i> Nivel: Avanzado</span>
-                <span><i class="fas fa-tag"></i> Desarrollo</span>
-            </div>
-
-            <section class="article-section">
-                <h3>JavaScript Moderno y APIs Web</h3>
-                <p>El desarrollo web moderno aprovecha las últimas características de JavaScript y las APIs web más potentes.</p>
-                
-                <div class="concept-grid">
-                    <div class="concept-item">
-                        <h4>APIs Web Modernas</h4>
-                        <pre><code class="language-javascript">
-// Intersection Observer
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.5
-});
-
-// Web Workers para tareas pesadas
-const worker = new Worker('worker.js');
-worker.postMessage({ data: complexData });
-worker.onmessage = (e) => {
-    console.log('Resultado:', e.data);
-};
-
-// Service Workers para PWA
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-            console.log('SW registrado:', registration);
-        })
-        .catch(error => {
-            console.error('Error SW:', error);
-        });
-}
-                        </code></pre>
-                    </div>
-                    <div class="concept-item">
-                        <h4>Manipulación del DOM Moderna</h4>
-                        <pre><code class="language-javascript">
-// Sistema de componentes moderno
-class CustomComponent extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-    }
-
-    connectedCallback() {
-        this.render();
-        this.setupEvents();
-    }
-
-    render() {
-        this.shadowRoot.innerHTML = `
-            <style>
-                :host {
-                    display: block;
-                    padding: 20px;
-                }
-                .component {
-                    background: var(--bg-color);
-                    border-radius: 8px;
-                }
-            </style>
-            <div class="component">
-                <slot></slot>
-            </div>
-        `;
-    }
-
-    setupEvents() {
-        this.addEventListener('click', this.handleClick);
-    }
-}
-
-customElements.define('custom-component', CustomComponent);
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>HTML Semántico y Accesibilidad</h3>
-                <div class="code-example">
-                    <pre><code class="language-html">
-<!-- Estructura semántica moderna -->
-<article class="product-card" role="article" aria-labelledby="product-title">
-    <header>
-        <h2 id="product-title">Producto Premium</h2>
-        <p role="doc-subtitle">Descripción corta del producto</p>
-    </header>
-    
-    <div class="product-gallery" role="region" aria-label="Galería de producto">
-        <figure>
-            <img src="product.jpg" alt="Detalle del producto" loading="lazy">
-            <figcaption>Vista detallada del producto</figcaption>
-        </figure>
-    </div>
-    
-    <div class="product-details">
-        <dl>
-            <dt>Características:</dt>
-            <dd>Característica 1</dd>
-            <dd>Característica 2</dd>
-        </dl>
-    </div>
-    
-    <footer>
-        <button class="cta" 
-                aria-label="Agregar al carrito"
-                data-action="add-to-cart">
-            Comprar
-        </button>
-    </footer>
-</article>
-                    </code></pre>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Optimización y Rendimiento</h3>
-                <div class="performance-grid">
-                    <div class="perf-item">
-                        <h4>Lazy Loading y Code Splitting</h4>
-                        <pre><code class="language-javascript">
-// Lazy loading de módulos
-const loadModule = async () => {
-    try {
-        const module = await import('./heavy-module.js');
-        module.init();
-    } catch (error) {
-        console.error('Error cargando módulo:', error);
-    }
-};
-
-// Intersection Observer para imágenes
-document.querySelectorAll('img[data-src]').forEach(img => {
-    const imageObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    observer.unobserve(img);
-                }
-            });
-        },
-        { rootMargin: '50px' }
-    );
-    
-    imageObserver.observe(img);
-});
-                        </code></pre>
-                    </div>
-                    <div class="perf-item">
-                        <h4>Caché y Estado</h4>
-                        <pre><code class="language-javascript">
-// Sistema de caché moderno
-class CacheManager {
-    constructor() {
-        this.storage = new Map();
-        this.maxAge = 5 * 60 * 1000; // 5 minutos
-    }
-
-    set(key, value, ttl = this.maxAge) {
-        this.storage.set(key, {
-            value,
-            timestamp: Date.now(),
-            ttl
-        });
-    }
-
-    get(key) {
-        const item = this.storage.get(key);
-        if (!item) return null;
-
-        if (Date.now() - item.timestamp > item.ttl) {
-            this.storage.delete(key);
-            return null;
-        }
-
-        return item.value;
-    }
-}
-
-// Uso del caché
-const cache = new CacheManager();
-cache.set('user-data', userData);
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Seguridad en el Frontend</h3>
-                <div class="security-grid">
-                    <div class="sec-item">
-                        <h4>Protección XSS y CSRF</h4>
-                        <pre><code class="language-javascript">
-// Sanitización de HTML
-const sanitizeHTML = (dirty) => {
-    const template = document.createElement('template');
-    template.innerHTML = dirty;
-    return template.content.textContent || template.content.firstChild?.nodeValue;
-};
-
-// Headers de seguridad
-fetch('/api/data', {
-    headers: {
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': csrfToken,
-        'X-Requested-With': 'XMLHttpRequest'
-    },
-    credentials: 'same-origin'
-})
-.then(response => response.json())
-.then(data => {
-    const sanitizedData = sanitizeHTML(data.content);
-    document.querySelector('.content').textContent = sanitizedData;
-});
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Testing y Debugging</h3>
-                <div class="testing-grid">
-                    <div class="test-item">
-                        <h4>Testing Moderno</h4>
-                        <pre><code class="language-javascript">
-// Jest + Testing Library
-import { render, fireEvent, waitFor } from '@testing-library/dom';
-
-describe('Component Tests', () => {
-    test('renders correctly', async () => {
-        const { getByRole, queryByText } = render(`
-            <custom-component>
-                <h1>Test Content</h1>
-            </custom-component>
-        `);
-
-        const heading = getByRole('heading');
-        expect(heading).toHaveTextContent('Test Content');
-
-        await fireEvent.click(heading);
-        await waitFor(() => {
-            expect(queryByText('Clicked!')).toBeInTheDocument();
-        });
-    });
-});
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </template>
-
-    <template id="article-frameworks-modernos">
-        <article class="article-content">
-            <h2>Frameworks Frontend Modernos: React, Vue y Angular</h2>
-            
-            <div class="article-meta-header">
-                <span><i class="far fa-clock"></i> 55 min lectura</span>
-                <span><i class="fas fa-layer-group"></i> Nivel: Intermedio-Avanzado</span>
-                <span><i class="fas fa-tag"></i> Desarrollo</span>
-            </div>
-
-            <section class="article-section">
-                <h3>Comparativa de Frameworks</h3>
-                <div class="framework-comparison">
-                    <div class="framework-item">
-                        <h4>React</h4>
-                        <ul>
-                            <li>Virtual DOM eficiente</li>
-                            <li>Ecosistema extenso</li>
-                            <li>Curva de aprendizaje moderada</li>
-                            <li>Ideal para aplicaciones grandes</li>
-                        </ul>
-                        <pre><code class="language-javascript">
-// Componente React moderno
-import { useState, useEffect } from 'react';
-
-const UserDashboard = () => {
-    const [userData, setUserData] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('/api/user');
-                const data = await response.json();
-                setUserData(data);
-            } catch (error) {
-                console.error('Error:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    if (loading) return <LoadingSpinner />;
-
-    return (
-        <div className="dashboard">
-            <h1>Bienvenido, {userData.name}</h1>
-            <UserStats stats={userData.stats} />
-            <ActivityFeed activities={userData.activities} />
-        </div>
-    );
-};
-                        </code></pre>
-                    </div>
-
-                    <div class="framework-item">
-                        <h4>Vue.js</h4>
-                        <ul>
-                            <li>Sintaxis intuitiva</li>
-                            <li>Excelente documentación</li>
-                            <li>Curva de aprendizaje suave</li>
-                            <li>Perfecto para aplicaciones medianas</li>
-                        </ul>
-                        <pre><code class="language-javascript">
-<!-- Componente Vue 3 con Composition API -->
-<template>
-    <div class="dashboard" v-if="!loading">
-        <h1>Bienvenido, {{ userData.name }}</h1>
-        <user-stats :stats="userData.stats" />
-        <activity-feed :activities="userData.activities" />
-    </div>
-    <loading-spinner v-else />
-</template>
-
-<script setup>
-import { ref, onMounted } from 'vue';
-
-const userData = ref(null);
-const loading = ref(true);
-
-onMounted(async () => {
-    try {
-        const response = await fetch('/api/user');
-        userData.value = await response.json();
-    } catch (error) {
-        console.error('Error:', error);
-    } finally {
-        loading.value = false;
-    }
-});
-</script>
-                        </code></pre>
-                    </div>
-
-                    <div class="framework-item">
-                        <h4>Angular</h4>
-                        <ul>
-                            <li>Framework completo</li>
-                            <li>TypeScript por defecto</li>
-                            <li>Curva de aprendizaje pronunciada</li>
-                            <li>Óptimo para empresas grandes</li>
-                        </ul>
-                        <pre><code class="language-typescript">
-// Componente Angular moderno
-import { Component, OnInit } from '@angular/core';
-import { UserService } from './user.service';
-
-@Component({
-    selector: 'app-dashboard',
-    template: `
-        <div class="dashboard" *ngIf="!loading">
-            <h1>Bienvenido, {{userData?.name}}</h1>
-            <app-user-stats [stats]="userData?.stats">
-            </app-user-stats>
-            <app-activity-feed 
-                [activities]="userData?.activities">
-            </app-activity-feed>
-        </div>
-        <app-loading-spinner *ngIf="loading">
-        </app-loading-spinner>
-    `
-})
-export class DashboardComponent implements OnInit {
-    userData: any = null;
-    loading = true;
-
-    constructor(private userService: UserService) {}
-
-    ngOnInit() {
-        this.userService.getUserData()
-            .subscribe({
-                next: (data) => {
-                    this.userData = data;
-                    this.loading = false;
-                },
-                error: (error) => {
-                    console.error('Error:', error);
-                    this.loading = false;
-                }
-            });
-    }
-}
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Integración con PHP Backend</h3>
-                <div class="integration-examples">
-                    <div class="example-item">
-                        <h4>API REST con PHP y React</h4>
-                        <pre><code class="language-php">
-// Backend PHP (usando Slim Framework)
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-
-$app->get('/api/users', function (Request $request, Response $response) {
-    $users = $this->get('db')->query('SELECT * FROM users');
-    $response->getBody()->write(json_encode($users));
-    return $response->withHeader('Content-Type', 'application/json');
-});
-                        </code></pre>
-                        <pre><code class="language-javascript">
-// Frontend React
-const UserList = () => {
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        fetch('/api/users')
-            .then(res => res.json())
-            .then(data => setUsers(data))
-            .catch(err => console.error(err));
-    }, []);
-
-    return (
-        <div className="user-list">
-            {users.map(user => (
-                <UserCard key={user.id} user={user} />
-            ))}
-        </div>
-    );
-};
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Patrones de Diseño Frontend</h3>
-                <div class="patterns-grid">
-                    <div class="pattern-item">
-                        <h4>Gestión de Estado</h4>
-                        <pre><code class="language-javascript">
-// Redux con React
-import { createSlice, configureStore } from '@reduxjs/toolkit';
-
-const userSlice = createSlice({
-    name: 'user',
-    initialState: {
-        data: null,
-        loading: false,
-        error: null
-    },
-    reducers: {
-        fetchUserStart: (state) => {
-            state.loading = true;
-        },
-        fetchUserSuccess: (state, action) => {
-            state.data = action.payload;
-            state.loading = false;
-        },
-        fetchUserError: (state, action) => {
-            state.error = action.payload;
-            state.loading = false;
-        }
-    }
-});
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </template>
-
-    <template id="article-integracion-frontend-backend">
-        <article class="article-content">
-            <h2>Integración Frontend-Backend: Arquitecturas Modernas</h2>
-            
-            <div class="article-meta-header">
-                <span><i class="far fa-clock"></i> 50 min lectura</span>
-                <span><i class="fas fa-layer-group"></i> Nivel: Avanzado</span>
-                <span><i class="fas fa-tag"></i> Desarrollo</span>
-            </div>
-
-            <section class="article-section">
-                <h3>APIs RESTful Modernas</h3>
-                <div class="api-examples">
-                    <div class="example-item">
-                        <h4>Diseño de API REST</h4>
-                        <pre><code class="language-php">
-// API REST en PHP moderno
-class UserController {
-    public function getUser(int $id): JsonResponse {
-        try {
-            $user = $this->userRepository->find($id);
-            
-            if (!$user) {
-                return new JsonResponse([
-                    'error' => 'Usuario no encontrado'
-                ], 404);
-            }
-
-            return new JsonResponse([
-                'data' => $user->toArray(),
-                'links' => [
-                    'self' => "/api/users/{$id}",
-                    'posts' => "/api/users/{$id}/posts",
-                    'followers' => "/api/users/{$id}/followers"
-                ]
-            ]);
-        } catch (Exception $e) {
-            return new JsonResponse([
-                'error' => $e->getMessage()
-            ], 500);
-        }
-    }
-}
-                        </code></pre>
-                    </div>
-
-                    <div class="example-item">
-                        <h4>Consumo de API en Frontend</h4>
-                        <pre><code class="language-javascript">
-// Clase de servicio moderna
-class ApiService {
-    constructor(baseUrl) {
-        this.baseUrl = baseUrl;
-        this.headers = {
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
-        };
-    }
-
-    async request(endpoint, options = {}) {
-        const url = `${this.baseUrl}${endpoint}`;
-        const config = {
-            ...options,
-            headers: {
-                ...this.headers,
-                ...options.headers
-            }
-        };
-
-        try {
-            const response = await fetch(url, config);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error('API Error:', error);
-            throw error;
-        }
-    }
-
-    async getUser(id) {
-        return this.request(`/users/${id}`);
-    }
-
-    async updateUser(id, data) {
-        return this.request(`/users/${id}`, {
-            method: 'PUT',
-            body: JSON.stringify(data)
-        });
-    }
-}
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>WebSockets y Tiempo Real</h3>
-                <div class="websocket-examples">
-                    <div class="example-item">
-                        <h4>Servidor WebSocket con PHP</h4>
-                        <pre><code class="language-php">
-// Usando Ratchet para WebSockets
-use Ratchet\MessageComponentInterface;
-use Ratchet\ConnectionInterface;
-
-class ChatServer implements MessageComponentInterface {
-    protected $clients;
-
-    public function __construct() {
-        $this->clients = new \SplObjectStorage;
-    }
-
-    public function onMessage(ConnectionInterface $from, $msg) {
-        $numRecv = count($this->clients) - 1;
-        echo sprintf('Conexión %d enviando mensaje "%s" a %d otros clientes' . "\n"
-            , $from->resourceId, $msg, $numRecv);
-
-        foreach ($this->clients as $client) {
-            if ($from !== $client) {
-                $client->send($msg);
-            }
-        }
-    }
-}
-                        </code></pre>
-                    </div>
-
-                    <div class="example-item">
-                        <h4>Cliente WebSocket en JavaScript</h4>
-                        <pre><code class="language-javascript">
-class WebSocketClient {
-    constructor(url) {
-        this.url = url;
-        this.reconnectAttempts = 0;
-        this.maxReconnectAttempts = 5;
-        this.listeners = new Map();
-        
-        this.connect();
-    }
-
-    connect() {
-        this.ws = new WebSocket(this.url);
-        
-        this.ws.onopen = () => {
-            console.log('Conectado al servidor WebSocket');
-            this.reconnectAttempts = 0;
-            this.emit('connected');
-        };
-
-        this.ws.onmessage = (event) => {
-            try {
-                const data = JSON.parse(event.data);
-                this.emit('message', data);
-            } catch (error) {
-                console.error('Error parsing message:', error);
-            }
-        };
-
-        this.ws.onclose = () => {
-            console.log('Conexión cerrada');
-            this.handleReconnect();
-        };
-
-        this.ws.onerror = (error) => {
-            console.error('Error de WebSocket:', error);
-            this.emit('error', error);
-        };
-    }
-
-    handleReconnect() {
-        if (this.reconnectAttempts < this.maxReconnectAttempts) {
-            this.reconnectAttempts++;
-            console.log(`Intentando reconectar... Intento ${this.reconnectAttempts}`);
-            setTimeout(() => this.connect(), 1000 * this.reconnectAttempts);
-        } else {
-            console.error('Máximo número de intentos de reconexión alcanzado');
-            this.emit('maxReconnectAttemptsReached');
-        }
-    }
-
-    on(event, callback) {
-        if (!this.listeners.has(event)) {
-            this.listeners.set(event, new Set());
-        }
-        this.listeners.get(event).add(callback);
-    }
-
-    emit(event, data) {
-        if (this.listeners.has(event)) {
-            this.listeners.get(event).forEach(callback => callback(data));
-        }
-    }
-
-    send(data) {
-        if (this.ws.readyState === WebSocket.OPEN) {
-            this.ws.send(JSON.stringify(data));
-        } else {
-            console.error('WebSocket no está conectado');
-        }
-    }
-}
-
-// Uso del cliente WebSocket
-const chat = new WebSocketClient('ws://localhost:8080');
-
-chat.on('connected', () => {
-    console.log('Conectado al chat');
-});
-
-chat.on('message', (data) => {
-    console.log('Nuevo mensaje:', data);
-    updateChatUI(data);
-});
-
-chat.on('error', (error) => {
-    showErrorNotification(error);
-});
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h3>Autenticación y Autorización</h3>
-                <div class="auth-examples">
-                    <div class="example-item">
-                        <h4>JWT Authentication</h4>
-                        <pre><code class="language-javascript">
-class AuthService {
-    constructor() {
-        this.tokenKey = 'auth_token';
-        this.refreshTokenKey = 'refresh_token';
-    }
-
-    async login(credentials) {
-        try {
-            const response = await fetch('/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(credentials)
-            });
-
-            if (!response.ok) {
-                throw new Error('Login failed');
-            }
-
-            const { token, refreshToken } = await response.json();
-            
-            this.setTokens(token, refreshToken);
-            return true;
-        } catch (error) {
-            console.error('Login error:', error);
-            throw error;
-        }
-    }
-
-    async refreshToken() {
-        const refreshToken = this.getRefreshToken();
-        
-        if (!refreshToken) {
-            throw new Error('No refresh token available');
-        }
-
-        try {
-            const response = await fetch('/api/refresh-token', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${refreshToken}`
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error('Token refresh failed');
-            }
-
-            const { token, newRefreshToken } = await response.json();
-            this.setTokens(token, newRefreshToken);
-            
-            return token;
-        } catch (error) {
-            console.error('Token refresh error:', error);
-            this.logout();
-            throw error;
-        }
-    }
-
-    setTokens(token, refreshToken) {
-        localStorage.setItem(this.tokenKey, token);
-        localStorage.setItem(this.refreshTokenKey, refreshToken);
-    }
-
-    getToken() {
-        return localStorage.getItem(this.tokenKey);
-    }
-
-    getRefreshToken() {
-        return localStorage.getItem(this.refreshTokenKey);
-    }
-
-    logout() {
-        localStorage.removeItem(this.tokenKey);
-        localStorage.removeItem(this.refreshTokenKey);
-    }
-
-    isAuthenticated() {
-        const token = this.getToken();
-        if (!token) return false;
-
-        try {
-            const payload = JSON.parse(atob(token.split('.')[1]));
-            return payload.exp > Date.now() / 1000;
-        } catch (error) {
-            return false;
-        }
-    }
-}
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </template>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
     <style>
+        /* Estilos específicos para la biblioteca de lecturas */
+        .library-header {
+            background: var(--gradient-primary);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .library-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .library-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .library-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            padding: 2rem 0;
+            padding: 2rem;
         }
 
         .article-card {
-            background: var(--card-bg);
-            border-radius: 8px;
+            background: var(--bg-card);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
             transition: transform 0.3s ease;
-            cursor: pointer;
+            border: 1px solid var(--border);
         }
 
         .article-card:hover {
             transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         .article-image {
             width: 100%;
             height: 200px;
-            overflow: hidden;
-        }
-
-        .article-image img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
         }
 
-        .article-info {
+        .article-content {
             padding: 1.5rem;
         }
 
-        .article-info h3 {
-            margin: 0 0 1rem;
-            color: var(--text-color);
+        .article-category {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: var(--primary-light);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
-        .article-info p {
-            margin: 0 0 1rem;
-            color: var(--text-secondary);
+        .article-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
         .article-meta {
             display: flex;
+            align-items: center;
             gap: 1rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .article-meta i {
-            margin-right: 0.5rem;
+            color: var(--primary);
         }
 
-        /* Estilos del Modal */
-        .modal {
+        .article-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .article-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .article-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* Estilos para el modal de artículos */
+        .article-modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
             overflow-y: auto;
         }
 
         .modal-content {
-            position: relative;
-            background-color: var(--bg-color);
+            background: var(--bg-primary);
+            max-width: 900px;
             margin: 2rem auto;
             padding: 2rem;
-            width: 90%;
-            max-width: 1000px;
-            border-radius: 8px;
+            border-radius: 15px;
+            position: relative;
         }
 
         .close-modal {
             position: absolute;
-            right: 20px;
-            top: 10px;
-            font-size: 30px;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
             cursor: pointer;
-            color: var(--text-color);
+            transition: color 0.3s ease;
         }
 
         .close-modal:hover {
-            color: var(--primary-color);
+            color: var(--primary);
         }
 
-        /* Estilos del Artículo */
-        .article-content {
-            padding: 1rem 0;
+        .article-content h2 {
+            color: var(--text-primary);
+            margin: 2rem 0 1rem;
         }
 
-        .article-section {
-            margin-bottom: 2rem;
-        }
-
-        .article-section h3 {
-            color: var(--text-color);
+        .article-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        .article-section p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .article-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .article-section ul li {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            padding-left: 1.5rem;
+        .article-content pre {
+            margin: 1.5rem 0;
+            border-radius: 10px;
             position: relative;
         }
 
-        .article-section ul li:before {
-            content: "•";
-            color: var(--primary-color);
+        .copy-btn {
             position: absolute;
-            left: 0;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .tech-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 1rem;
-            background: var(--card-bg);
-            border-radius: 8px;
-        }
-
-        .tech-item img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 0.5rem;
-        }
-
-        .tech-item span {
-            color: var(--text-color);
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
             font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         @media (max-width: 768px) {
+            .library-header {
+                padding: 3rem 1rem;
+            }
+
+            .library-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .articles-grid {
+                padding: 1rem;
+            }
+
             .modal-content {
                 margin: 1rem;
-                padding: 1rem;
-            }
-
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Estilos adicionales para el nuevo contenido */
-        .article-meta-header {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .concept-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .concept-item {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .concept-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .security-layer {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .security-layer h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .best-practices {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .practice-item {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .practice-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .tools-section {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .tool-category h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .conclusion {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-
-        .next-steps {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .next-steps h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .concept-grid,
-            .best-practices {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Estilos para código */
-        pre {
-            background: var(--code-bg, #1e1e1e);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            overflow-x: auto;
-        }
-
-        code {
-            font-family: 'Fira Code', 'Consolas', monospace;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: var(--code-text, #d4d4d4);
-        }
-
-        .language-python {
-            color: #569cd6;
-        }
-
-        .language-yaml {
-            color: #ce9178;
-        }
-
-        /* Resaltado de sintaxis */
-        .keyword { color: #569cd6; }
-        .string { color: #ce9178; }
-        .comment { color: #6a9955; }
-        .number { color: #b5cea8; }
-        .function { color: #dcdcaa; }
-        .class { color: #4ec9b0; }
-
-        /* Mejoras para artículos */
-        .article-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .article-section {
-            margin-bottom: 3rem;
-        }
-
-        .article-meta-header {
-            background: var(--card-bg);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .implementation-grid,
-        .monitoring-grid,
-        .automation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .impl-item,
-        .mon-item,
-        .automation-item {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .impl-item h4,
-        .mon-item h4,
-        .automation-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        /* Estilos para ejemplos de código */
-        .code-example {
-            background: var(--code-bg);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-
-        .code-example pre {
-            margin: 0;
-            padding: 0;
-            background: none;
-        }
-
-        .code-example-header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .implementation-grid,
-            .monitoring-grid,
-            .automation-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .article-content {
-                padding: 1rem;
-            }
-
-            pre {
-                font-size: 0.8rem;
+                padding: 1.5rem;
             }
         }
     </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">
+            <img src="logo.svg" alt="TechWeave Logo">
+            <h1>TechWeave</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#sobre-mi">Sobre Mí</a>
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="index.html#contacto" class="nav-cta">Contacto</a>
+        </div>
+    </nav>
 
-    <!-- Agregar Prism.js para resaltado de sintaxis -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <div class="library-header">
+        <h1>Biblioteca Técnica</h1>
+        <p>Explora artículos técnicos, guías y recursos sobre desarrollo, ciberseguridad y tecnología</p>
+    </div>
+
+    <div class="container">
+        <div class="library-filters">
+            <button class="filter-btn active" data-category="todos">Todos</button>
+            <button class="filter-btn" data-category="ciberseguridad">Ciberseguridad</button>
+            <button class="filter-btn" data-category="desarrollo">Desarrollo</button>
+            <button class="filter-btn" data-category="redes">Redes</button>
+            <button class="filter-btn" data-category="cloud">Cloud</button>
+        </div>
+
+        <div class="articles-grid">
+            <!-- Artículo: Desarrollo Web Moderno -->
+            <article class="article-card" data-category="desarrollo">
+                <img src="images/articles/modern-web.jpg" alt="Desarrollo Web Moderno" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Desarrollo</span>
+                    <h2 class="article-title">Desarrollo Web Moderno: JavaScript y HTML Avanzado</h2>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 25 min lectura</span>
+                        <span><i class="far fa-calendar"></i> Marzo 2024</span>
+                    </div>
+                    <p class="article-description">Explora las últimas tendencias en desarrollo web, incluyendo APIs modernas, optimización y mejores prácticas.</p>
+                    <a href="#" class="article-link" onclick="showArticle('modern-web')">
+                        Leer más <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Artículo: Cloud Security -->
+            <article class="article-card" data-category="cloud">
+                <img src="images/articles/cloud-security.jpg" alt="Seguridad en la Nube" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Cloud</span>
+                    <h2 class="article-title">Seguridad en la Nube: Mejores Prácticas y Configuraciones</h2>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 30 min lectura</span>
+                        <span><i class="far fa-calendar"></i> Marzo 2024</span>
+                    </div>
+                    <p class="article-description">Guía completa sobre seguridad en la nube, incluyendo AWS y Azure, con ejemplos prácticos de configuración.</p>
+                    <a href="#" class="article-link" onclick="showArticle('cloud-security')">
+                        Leer más <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Artículo: Zero Trust -->
+            <article class="article-card" data-category="ciberseguridad">
+                <img src="images/articles/zero-trust.jpg" alt="Zero Trust Security" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Ciberseguridad</span>
+                    <h2 class="article-title">Zero Trust: El Nuevo Paradigma de Seguridad</h2>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 15 min lectura</span>
+                        <span><i class="far fa-calendar"></i> Marzo 2024</span>
+                    </div>
+                    <p class="article-description">Explora el modelo de seguridad Zero Trust, sus principios fundamentales y cómo implementarlo en tu organización.</p>
+                    <a href="#" class="article-link" onclick="showArticle('zero-trust')">
+                        Leer más <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Artículo: Análisis Forense -->
+            <article class="article-card" data-category="ciberseguridad">
+                <img src="images/articles/forensics.jpg" alt="Análisis Forense Digital" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Ciberseguridad</span>
+                    <h2 class="article-title">Análisis Forense Digital: Metodologías y Herramientas</h2>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 20 min lectura</span>
+                        <span><i class="far fa-calendar"></i> Marzo 2024</span>
+                    </div>
+                    <p class="article-description">Guía completa sobre análisis forense digital, técnicas de investigación y herramientas esenciales.</p>
+                    <a href="#" class="article-link" onclick="showArticle('forensics')">
+                        Leer más <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Artículo: Redes Empresariales -->
+            <article class="article-card" data-category="redes">
+                <img src="images/articles/enterprise-networks.jpg" alt="Redes Empresariales" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Redes</span>
+                    <h2 class="article-title">Diseño de Redes Empresariales Seguras</h2>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock"></i> 25 min lectura</span>
+                        <span><i class="far fa-calendar"></i> Marzo 2024</span>
+                    </div>
+                    <p class="article-description">Mejores prácticas para el diseño e implementación de redes empresariales seguras y escalables.</p>
+                    <a href="#" class="article-link" onclick="showArticle('enterprise-networks')">
+                        Leer más <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- Templates de Artículos -->
+    <template id="zero-trust-template">
+        <h2>Zero Trust: El Nuevo Paradigma de Seguridad</h2>
+        <div class="article-meta">
+            <span><i class="far fa-clock"></i> 15 minutos de lectura</span>
+            <span><i class="far fa-user"></i> Por Taiel Aguirre</span>
+            <span><i class="far fa-calendar"></i> Marzo 2024</span>
+        </div>
+
+        <section class="article-section">
+            <h3>Introducción al Modelo Zero Trust</h3>
+            <p>El modelo de seguridad Zero Trust parte de la premisa "nunca confiar, siempre verificar". Este enfoque representa un cambio fundamental en la forma en que las organizaciones abordan la seguridad de la información.</p>
+        </section>
+
+        <section class="article-section">
+            <h3>Principios Fundamentales</h3>
+            <ul>
+                <li>Verificación continua de identidad</li>
+                <li>Acceso con privilegios mínimos</li>
+                <li>Microsegmentación de red</li>
+                <li>Monitoreo y logging exhaustivo</li>
+            </ul>
+        </section>
+
+        <section class="article-section">
+            <h3>Implementación Práctica</h3>
+            <p>Ejemplo de configuración de política Zero Trust en un firewall:</p>
+            <pre><code class="language-yaml"># Ejemplo de política Zero Trust
+policy:
+  name: "zero-trust-policy"
+  default_action: deny
+  rules:
+    - name: "auth-access"
+      source: any
+      destination: internal_apps
+      action: allow
+      conditions:
+        - verify_identity: true
+        - check_device_health: true
+        - require_mfa: true</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Monitorización y Automatización</h3>
+            <p>Ejemplo de script Python para monitoreo de accesos:</p>
+            <pre><code class="language-python">import logging
+from datetime import datetime
+
+def monitor_access_attempts(user_id, resource, action):
+    logging.basicConfig(filename='access_log.txt', level=logging.INFO)
+    
+    # Registrar intento de acceso
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_entry = f"{timestamp} - Usuario: {user_id} - Recurso: {resource} - Acción: {action}"
+    
+    logging.info(log_entry)
+    
+    # Verificar políticas de acceso
+    if verify_access_policy(user_id, resource):
+        return True
+    else:
+        logging.warning(f"{timestamp} - Acceso denegado para {user_id}")
+        return False</code></pre>
+        </section>
+    </template>
+
+    <!-- Template: Desarrollo Web Moderno -->
+    <template id="modern-web-template">
+        <h2>Desarrollo Web Moderno: JavaScript y HTML Avanzado</h2>
+        <div class="article-meta">
+            <span><i class="far fa-clock"></i> 25 minutos de lectura</span>
+            <span><i class="far fa-user"></i> Por Taiel Aguirre</span>
+            <span><i class="far fa-calendar"></i> Marzo 2024</span>
+        </div>
+
+        <section class="article-section">
+            <h3>JavaScript Moderno y APIs Web</h3>
+            <p>Las APIs web modernas proporcionan funcionalidades poderosas para crear aplicaciones web dinámicas y eficientes. Veamos algunos ejemplos prácticos:</p>
+            
+            <h4>Intersection Observer</h4>
+            <pre><code class="language-javascript">// Implementación de Intersection Observer para lazy loading
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            observer.unobserve(img);
+        }
+    });
+});
+
+// Observar imágenes
+document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));</code></pre>
+
+            <h4>Web Workers</h4>
+            <pre><code class="language-javascript">// Ejemplo de Web Worker para procesamiento en segundo plano
+// main.js
+const worker = new Worker('worker.js');
+worker.postMessage({ data: largeArray });
+worker.onmessage = (e) => console.log('Resultado:', e.data);
+
+// worker.js
+self.onmessage = (e) => {
+    const result = procesarDatos(e.data);
+    self.postMessage(result);
+};</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>HTML Semántico y Accesibilidad</h3>
+            <p>El HTML semántico mejora la accesibilidad y el SEO de tu sitio web. Aquí hay un ejemplo de estructura semántica:</p>
+            
+            <pre><code class="language-html">&lt;article class="product-card"&gt;
+    &lt;header&gt;
+        &lt;h2&gt;Nombre del Producto&lt;/h2&gt;
+        &lt;p role="doc-subtitle"&gt;Categoría: Electrónica&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;figure&gt;
+        &lt;img src="producto.jpg" alt="Descripción detallada del producto"&gt;
+        &lt;figcaption&gt;Vista frontal del producto&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;div class="product-details"&gt;
+        &lt;p aria-label="Precio"&gt;$999.99&lt;/p&gt;
+        &lt;button aria-label="Añadir al carrito"&gt;
+            Comprar
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Optimización y Rendimiento</h3>
+            <p>La optimización del rendimiento es crucial para una buena experiencia de usuario. Algunas técnicas clave incluyen:</p>
+            <ul>
+                <li>Lazy loading de imágenes y componentes</li>
+                <li>Minimización y compresión de recursos</li>
+                <li>Implementación de service workers para caching</li>
+                <li>Optimización de la ruta crítica de renderizado</li>
+            </ul>
+        </section>
+    </template>
+
+    <!-- Template: Cloud Security -->
+    <template id="cloud-security-template">
+        <h2>Seguridad en la Nube: Mejores Prácticas y Configuraciones</h2>
+        <div class="article-meta">
+            <span><i class="far fa-clock"></i> 30 minutos de lectura</span>
+            <span><i class="far fa-user"></i> Por Taiel Aguirre</span>
+            <span><i class="far fa-calendar"></i> Marzo 2024</span>
+        </div>
+
+        <section class="article-section">
+            <h3>Configuración Segura de AWS</h3>
+            <p>La seguridad en AWS comienza con una configuración adecuada de IAM y servicios básicos:</p>
+            
+            <pre><code class="language-yaml"># Ejemplo de política IAM restrictiva
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::mi-bucket/*",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": ["IP_PERMITIDA"]
+                }
+            }
+        }
+    ]
+}</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Monitoreo y Logging</h3>
+            <p>Implementación de monitoreo efectivo con CloudWatch:</p>
+            
+            <pre><code class="language-python">import boto3
+from datetime import datetime, timedelta
+
+def monitor_security_events():
+    cloudwatch = boto3.client('cloudwatch')
+    
+    # Configurar alarma para intentos de acceso fallidos
+    cloudwatch.put_metric_alarm(
+        AlarmName='SecurityFailedLogins',
+        MetricName='FailedLoginAttempts',
+        Namespace='SecurityMetrics',
+        Period=300,
+        EvaluationPeriods=2,
+        Threshold=5,
+        ComparisonOperator='GreaterThanThreshold',
+        AlarmActions=['SNS_TOPIC_ARN']
+    )</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Mejores Prácticas de Seguridad</h3>
+            <ul>
+                <li>Implementar encriptación en reposo y en tránsito</li>
+                <li>Utilizar redes privadas virtuales (VPC)</li>
+                <li>Configurar grupos de seguridad restrictivos</li>
+                <li>Mantener actualizados los parches de seguridad</li>
+                <li>Implementar autenticación multifactor (MFA)</li>
+            </ul>
+        </section>
+    </template>
+
+    <!-- Template: Análisis Forense -->
+    <template id="forensics-template">
+        <h2>Análisis Forense Digital: Metodologías y Herramientas</h2>
+        <div class="article-meta">
+            <span><i class="far fa-clock"></i> 20 minutos de lectura</span>
+            <span><i class="far fa-user"></i> Por Taiel Aguirre</span>
+            <span><i class="far fa-calendar"></i> Marzo 2024</span>
+        </div>
+
+        <section class="article-section">
+            <h3>Fundamentos del Análisis Forense Digital</h3>
+            <p>El análisis forense digital es una disciplina que combina elementos de derecho y ciencias de la computación para recolectar, analizar y presentar evidencia digital de manera que sea admisible en procesos legales.</p>
+            
+            <h4>Principios Básicos</h4>
+            <ul>
+                <li>Preservación de la evidencia original</li>
+                <li>Cadena de custodia documentada</li>
+                <li>Reproducibilidad de los hallazgos</li>
+                <li>Documentación detallada del proceso</li>
+            </ul>
+        </section>
+
+        <section class="article-section">
+            <h3>Herramientas Esenciales</h3>
+            <p>Script de ejemplo para análisis de logs con Python:</p>
+            
+            <pre><code class="language-python">import pandas as pd
+import re
+from datetime import datetime
+
+def analyze_security_logs(log_file):
+    # Patrón para logs de seguridad
+    pattern = r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) \[(\w+)\] (\d+\.\d+\.\d+\.\d+) (\w+): (.*)'
+    
+    logs = []
+    with open(log_file, 'r') as f:
+        for line in f:
+            match = re.match(pattern, line)
+            if match:
+                timestamp, level, ip, action, message = match.groups()
+                logs.append({
+                    'timestamp': datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S'),
+                    'level': level,
+                    'ip': ip,
+                    'action': action,
+                    'message': message
+                })
+    
+    # Análisis con pandas
+    df = pd.DataFrame(logs)
+    suspicious_ips = df[df['level'] == 'WARNING']['ip'].value_counts()
+    return suspicious_ips</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Análisis de Memoria RAM</h3>
+            <p>Ejemplo de uso de Volatility para análisis de memoria:</p>
+            
+            <pre><code class="language-python"># Ejemplo de script para automatizar análisis de memoria
+from volatility3.framework import contexts, automagic
+from volatility3.plugins.windows import pslist, netscan
+
+def analyze_memory_dump(dump_file):
+    # Configurar contexto
+    ctx = contexts.Context()
+    
+    # Listar procesos
+    processes = pslist.PsList(ctx, dump_file)
+    for proc in processes:
+        print(f"PID: {proc.pid} | Nombre: {proc.name}")
+    
+    # Analizar conexiones de red
+    connections = netscan.NetScan(ctx, dump_file)
+    for conn in connections:
+        print(f"Puerto local: {conn.lport} | Remoto: {conn.raddr}")</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Mejores Prácticas en Investigación</h3>
+            <ul>
+                <li>Crear imágenes forenses bit a bit</li>
+                <li>Utilizar herramientas forenses validadas</li>
+                <li>Mantener registros detallados de cada acción</li>
+                <li>Seguir procedimientos estandarizados</li>
+                <li>Preservar metadatos y timestamps</li>
+            </ul>
+        </section>
+    </template>
+
+    <!-- Template: Redes Empresariales -->
+    <template id="enterprise-networks-template">
+        <h2>Diseño de Redes Empresariales Seguras</h2>
+        <div class="article-meta">
+            <span><i class="far fa-clock"></i> 25 minutos de lectura</span>
+            <span><i class="far fa-user"></i> Por Taiel Aguirre</span>
+            <span><i class="far fa-calendar"></i> Marzo 2024</span>
+        </div>
+
+        <section class="article-section">
+            <h3>Arquitectura de Red Segura</h3>
+            <p>Una arquitectura de red empresarial segura debe implementar múltiples capas de seguridad y seguir el principio de defensa en profundidad.</p>
+            
+            <h4>Segmentación de Red</h4>
+            <pre><code class="language-yaml"># Ejemplo de configuración de VLANs
+vlans:
+  management:
+    id: 10
+    subnet: 10.0.10.0/24
+    purpose: "Gestión de red"
+  users:
+    id: 20
+    subnet: 10.0.20.0/23
+    purpose: "Red de usuarios"
+  servers:
+    id: 30
+    subnet: 10.0.30.0/24
+    purpose: "Servidores internos"
+  dmz:
+    id: 40
+    subnet: 10.0.40.0/24
+    purpose: "Zona desmilitarizada"</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Implementación de ACLs</h3>
+            <p>Ejemplo de configuración de ACLs en Cisco IOS:</p>
+            
+            <pre><code class="language-python"># Configuración de ACLs
+access-list 101 permit tcp 10.0.20.0 0.0.1.255 10.0.30.0 0.0.0.255 eq 443
+access-list 101 permit tcp 10.0.20.0 0.0.1.255 10.0.30.0 0.0.0.255 eq 80
+access-list 101 deny ip any any log
+
+interface GigabitEthernet0/1
+ description "Red de usuarios"
+ ip access-group 101 in</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Monitoreo y Detección de Intrusiones</h3>
+            <p>Script de ejemplo para monitoreo de red con Python:</p>
+            
+            <pre><code class="language-python">from scapy.all import *
+import logging
+
+def network_monitor(interface):
+    logging.basicConfig(filename='network_monitor.log', level=logging.INFO)
+    
+    def packet_callback(pkt):
+        if IP in pkt:
+            src_ip = pkt[IP].src
+            dst_ip = pkt[IP].dst
+            
+            # Detectar escaneo de puertos
+            if TCP in pkt and pkt[TCP].flags == 2:  # SYN flag
+                logging.warning(f"Posible escaneo de puertos desde {src_ip}")
+            
+            # Detectar tráfico inusual
+            if UDP in pkt and pkt[UDP].dport == 53:
+                # Análisis de consultas DNS
+                if DNS in pkt and pkt[DNS].qr == 0:
+                    query = pkt[DNS].qd.qname.decode()
+                    logging.info(f"Consulta DNS desde {src_ip}: {query}")
+    
+    # Iniciar captura
+    sniff(iface=interface, prn=packet_callback, store=0)</code></pre>
+        </section>
+
+        <section class="article-section">
+            <h3>Mejores Prácticas de Seguridad en Red</h3>
+            <ul>
+                <li>Implementar segmentación de red y VLANs</li>
+                <li>Configurar firewalls y ACLs restrictivas</li>
+                <li>Establecer sistemas de detección/prevención de intrusiones</li>
+                <li>Mantener logs centralizados</li>
+                <li>Implementar autenticación 802.1X</li>
+                <li>Realizar auditorías regulares de seguridad</li>
+            </ul>
+        </section>
+    </template>
+
+    <!-- Modal para mostrar artículos -->
+    <div class="article-modal" id="articleModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="articleContent"></div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup.min.js"></script>
+    <script>
+        // Funcionalidad de filtros
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Actualizar botones activos
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
-    <script src="scripts.js"></script>
+                // Filtrar artículos
+                const category = button.dataset.category;
+                document.querySelectorAll('.article-card').forEach(article => {
+                    if (category === 'todos' || article.dataset.category === category) {
+                        article.style.display = 'block';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Funcionalidad del modal
+        const modal = document.getElementById('articleModal');
+        const closeBtn = document.querySelector('.close-modal');
+        const articleContent = document.getElementById('articleContent');
+
+        function showArticle(templateId) {
+            const template = document.getElementById(`${templateId}-template`);
+            if (template) {
+                articleContent.innerHTML = template.innerHTML;
+                modal.style.display = 'block';
+                // Recargar Prism para el resaltado de código
+                Prism.highlightAll();
+            }
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Funcionalidad de copiar código
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('copy-btn')) {
+                const codeBlock = e.target.parentElement.querySelector('code');
+                navigator.clipboard.writeText(codeBlock.textContent);
+                
+                e.target.textContent = '¡Copiado!';
+                setTimeout(() => {
+                    e.target.textContent = 'Copiar';
+                }, 2000);
+            }
+        });
+    </script>
 </body>
 </html> 
