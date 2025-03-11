@@ -96,3 +96,70 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// Funcionalidad del modo oscuro
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Verificar si hay un tema guardado
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme === 'dark');
+    
+    // Cambiar tema al hacer clic
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+    });
+    
+    function updateThemeIcon(isDark) {
+        themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+});
+
+// Funcionalidad del carrusel de tecnologías
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.tech-track');
+    if (track) {
+        // Duplicar los elementos para crear un efecto infinito
+        track.innerHTML += track.innerHTML;
+        
+        // Detectar hover para pausar la animación
+        const carousel = document.querySelector('.tech-carousel');
+        carousel.addEventListener('mouseenter', () => {
+            track.style.animationPlayState = 'paused';
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            track.style.animationPlayState = 'running';
+        });
+    }
+});
+
+// Funcionalidad de las pestañas de certificaciones
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remover clase activa de todos los botones
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Mostrar el contenido correspondiente
+            const tabId = button.getAttribute('data-tab');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === `${tabId}-tab`) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
+});
