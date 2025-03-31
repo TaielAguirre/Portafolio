@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiel Aguirre | Especialista en Ciberseguridad & Desarrollo</title>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00cc99;
+            --dark-color: #1a1a2e;
+            --light-color: #f5f5f7;
+            --accent-color: #ff6b6b;
+            --gray-color: #555;
+            --light-gray: #ddd;
+            --font-main: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .cv-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--dark-color), #16213e);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="40" height="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .name-title {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-item {
+            margin-right: 30px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .profile-summary {
+            background: white;
+            padding: 40px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--light-gray);
+            margin-left: 15px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--light-gray);
+        }
+        
+        .job-title, .edu-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .company, .institution {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .date {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-bottom: 10px;
+        }
+        
+        .job-description, .edu-description {
+            margin-bottom: 10px;
+        }
+        
+        .job-description ul, .skills-list {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .job-description li, .skills-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .job-description li::before, .skills-list li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .side-content {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 30px;
+        }
+        
+        .skills-category {
+            margin-bottom: 25px;
+        }
+        
+        .skills-category h3 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .skills-list {
+            margin-bottom: 0;
+        }
+        
+        .reference {
+            margin-bottom: 20px;
+        }
+        
+        .reference-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .reference-company {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .languages {
+            margin-top: 30px;
+        }
+        
+        .language-item {
+            margin-bottom: 15px;
+        }
+        
+        .language-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .language-level {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        .language-bar {
+            height: 6px;
+            background: var(--light-gray);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .language-progress {
+            height: 100%;
+            background: var(--gradient);
+        }
+        
+        .portfolio-link {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .portfolio-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-link a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .download-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .download-btn {
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .download-btn i {
+            margin-right: 6px;
+        }
+        
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .print-btn {
+            background: rgba(0, 204, 153, 0.2);
+            border-color: rgba(0, 204, 153, 0.3);
+        }
+        
+        .print-btn:hover {
+            background: rgba(0, 204, 153, 0.3);
+        }
+        
+        .cert-badge {
+            display: inline-block;
+            background: rgba(0, 102, 204, 0.1);
+            color: var(--primary-color);
+            padding: 3px 10px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .cv-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .download-actions {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-summary, .main-content {
+                padding: 20px;
+            }
+            
+            .download-actions {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .cv-footer {
+            margin-top: 40px;
+            padding: 30px 40px;
+            background: #f0f2f5;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .updated-date {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-bottom: 10px;
+        }
+        
+        .footer-note {
+            font-size: 0.85rem;
+            color: var(--gray-color);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        @media print {
+            .cv-footer {
+                background: white;
+                padding: 20px 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cv-container">
+        <div class="download-actions">
+            <a href="javascript:window.print()" class="download-btn print-btn">
+                <i class="fas fa-print"></i> Imprimir CV
+            </a>
+            <a href="#" id="download-pdf" class="download-btn">
+                <i class="fas fa-file-pdf"></i> Descargar PDF
+            </a>
+        </div>
+        
+        <a href="javascript:window.print()" class="download-btn">
+            <i class="fas fa-download"></i> Descargar CV
+        </a>
+        
+        <div class="header">
+            <div class="name-title">
+                <h1>Taiel Aguirre</h1>
+                <div class="title">Especialista en Ciberseguridad & Desarrollo de Software</div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    291-4476665
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    braiantaielaguirre@gmail.com
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Bouchard 1434, Bahía Blanca, BS AS
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    taielaguirre.github.io/portafolio
+                </div>
+            </div>
+        </div>
+        
+        <div class="profile-summary">
+            <h2 class="section-title">Perfil Profesional</h2>
+            <p>Especialista en ciberseguridad, redes y desarrollo de software. Enfoque en la protección de sistemas, análisis forense y desarrollo de soluciones digitales para empresas. Sólida formación en administración de redes, seguridad informática y programación, con un historial comprobado en la implementación de medidas de ciberseguridad y creación de aplicaciones comerciales.</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-content">
+                <h2 class="section-title">Experiencia Profesional</h2>
+                
+                <div class="experience-item">
+                    <div class="job-title">Especialista en E-commerce y Desarrollo de Software</div>
+                    <div class="company">ELECTROPRIMA S.L.R</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Gestión y mantenimiento de la página web de PrestaShop.</li>
+                            <li>Desarrollo de aplicaciones internas en PHP, Java y Python, incluyendo un presupuestador y un gestor de pedidos.</li>
+                            <li>Implementación de medidas de ciberseguridad para proteger la red y los datos empresariales.</li>
+                            <li>Automatización de procesos internos para optimizar la eficiencia operativa.</li>
+                        </ul>
+                        <p><strong>Referencia:</strong> Sergio Correge - 291 572-6678</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-title">Encargado de Sector de Telecomunicaciones</div>
+                    <div class="company">SD ENERGÍAS RENOVABLES</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Gestión del área de telecomunicaciones.</li>
+                            <li>Servicio técnico especializado.</li>
+                            <li>Asesoramiento y ventas de soluciones tecnológicas.</li>
+                        </ul>
+                        <p><strong>Referencia:</strong> Pablo Faure - 291-4474744</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-title">Programador y Técnico de Hardware</div>
+                    <div class="company">TIENDA DE INFORMÁTICA 'MAXHARD PC'</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Diseño y programación de página web.</li>
+                            <li>Ensamblaje y mantenimiento de hardware.</li>
+                            <li>Solución de problemas técnicos para clientes.</li>
+                        </ul>
+                        <p><strong>Referencia:</strong> Francisco Martinez - 291-6415283</p>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-title">Instructor de Cursos</div>
+                    <div class="company">TAURO COMPUTACIÓN</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Instructor de cursos de armado y configuración de PC.</li>
+                            <li>Capacitación en configuración de redes informáticas.</li>
+                        </ul>
+                        <p><strong>Referencia:</strong> Italo Belardinelli</p>
+                    </div>
+                </div>
+                
+                <h2 class="section-title">Educación y Formación</h2>
+                
+                <div class="education-item">
+                    <div class="edu-title">Administración e Instalación de Redes Informáticas</div>
+                    <div class="institution">Escuela Municipal "San Roque"</div>
+                    <div class="edu-description">
+                        <ul>
+                            <li>540 horas acreditadas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="edu-title">Formación en Ciberseguridad</div>
+                    <div class="institution">Múltiples plataformas</div>
+                    <div class="edu-description">
+                        <ul>
+                            <li>Cisco Academy</li>
+                            <li>HarvardX CS50</li>
+                            <li>Universidad de Maryland (Coursera)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="edu-title">Python y Ciencia de Datos</div>
+                    <div class="institution">Santander Academy</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="edu-title">Certificaciones en Progreso</div>
+                    <div class="institution">Ciberseguridad y Cloud Security</div>
+                    <div>
+                        <span class="cert-badge">AWS Cloud Security</span>
+                        <span class="cert-badge">CompTIA Security+</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="side-content">
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                
+                <div class="skills-category">
+                    <h3>Ciberseguridad y Análisis Forense</h3>
+                    <ul class="skills-list">
+                        <li>Identificación y mitigación de vulnerabilidades</li>
+                        <li>Configuración de firewalls y reglas de seguridad</li>
+                        <li>Análisis de tráfico con Wireshark</li>
+                        <li>Pentesting y monitoreo de ciberseguridad</li>
+                        <li>Implementación de medidas de seguridad en TI</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Redes y Administración</h3>
+                    <ul class="skills-list">
+                        <li>Configuración de redes cableadas e inalámbricas</li>
+                        <li>Subneteo y gestión de direcciones IP</li>
+                        <li>Administración de servidores</li>
+                        <li>Optimización y mantenimiento de redes</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Desarrollo de Software</h3>
+                    <ul class="skills-list">
+                        <li>Python, PHP y Java</li>
+                        <li>Aplicaciones empresariales</li>
+                        <li>Desarrollo web con WordPress</li>
+                        <li>Seguridad en software y bases de datos</li>
+                    </ul>
+                </div>
+                
+                <div class="languages">
+                    <h2 class="section-title">Idiomas</h2>
+                    
+                    <div class="language-item">
+                        <div class="language-name">
+                            <span>Español</span>
+                            <span class="language-level">Nativo</span>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="language-item">
+                        <div class="language-name">
+                            <span>Inglés</span>
+                            <span class="language-level">Intermedio</span>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-link">
+                    <a href="https://taielaguirre.github.io/portafolio/" target="_blank">
+                        <i class="fas fa-laptop-code"></i> Ver Portafolio Completo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="cv-footer">
+        <div class="footer-content">
+            <p class="updated-date">Actualizado: Abril 2024</p>
+            <p class="footer-note">Este documento resume mi experiencia profesional y habilidades técnicas. Para información más detallada y ejemplos de mi trabajo, por favor visite mi portafolio digital.</p>
+            <div class="footer-links">
+                <a href="https://taielaguirre.github.io/portafolio/" target="_blank">Portafolio</a>
+                <a href="https://github.com/taielaguirre" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/taielaguirre" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Ocultar los botones de descarga para el PDF
+            const downloadActions = document.querySelector('.download-actions');
+            downloadActions.style.display = 'none';
+            
+            // Configuración del PDF
+            const options = {
+                margin: 10,
+                filename: 'CV-Taiel-Aguirre.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // Generar el PDF
+            const element = document.body;
+            html2pdf().set(options).from(element).save().then(function() {
+                // Mostrar los botones de nuevo después de generar el PDF
+                downloadActions.style.display = 'flex';
+            });
+        });
+    </script>
+</body>
+</html> 

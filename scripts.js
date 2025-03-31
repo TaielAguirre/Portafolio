@@ -195,3 +195,131 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Project filtering
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Get filter value
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Show/hide projects based on filter
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category');
+                        if (categories && categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+                
+                // Add animation class for smooth transition
+                projectCards.forEach(card => {
+                    if (card.style.display === 'block') {
+                        card.classList.add('fade-in');
+                        setTimeout(() => {
+                            card.classList.remove('fade-in');
+                        }, 500);
+                    }
+                });
+            });
+        });
+    }
+});
+
+// Inicialización de EmailJS
+(function() {
+    // Configuración de EmailJS con la clave pública
+    emailjs.init("F3U3F3Z3JImboatGR");
+})();
+
+// Función para manejar el envío del formulario de contacto
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Mostrar estado de envío
+            formStatus.textContent = "Enviando mensaje...";
+            formStatus.className = "form-status sending";
+            
+            // Recolectar datos del formulario
+            const formData = {
+                name: contactForm.name.value,
+                email: contactForm.email.value,
+                subject: contactForm.subject.value,
+                message: contactForm.message.value
+            };
+            
+            // Enviar el correo usando EmailJS con los IDs proporcionados
+            emailjs.send('service_bt492xk', 'template_y9wij1g', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    formStatus.textContent = "¡Mensaje enviado correctamente! Te responderé lo antes posible.";
+                    formStatus.className = "form-status success";
+                    contactForm.reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    formStatus.textContent = "Error al enviar el mensaje. Por favor, intenta de nuevo o contáctame directamente a taielaguirr@gmail.com";
+                    formStatus.className = "form-status error";
+                });
+        });
+    }
+});
+
+// Función para manejar el envío del formulario de NetLoom
+document.addEventListener('DOMContentLoaded', function() {
+    const netloomForm = document.getElementById('netloomForm');
+    const netloomFormStatus = document.getElementById('netloom-form-status');
+    
+    if (netloomForm) {
+        netloomForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Mostrar estado de envío
+            netloomFormStatus.textContent = "Enviando solicitud...";
+            netloomFormStatus.className = "form-status sending";
+            
+            // Recolectar datos del formulario de NetLoom
+            const formData = {
+                company_name: netloomForm.company_name.value,
+                contact_name: netloomForm.contact_name.value,
+                business_email: netloomForm.business_email.value,
+                business_phone: netloomForm.business_phone.value || "No proporcionado",
+                service_type: netloomForm.service_type.value,
+                business_message: netloomForm.business_message.value,
+                to_name: "NetLoom Solutions" // Para personalizar el correo
+            };
+            
+            // Usar el mismo servicio pero con una plantilla específica para negocios
+            emailjs.send('service_bt492xk', 'template_y9wij1g', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    netloomFormStatus.textContent = "¡Solicitud enviada correctamente! Un especialista de NetLoom se pondrá en contacto contigo en breve.";
+                    netloomFormStatus.className = "form-status success";
+                    netloomForm.reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    netloomFormStatus.textContent = "Error al enviar la solicitud. Por favor, intenta de nuevo o escribe directamente a info@netloom.com";
+                    netloomFormStatus.className = "form-status error";
+                });
+        });
+    }
+});
