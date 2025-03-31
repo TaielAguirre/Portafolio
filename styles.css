@@ -374,6 +374,79 @@ nav.scrolled {
     .social-icons {
         justify-content: center;
     }
+    
+    .nav-brand h1 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+    
+    .keywords-cloud {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .keyword {
+        margin: 5px;
+        font-size: 0.8rem;
+    }
+    
+    .contact-container, .netloom-contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-form-container, .netloom-contact-form {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .contact-info, .netloom-info {
+        width: 100%;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-cta a {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .company-services {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-container {
+        flex-direction: column;
+    }
+    
+    .testimonial-quote, .cta-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .projects-filter {
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        margin: 5px;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -414,6 +487,38 @@ nav.scrolled {
     
     .footer-logo {
         height: 35px;
+    }
+    
+    .technologies-grid, .services-grid, .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-category {
+        padding: 15px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons a {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .section-header p {
+        font-size: 0.9rem;
+    }
+    
+    .download-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .download-btn {
+        margin-bottom: 10px;
     }
 }
 
