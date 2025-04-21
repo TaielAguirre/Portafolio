@@ -484,6 +484,36 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/cisco.png" alt="Cisco">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>Cisco Packet Tracer - Ciberseguridad</h3>
+                                    <p class="issuer">Cisco Networking Academy</p>
+                                    <p class="cert-date">2024</p>
+                                    <div class="cert-skills">
+                                        <span>Redes</span>
+                                        <span>Seguridad</span>
+                                        <span>Packet Tracer</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/maryland.png" alt="University of Maryland">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>Ciberseguridad para todos</h3>
+                                    <p class="issuer">University of Maryland, College Park</p>
+                                    <p class="cert-date">2024</p>
+                                    <div class="cert-skills">
+                                        <span>Fundamentos de Ciberseguridad</span>
+                                        <span>Seguridad de Redes</span>
+                                        <span>Prácticas de Seguridad</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -696,11 +726,19 @@
                         <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Nombre completo</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
                             </div>
                             <div class="form-group">
                                 <label for="email">Correo electrónico</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono (opcional)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+54 9 XXX XXX XXXX">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Empresa/Organización</label>
+                                <input type="text" id="company" name="company" placeholder="Nombre de la empresa">
                             </div>
                             <div class="form-group">
                                 <label for="subject">Asunto</label>
@@ -709,14 +747,35 @@
                                     <option value="Oportunidad laboral">Oportunidad laboral</option>
                                     <option value="Proyecto freelance">Proyecto freelance</option>
                                     <option value="Consultoría">Consultoría</option>
+                                    <option value="Desarrollo de IA">Desarrollo de IA</option>
+                                    <option value="Ciberseguridad">Ciberseguridad</option>
                                     <option value="Otro">Otro</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="budget">Presupuesto estimado (opcional)</label>
+                                <select id="budget" name="budget">
+                                    <option value="" selected>Selecciona un rango</option>
+                                    <option value="Menos de $1000">Menos de $1000</option>
+                                    <option value="$1000 - $5000">$1000 - $5000</option>
+                                    <option value="$5000 - $10000">$5000 - $10000</option>
+                                    <option value="Más de $10000">Más de $10000</option>
+                                    <option value="A determinar">A determinar</option>
+                                </select>
                             </div>
-                            <button type="submit" class="btn-primary">Enviar mensaje</button>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Describe tu proyecto o consulta..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter" id="newsletter">
+                                    <span>Deseo recibir actualizaciones sobre nuevos proyectos y tecnologías</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-paper-plane"></i> Enviar mensaje
+                            </button>
                             <div id="form-status" class="form-status"></div>
                         </form>
                     </div>
@@ -817,12 +876,21 @@
                         <p class="timeline-date">Especialista en E-commerce y Desarrollo</p>
                         <h4>Especialista en E-commerce y Desarrollo de Software</h4>
                         <ul class="timeline-details">
-                            <li>Gestión y mantenimiento de la página web de PrestaShop</li>
-                            <li>Desarrollo de aplicaciones internas en PHP, Java y Python</li>
-                            <li>Implementación de un presupuestador y gestor de pedidos</li>
-                            <li>Implementación de medidas de ciberseguridad para protección de red y datos empresariales</li>
-                            <li>Automatización de procesos internos para mejorar la eficiencia operativa</li>
+                            <li>Gestión y mantenimiento de la página web de PrestaShop, logrando un aumento del 40% en conversiones</li>
+                            <li>Desarrollo de aplicaciones internas en PHP, Java y Python, automatizando el 60% de los procesos manuales</li>
+                            <li>Implementación de un presupuestador y gestor de pedidos que redujo el tiempo de procesamiento en un 75%</li>
+                            <li>Implementación de medidas de ciberseguridad que redujeron los incidentes de seguridad en un 90%</li>
+                            <li>Desarrollo de un sistema de análisis predictivo que mejoró la precisión de inventarios en un 85%</li>
+                            <li>Capacitación de 15 empleados en nuevas tecnologías y prácticas de seguridad</li>
                         </ul>
+                        <div class="achievements">
+                            <h5>Logros Clave:</h5>
+                            <ul>
+                                <li>Reducción del 50% en tiempo de respuesta a incidentes de seguridad</li>
+                                <li>Implementación exitosa de 5 proyectos de automatización</li>
+                                <li>Mejora del 30% en la eficiencia operativa general</li>
+                        </ul>
+                        </div>
                     </div>
                 </div>
                 
@@ -833,10 +901,19 @@
                         <p class="timeline-date">Instructor de cursos técnicos</p>
                         <h4>Instructor de cursos de armado y configuración PC/Redes</h4>
                         <ul class="timeline-details">
-                            <li>Capacitación en configuración de hardware y redes informáticas</li>
-                            <li>Desarrollo de material educativo y guías prácticas</li>
-                            <li>Enseñanza de conceptos fundamentales de redes y sistemas</li>
+                            <li>Capacitación de más de 100 estudiantes en configuración de hardware y redes informáticas</li>
+                            <li>Desarrollo de material educativo interactivo que mejoró la retención de conocimientos en un 40%</li>
+                            <li>Implementación de laboratorios virtuales para prácticas de red, beneficiando a 50+ estudiantes</li>
+                            <li>Creación de guías prácticas que redujeron el tiempo de aprendizaje en un 30%</li>
                         </ul>
+                        <div class="achievements">
+                            <h5>Logros Clave:</h5>
+                            <ul>
+                                <li>95% de satisfacción en evaluaciones de estudiantes</li>
+                                <li>Desarrollo de 10 cursos especializados en ciberseguridad</li>
+                                <li>Implementación de metodologías de enseñanza innovadoras</li>
+                        </ul>
+                        </div>
                     </div>
                 </div>
                 
@@ -966,7 +1043,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="skill-name">Java</span>
+                            <span class="skill-name">JavaScript</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-level="75"></div>
                             </div>
@@ -1093,6 +1170,373 @@
                         <button type="submit" class="btn-primary">Solicitar información</button>
                         <div id="netloom-form-status" class="form-status"></div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos-ia" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proyectos de Inteligencia Artificial</h2>
+                <p>Desarrollo y entrenamiento de modelos de IA especializados</p>
+            </div>
+            
+            <div class="ia-projects-grid">
+                <div class="ia-project-card">
+                    <div class="ia-project-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>CryptoBot Analyzer</h3>
+                    </div>
+                    <div class="ia-project-content">
+                        <p>Bot especializado en análisis de mercado cripto con sistema de aprendizaje para inversiones y desafíos en tiempo real.</p>
+                        <div class="ia-project-features">
+                            <h4>Características principales:</h4>
+                            <ul>
+                                <li>Análisis predictivo de tendencias cripto</li>
+                                <li>Sistema de desafíos en tiempo real</li>
+                                <li>Recomendaciones de inversión basadas en IA</li>
+                                <li>Análisis de sentimiento del mercado</li>
+                            </ul>
+                        </div>
+                        <div class="ia-project-tech">
+                            <h4>Tecnologías utilizadas:</h4>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>Pandas</span>
+                                <span>APIs Cripto</span>
+                                <span>Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ia-project-card">
+                    <div class="ia-project-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Data Analysis Bot</h3>
+                    </div>
+                    <div class="ia-project-content">
+                        <p>Chatbot especializado en análisis de datos para PYMES, actuando como departamento de análisis de datos virtual.</p>
+                        <div class="ia-project-features">
+                            <h4>Características principales:</h4>
+                            <ul>
+                                <li>Análisis predictivo de datos empresariales</li>
+                                <li>Recomendaciones estratégicas basadas en datos</li>
+                                <li>Visualización de tendencias y patrones</li>
+                                <li>Optimización de procesos empresariales</li>
+                            </ul>
+                        </div>
+                        <div class="ia-project-tech">
+                            <h4>Tecnologías utilizadas:</h4>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>NLP</span>
+                                <span>Scikit-learn</span>
+                                <span>Pandas</span>
+                                <span>Matplotlib</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blog Técnico</h2>
+                <p>Artículos y tutoriales sobre ciberseguridad, desarrollo y IA</p>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/cloud-security.jpg" alt="Seguridad en la Nube">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Ciberseguridad</span>
+                            <span class="blog-date">Marzo 2024</span>
+                        </div>
+                        <h3>Mejores Prácticas de Seguridad en AWS</h3>
+                        <p>Guía completa sobre implementación de medidas de seguridad en entornos AWS, incluyendo IAM, VPC y grupos de seguridad.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/ai-ml.jpg" alt="Inteligencia Artificial">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">IA & Machine Learning</span>
+                            <span class="blog-date">Febrero 2024</span>
+                        </div>
+                        <h3>Entrenamiento de Modelos con TensorFlow</h3>
+                        <p>Tutorial paso a paso sobre cómo crear y entrenar modelos de machine learning utilizando TensorFlow y Python.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/web-dev.jpg" alt="Desarrollo Web">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Desarrollo Web</span>
+                            <span class="blog-date">Enero 2024</span>
+                        </div>
+                        <h3>Construyendo APIs Seguras con Node.js</h3>
+                        <p>Guía práctica sobre desarrollo de APIs RESTful seguras utilizando Node.js, Express y mejores prácticas de seguridad.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="blog-cta">
+                <a href="blog.html" class="btn-primary">Ver todos los artículos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recursos y Tutoriales</h2>
+                <p>Material educativo y guías prácticas para desarrolladores</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-category">
+                    <h3><i class="fas fa-shield-alt"></i> Ciberseguridad</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Guía de Seguridad en AWS</span>
+                                <small>PDF - 2.5MB</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-video"></i>
+                                <span>Tutorial de Packet Tracer</span>
+                                <small>Video - 45 min</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-code"></i>
+                                <span>Scripts de Seguridad</span>
+                                <small>GitHub Repository</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="resource-category">
+                    <h3><i class="fas fa-code"></i> Desarrollo</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Guía de Node.js</span>
+                                <small>PDF - 1.8MB</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-video"></i>
+                                <span>Tutorial de React</span>
+                                <small>Video - 60 min</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-code"></i>
+                                <span>Proyectos de Ejemplo</span>
+                                <small>GitHub Repository</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="resource-category">
+                    <h3><i class="fas fa-brain"></i> Inteligencia Artificial</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Guía de TensorFlow</span>
+                                <small>PDF - 3.2MB</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-video"></i>
+                                <span>Tutorial de Machine Learning</span>
+                                <small>Video - 90 min</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-code"></i>
+                                <span>Modelos de IA</span>
+                                <small>GitHub Repository</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="resources-cta">
+                <a href="recursos.html" class="btn-primary">Ver todos los recursos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Curriculum Vitae</h2>
+                <p>Perfil profesional en ciberseguridad</p>
+            </div>
+            
+            <div class="cv-container">
+                <div class="cv-header">
+                    <div class="cv-personal">
+                        <h1>Taiel Aguirre</h1>
+                        <p class="cv-title">Especialista en Ciberseguridad y Desarrollo Web</p>
+                        <div class="cv-contact">
+                            <span><i class="fas fa-envelope"></i> contacto@netloomsolutions.com</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bahía Blanca, Argentina</span>
+                            <span><i class="fas fa-phone"></i> +54 9 XXX XXX XXXX</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-section">
+                    <h3>Resumen Profesional</h3>
+                    <p>Especialista certificado en seguridad en la nube y desarrollo web con experiencia en implementación de soluciones seguras en entornos cloud y creación de aplicaciones web modernas. Fundador de NetLoom Solutions, empresa especializada en desarrollo web seguro y soluciones de ciberseguridad. Experto en análisis de vulnerabilidades, auditoría de sistemas y desarrollo de aplicaciones empresariales.</p>
+                </div>
+                
+                <div class="cv-section">
+                    <h3>Habilidades Clave</h3>
+                    <div class="cv-skills-grid">
+                        <div class="cv-skill-category">
+                            <h4>Seguridad en la Nube</h4>
+                            <ul>
+                                <li>AWS Security (IAM, VPC, Security Groups)</li>
+                                <li>Google Cloud Security</li>
+                                <li>Arquitecturas Cloud Seguras</li>
+                                <li>Implementación Zero Trust</li>
+                            </ul>
+                        </div>
+                        <div class="cv-skill-category">
+                            <h4>Desarrollo Web</h4>
+                            <ul>
+                                <li>Frontend (React, HTML5, CSS3)</li>
+                                <li>Backend (Node.js, PHP, Python)</li>
+                                <li>Bases de Datos (MySQL, MongoDB)</li>
+                                <li>APIs RESTful y GraphQL</li>
+                            </ul>
+                        </div>
+                        <div class="cv-skill-category">
+                            <h4>Análisis y Auditoría</h4>
+                            <ul>
+                                <li>Análisis de Vulnerabilidades</li>
+                                <li>Auditoría de Sistemas</li>
+                                <li>Evaluación de Riesgos</li>
+                                <li>Implementación de Controles</li>
+                            </ul>
+                        </div>
+                        <div class="cv-skill-category">
+                            <h4>Infraestructura y DevOps</h4>
+                            <ul>
+                                <li>Configuración de Firewalls</li>
+                                <li>Seguridad de Redes</li>
+                                <li>Docker y Contenedores</li>
+                                <li>CI/CD y Automatización</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-section">
+                    <h3>Experiencia Laboral</h3>
+                    <div class="cv-experience">
+                        <div class="cv-job">
+                            <h4>NetLoom Solutions</h4>
+                            <p class="cv-job-title">Fundador y Especialista en Seguridad y Desarrollo</p>
+                            <p class="cv-job-period">2020 - Presente</p>
+                            <ul>
+                                <li>Desarrollo de aplicaciones web seguras y escalables para clientes empresariales</li>
+                                <li>Implementación de medidas de ciberseguridad en proyectos de desarrollo</li>
+                                <li>Consultoría en seguridad y desarrollo de soluciones cloud</li>
+                                <li>Gestión de proyectos de desarrollo web con enfoque en seguridad</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cv-job">
+                            <h4>Electroprima S.L.R</h4>
+                            <p class="cv-job-title">Especialista en Seguridad y Desarrollo</p>
+                            <p class="cv-job-period">2020 - Presente</p>
+                            <ul>
+                                <li>Implementación de medidas de ciberseguridad que redujeron incidentes en un 90%</li>
+                                <li>Desarrollo de aplicaciones web internas con enfoque en seguridad</li>
+                                <li>Configuración y gestión de políticas de seguridad en la nube</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cv-job">
+                            <h4>Tauro Computación</h4>
+                            <p class="cv-job-title">Instructor de Cursos Técnicos</p>
+                            <p class="cv-job-period">2019 - 2020</p>
+                            <ul>
+                                <li>Capacitación en desarrollo web y seguridad</li>
+                                <li>Desarrollo de material educativo sobre ciberseguridad</li>
+                                <li>Implementación de laboratorios virtuales para prácticas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-section">
+                    <h3>Certificaciones</h3>
+                    <div class="cv-certifications">
+                        <div class="cv-cert">
+                            <h4>Professional Cloud Security Engineer</h4>
+                            <p>Google Cloud - 2024</p>
+                        </div>
+                        <div class="cv-cert">
+                            <h4>Certificate of Cloud Security Knowledge v.4</h4>
+                            <p>Cloud Security Alliance - 2024</p>
+                        </div>
+                        <div class="cv-cert">
+                            <h4>AWS Certified Security – Specialty</h4>
+                            <p>Amazon Web Services - 2024</p>
+                        </div>
+                        <div class="cv-cert">
+                            <h4>Cisco Packet Tracer - Ciberseguridad</h4>
+                            <p>Cisco Networking Academy - 2024</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-section">
+                    <h3>Educación</h3>
+                    <div class="cv-education">
+                        <div class="cv-edu-item">
+                            <h4>Administración de Redes Informáticas</h4>
+                            <p>Escuela Municipal "San Roque"</p>
+                            <p>2018 - 2020</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
