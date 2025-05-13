@@ -444,7 +444,316 @@
                 bottom: 5rem;
             }
         }
+
+        /* Mejoras responsivas generales */
+        :root {
+            --header-height: 4rem;
+            --nav-width: 68px;
+            --first-color: #4723D9;
+            --first-color-light: #AFA5D9;
+            --white-color: #F7F6FB;
+            --body-font: 'Space Grotesk', sans-serif;
+            --normal-font-size: 1rem;
+            --z-fixed: 100;
+        }
+
+        @media screen and (max-width: 768px) {
+            :root {
+                --normal-font-size: 0.938rem;
+            }
+
+            .nav-brand {
+                padding: 1rem;
+            }
+
+            .nav-logo {
+                width: 30px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: var(--header-height);
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                padding: 2rem;
+                background-color: var(--bg-primary);
+                transition: .5s;
+                box-shadow: var(--shadow-lg);
+                z-index: var(--z-fixed);
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links.show {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 0;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 0.5rem 1rem;
+                border-radius: var(--radius-md);
+            }
+
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+                margin-top: 1rem;
+            }
+        }
+
+        /* Hero Section Responsive */
+        @media screen and (max-width: 768px) {
+            .hero-content {
+                padding: 4rem 1rem;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-cta .btn-primary,
+            .hero-cta .btn-outline {
+                width: 100%;
+            }
+
+            .tech-carousel {
+                margin-top: 2rem;
+            }
+
+            .hero-socials {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                justify-content: center;
+                margin-top: 2rem;
+            }
+        }
+
+        /* Secciones de Contenido Responsive */
+        @media screen and (max-width: 768px) {
+            .section-padding {
+                padding: 4rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .about-grid,
+            .services-grid,
+            .projects-grid,
+            .technologies-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-card,
+            .service-card,
+            .project-card,
+            .certification-card {
+                padding: 1.5rem;
+            }
+
+            .tech-category {
+                margin-bottom: 2rem;
+            }
+
+            .tech-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        /* Formulario de Contacto Responsive */
+        @media screen and (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                order: 2;
+                margin-top: 2rem;
+            }
+
+            .contact-form {
+                order: 1;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            input, select, textarea {
+                padding: 0.8rem;
+            }
+        }
+
+        /* Testimonios Responsive */
+        @media screen and (max-width: 768px) {
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .testimonial-content {
+                font-size: 0.95rem;
+            }
+
+            .testimonial-author img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Footer Responsive */
+        @media screen and (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-brand {
+                justify-content: center;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        /* Mejoras de Rendimiento para Móviles */
+        @media screen and (max-width: 768px) {
+            .animate__animated {
+                animation-duration: 0.5s;
+            }
+
+            .parallax-bg {
+                background-attachment: scroll;
+            }
+
+            .floating-element {
+                display: none;
+            }
+        }
+
+        /* Sistema de Grid Adaptativo */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: clamp(1rem, 3vw, 2rem);
+        }
+
+        /* Tipografía Responsiva */
+        :root {
+            --fluid-min-width: 320;
+            --fluid-max-width: 1200;
+            --fluid-min-size: 14;
+            --fluid-max-size: 18;
+            --fluid-min-scale: 1.2;
+            --fluid-max-scale: 1.333;
+        }
+
+        @media screen and (min-width: 320px) {
+            :root {
+                --fluid-size: calc(var(--fluid-min-size) * 1px + (var(--fluid-max-size) - var(--fluid-min-size)) * ((100vw - (var(--fluid-min-width) * 1px)) / (var(--fluid-max-width) - var(--fluid-min-width))));
+            }
+
+            body {
+                font-size: var(--fluid-size);
+            }
+        }
+
+        /* Botón de Menú Hamburguesa */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: var(--z-fixed);
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
     </style>
+
+    <script>
+        // Menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('show');
+            });
+
+            // Cerrar menú al hacer click en un enlace
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('show');
+                });
+            });
+
+            // Cerrar menú al hacer scroll
+            window.addEventListener('scroll', () => {
+                if (navLinks.classList.contains('show')) {
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <nav>
@@ -459,7 +768,7 @@
             <a href="#habilidades">Habilidades</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#tecnologias">Tecnologías</a>
-            <a href="lecturas.html">Recursos</a>
+            <a href="blog-tecnico.html">Blog Técnico</a>
             <a href="#contacto" class="nav-cta">Contacto</a>
             <a href="modern-cv.html" class="nav-cv-link" target="_blank">Descargar CV</a>
             <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
@@ -1423,12 +1732,13 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="animate__animated animate__fadeIn">Certificaciones y Formación</h2>
-                <p>Desarrollo profesional continuo en tecnologías de ciberseguridad y cloud</p>
+                <p>Desarrollo profesional continuo en tecnologías de ciberseguridad, IA e Industria 4.0</p>
             </div>
             
             <div class="certifications-container">
                 <div class="certification-tabs">
                     <button class="tab-btn active" data-tab="cloud">Ciberseguridad & Cloud</button>
+                    <button class="tab-btn" data-tab="ia">IA & Industria 4.0</button>
                     <button class="tab-btn" data-tab="development">Desarrollo</button>
                     <button class="tab-btn" data-tab="courses">Cursos Completados</button>
                 </div>
@@ -1487,6 +1797,61 @@
                         </div>
                     </div>
                     
+                    <!-- Nueva pestaña de IA & Industria 4.0 -->
+                    <div class="tab-content" id="ia-tab">
+                        <div class="certifications-grid">
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/univ-brown.png" alt="Universidad Nacional Guillermo Brown">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>Inteligencia Artificial e Industria 4.0</h3>
+                                    <p class="issuer">Universidad Nacional Guillermo Brown</p>
+                                    <p class="cert-date">2023 - Presente</p>
+                                    <div class="cert-skills">
+                                        <span>Machine Learning</span>
+                                        <span>Deep Learning</span>
+                                        <span>Automatización Industrial</span>
+                                        <span>IoT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/industrial.png" alt="Centro de Formación Industrial">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>Automatización con IA Industria 4.0</h3>
+                                    <p class="issuer">Centro de Formación Industrial</p>
+                                    <p class="cert-date">2023</p>
+                                    <div class="cert-skills">
+                                        <span>PLCs</span>
+                                        <span>SCADA</span>
+                                        <span>Automatización</span>
+                                        <span>Redes Industriales</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="certification-card">
+                                <div class="certification-logo">
+                                    <img src="images/certifications/ml-specialist.png" alt="Machine Learning">
+                                </div>
+                                <div class="certification-info">
+                                    <h3>Machine Learning Specialist</h3>
+                                    <p class="issuer">Google Cloud</p>
+                                    <p class="cert-date">2023</p>
+                                    <div class="cert-skills">
+                                        <span>ML Algorithms</span>
+                                        <span>Data Processing</span>
+                                        <span>Model Deployment</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Desarrollo -->
                     <div class="tab-content" id="development-tab">
                         <div class="certifications-grid">
@@ -1862,6 +2227,23 @@
         </style>
     </section>
 
+    <!-- Agregar estilos específicos para la nueva pestaña -->
+    <style>
+        #ia-tab .certification-card {
+            border-left: 4px solid #37cdb7; /* Color distintivo para certificaciones de IA */
+        }
+        
+        #ia-tab .cert-skills span {
+            background: rgba(55, 205, 183, 0.1);
+            color: #37cdb7;
+        }
+        
+        #ia-tab .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(55, 205, 183, 0.1);
+        }
+    </style>
+
     <!-- Sección de Testimonios -->
     <section id="testimonios" class="section-padding bg-light">
         <div class="container">
@@ -2094,13 +2476,13 @@
                             <li><a href="#habilidades">Habilidades</a></li>
                             <li><a href="#proyectos">Proyectos</a></li>
                             <li><a href="#tecnologias">Tecnologías</a></li>
-                            <li><a href="lecturas.html">Recursos</a></li>
+                            <li><a href="blog-tecnico.html">Blog Técnico</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
                         <h4>Recursos</h4>
                         <ul>
-                            <li><a href="lecturas.html">Blog Técnico</a></li>
+                            <li><a href="blog-tecnico.html">Blog Técnico</a></li>
                             <li><a href="#proyectos">Portfolio</a></li>
                             <li><a href="#contacto">Contacto</a></li>
                             <li><a href="privacy-policy.html">Política de Privacidad</a></li>
