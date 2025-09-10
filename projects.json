@@ -1,89 +1,140 @@
 {
   "projects": [
     {
-      "id": "secure-webapp",
-      "title": "Aplicación Web Segura",
-      "category": ["development", "security"],
+      "id": "orbitaia-platform",
+      "title": "OrbitaIA - Plataforma de Asistentes con IA",
+      "category": ["automation", "fullstack"],
       "featured": true,
-      "mainImage": "images/projects/secure-webapp/main.jpg",
-      "description": "Aplicación web desarrollada con enfoque en seguridad, implementando las recomendaciones de OWASP Top 10. Incluye validación de entrada, autenticación segura y protección contra ataques comunes.",
-      "technologies": ["React", "Node.js", "Express", "MongoDB", "JWT"],
-      "githubUrl": "https://github.com/taielaguirre/secure-webapp",
-      "liveUrl": "https://secure-webapp-demo.netloomsolutions.com",
+      "mainImage": "images/projects/orbitaia/main.jpg",
+      "description": "Plataforma completa de asistentes y automatizaciones con Inteligencia Artificial. Incluye FastAPI + Next.js, PostgreSQL + Vector DB + Redis, autenticación, colas/caché y componentes reutilizables.",
+      "technologies": ["FastAPI", "Next.js", "PostgreSQL", "Redis", "Vector DB", "Python", "TypeScript", "Docker"],
+      "githubUrl": "https://github.com/TaielAguirre/OrbitaIA",
+      "liveUrl": "https://orbitaia-demo.netlify.app",
       "images": [
-        "images/projects/secure-webapp/screenshot1.jpg",
-        "images/projects/secure-webapp/screenshot2.jpg",
-        "images/projects/secure-webapp/screenshot3.jpg"
+        "images/projects/orbitaia/dashboard.jpg",
+        "images/projects/orbitaia/chat-interface.jpg",
+        "images/projects/orbitaia/automation-builder.jpg"
       ],
-      "details": "Esta aplicación demuestra la implementación práctica de seguridad en aplicaciones web modernas. Características: sistema de autenticación con JWT, protección contra XSS, validación exhaustiva de entrada, registro seguro de eventos, y monitoreo de actividad sospechosa."
+      "details": "Plataforma innovadora que combina múltiples tecnologías de IA para crear asistentes inteligentes. Características principales: procesamiento de lenguaje natural, base de datos vectorial para búsquedas semánticas, sistema de colas para procesamiento asíncrono, autenticación JWT, y una interfaz moderna construida con Next.js."
     },
     {
-      "id": "inventory-system",
-      "title": "Sistema de Inventario",
-      "category": ["development", "fullstack"],
+      "id": "electroprima-ecommerce",
+      "title": "Electroprima E-commerce (PrestaShop)",
+      "category": ["ecommerce", "fullstack"],
       "featured": true,
-      "mainImage": "images/projects/inventory/main.jpg",
-      "description": "Sistema completo de gestión de inventario con dashboard de análisis, reportes en tiempo real y gestión de usuarios. Implementado con arquitectura moderna y responsive.",
-      "technologies": ["Vue.js", "Laravel", "MySQL", "Docker"],
-      "githubUrl": "https://github.com/taielaguirre/inventory-system",
-      "liveUrl": "https://inventory-demo.netloomsolutions.com",
+      "mainImage": "images/projects/electroprima/main.jpg",
+      "description": "E-commerce completo desarrollado con PrestaShop, incluyendo diseño personalizado, módulos PHP/JS, integración con ERP Flexxus, gestión de catálogo, pagos y envíos.",
+      "technologies": ["PrestaShop", "PHP 8", "JavaScript", "MySQL", "Flexxus ERP", "CSS3", "jQuery"],
+      "githubUrl": "https://github.com/TaielAguirre/electroprima-ecommerce",
+      "liveUrl": "https://electroprima.com",
       "images": [
-        "images/projects/inventory/dashboard.jpg",
-        "images/projects/inventory/inventory-list.jpg",
-        "images/projects/inventory/reports.jpg"
+        "images/projects/electroprima/homepage.jpg",
+        "images/projects/electroprima/product-catalog.jpg",
+        "images/projects/electroprima/admin-panel.jpg"
       ],
-      "details": "Sistema completo para gestión de inventarios empresariales. Incluye gestión de productos, proveedores, órdenes de compra, dashboard analítico, sistema de alertas para stock bajo y generación de reportes automáticos."
+      "details": "Tienda online completa para Electroprima S.L.R con funcionalidades avanzadas: catálogo de productos con filtros inteligentes, carrito de compras optimizado, integración completa con ERP Flexxus para sincronización de inventario, sistema de pagos múltiples, gestión de envíos, y panel administrativo personalizado."
     },
     {
-      "id": "ecommerce-platform",
-      "title": "Plataforma E-commerce",
-      "category": ["development", "fullstack"],
+      "id": "erp-web-system",
+      "title": "ERP Web (PHP 8 + React)",
+      "category": ["fullstack", "automation"],
+      "featured": true,
+      "mainImage": "images/projects/erp-web/main.jpg",
+      "description": "Sistema ERP web desarrollado con PHP 8 y React, incluyendo AG Grid para tablas avanzadas, soporte multi-moneda, reportes/exportaciones e integración con Flexxus.",
+      "technologies": ["PHP 8", "React", "AG Grid", "MySQL", "REST API", "JavaScript", "Bootstrap"],
+      "githubUrl": "https://github.com/TaielAguirre/erp-web-system",
+      "liveUrl": "https://erp-web-demo.netlify.app",
+      "images": [
+        "images/projects/erp-web/dashboard.jpg",
+        "images/projects/erp-web/inventory.jpg",
+        "images/projects/erp-web/reports.jpg"
+      ],
+      "details": "Sistema ERP moderno que combina la robustez de PHP 8 con la interactividad de React. Características: tablas avanzadas con AG Grid, soporte para múltiples monedas, generación de reportes en PDF/Excel, integración con Flexxus para sincronización de datos, y una interfaz responsive optimizada para dispositivos móviles."
+    },
+    {
+      "id": "automation-scripts",
+      "title": "Scripts de Automatización con IA",
+      "category": ["automation", "security"],
       "featured": false,
-      "mainImage": "images/projects/ecommerce/main.jpg",
-      "description": "Plataforma e-commerce con carrito de compras, pasarela de pagos, gestión de productos y panel administrativo.",
-      "technologies": ["React", "Node.js", "MongoDB", "Stripe", "AWS S3"],
-      "githubUrl": "https://github.com/taielaguirre/ecommerce-platform",
-      "liveUrl": "https://ecommerce-demo.netloomsolutions.com",
+      "mainImage": "images/projects/automation/main.jpg",
+      "description": "Colección de scripts y automatizaciones desarrolladas con Python, incluyendo bots inteligentes, ETL ligeros, y procesos automatizados para optimización de tareas.",
+      "technologies": ["Python", "FastAPI", "OpenAI API", "Selenium", "Pandas", "Requests", "Cron"],
+      "githubUrl": "https://github.com/TaielAguirre/automation-scripts",
+      "liveUrl": "https://automation-demo.netlify.app",
       "images": [
-        "images/projects/ecommerce/homepage.jpg",
-        "images/projects/ecommerce/product-page.jpg",
-        "images/projects/ecommerce/checkout.jpg"
+        "images/projects/automation/bot-dashboard.jpg",
+        "images/projects/automation/etl-process.jpg",
+        "images/projects/automation/monitoring.jpg"
       ],
-      "details": "Plataforma e-commerce moderna con enfoque en usabilidad y seguridad. Incluye gestión de productos con imágenes, carrito de compras, pasarela segura de pagos con Stripe, sistema de usuarios y roles, y panel administrativo para gestión completa."
+      "details": "Suite de herramientas de automatización que incluye bots inteligentes para tareas repetitivas, procesos ETL para transformación de datos, integración con APIs de IA para procesamiento de texto, y monitoreo automatizado de sistemas. Todos los scripts incluyen logging detallado y manejo de errores robusto."
     },
     {
-      "id": "task-manager",
-      "title": "Gestor de Tareas Colaborativo",
-      "category": ["development", "frontend"],
+      "id": "security-headers-tool",
+      "title": "Herramienta de Headers de Seguridad",
+      "category": ["security", "automation"],
       "featured": false,
-      "mainImage": "images/projects/taskmanager/main.jpg",
-      "description": "Aplicación para gestión de tareas en equipos con asignación, seguimiento de tiempo y estadísticas de productividad.",
-      "technologies": ["JavaScript", "Vue.js", "Firebase", "Charts.js"],
-      "githubUrl": "https://github.com/taielaguirre/task-manager",
-      "liveUrl": "https://task-manager-demo.netloomsolutions.com",
+      "mainImage": "images/projects/security-headers/main.jpg",
+      "description": "Herramienta para implementación y verificación de headers de seguridad (TLS/HSTS/CSP), cookies seguras y checks en CI/CD con Semgrep, ZAP y Trivy.",
+      "technologies": ["Python", "FastAPI", "Semgrep", "OWASP ZAP", "Trivy", "Docker", "GitHub Actions"],
+      "githubUrl": "https://github.com/TaielAguirre/security-headers-tool",
+      "liveUrl": "https://security-headers-demo.netlify.app",
       "images": [
-        "images/projects/taskmanager/dashboard.jpg",
-        "images/projects/taskmanager/task-detail.jpg",
-        "images/projects/taskmanager/statistics.jpg"
+        "images/projects/security-headers/dashboard.jpg",
+        "images/projects/security-headers/scan-results.jpg",
+        "images/projects/security-headers/ci-integration.jpg"
       ],
-      "details": "Sistema colaborativo para gestión de tareas diseñado para equipos remotos. Incluye asignación de tareas, seguimiento de tiempo, comentarios en tiempo real, estadísticas de productividad por usuario y equipo, y notificaciones."
+      "details": "Herramienta integral de seguridad que automatiza la implementación y verificación de headers de seguridad. Incluye: análisis automático de vulnerabilidades, integración con CI/CD, generación de reportes de seguridad, y recomendaciones personalizadas basadas en OWASP Top 10."
     },
     {
-      "id": "security-dashboard",
-      "title": "Dashboard de Seguridad",
-      "category": ["security", "development"],
-      "featured": true,
-      "mainImage": "images/projects/securitydashboard/main.jpg",
-      "description": "Dashboard centralizado para visualización y análisis de eventos de seguridad. Integra múltiples fuentes de datos para ofrecer una visión completa de la postura de seguridad.",
-      "technologies": ["Python", "Django", "React", "D3.js", "ElasticSearch"],
-      "githubUrl": "https://github.com/taielaguirre/security-dashboard",
-      "liveUrl": "https://security-dashboard-demo.netloomsolutions.com",
+      "id": "linux-server-management",
+      "title": "Gestión de Servidores Linux",
+      "category": ["security", "automation"],
+      "featured": false,
+      "mainImage": "images/projects/linux-management/main.jpg",
+      "description": "Sistema de administración de servidores Linux con Apache/Nginx, dominios/SSL, backups automatizados y monitoreo básico.",
+      "technologies": ["Linux", "Apache", "Nginx", "SSL/TLS", "Bash", "Cron", "Docker", "Monitoring"],
+      "githubUrl": "https://github.com/TaielAguirre/linux-server-management",
+      "liveUrl": "https://server-management-demo.netlify.app",
       "images": [
-        "images/projects/securitydashboard/overview.jpg",
-        "images/projects/securitydashboard/alerts.jpg",
-        "images/projects/securitydashboard/logs.jpg"
+        "images/projects/linux-management/server-dashboard.jpg",
+        "images/projects/linux-management/ssl-management.jpg",
+        "images/projects/linux-management/backup-system.jpg"
       ],
-      "details": "Dashboard de seguridad que integra logs de diferentes fuentes, visualiza eventos en tiempo real, genera alertas automáticas, y facilita el análisis de tendencias de seguridad. Ideal para equipos de seguridad que necesitan una visión unificada de su infraestructura."
+      "details": "Sistema completo de gestión de servidores que incluye: configuración automatizada de Apache/Nginx, gestión de certificados SSL, sistema de backups programados, monitoreo de recursos del sistema, y alertas automáticas. Optimizado para alta disponibilidad y seguridad."
+    },
+    {
+      "id": "prestashop-modules",
+      "title": "Módulos PrestaShop Personalizados",
+      "category": ["ecommerce", "fullstack"],
+      "featured": false,
+      "mainImage": "images/projects/prestashop-modules/main.jpg",
+      "description": "Colección de módulos personalizados para PrestaShop, incluyendo integraciones con ERP, optimizaciones de performance y funcionalidades avanzadas.",
+      "technologies": ["PrestaShop", "PHP 8", "JavaScript", "MySQL", "Smarty", "jQuery", "CSS3"],
+      "githubUrl": "https://github.com/TaielAguirre/prestashop-modules",
+      "liveUrl": "https://prestashop-modules-demo.netlify.app",
+      "images": [
+        "images/projects/prestashop-modules/module-list.jpg",
+        "images/projects/prestashop-modules/erp-integration.jpg",
+        "images/projects/prestashop-modules/admin-config.jpg"
+      ],
+      "details": "Suite de módulos desarrollados específicamente para PrestaShop que incluyen: integración avanzada con ERPs, optimizaciones de rendimiento, funcionalidades de marketing automatizado, y herramientas de análisis. Todos los módulos siguen las mejores prácticas de PrestaShop y están optimizados para performance."
+    },
+    {
+      "id": "api-integration-suite",
+      "title": "Suite de Integración de APIs",
+      "category": ["fullstack", "automation"],
+      "featured": false,
+      "mainImage": "images/projects/api-suite/main.jpg",
+      "description": "Conjunto de APIs desarrolladas con Python FastAPI y Node.js para integración con servicios externos, automatización de procesos y gestión de datos.",
+      "technologies": ["FastAPI", "Node.js", "Express", "PostgreSQL", "Redis", "Docker", "Swagger", "JWT"],
+      "githubUrl": "https://github.com/TaielAguirre/api-integration-suite",
+      "liveUrl": "https://api-suite-demo.netlify.app",
+      "images": [
+        "images/projects/api-suite/api-docs.jpg",
+        "images/projects/api-suite/integration-flow.jpg",
+        "images/projects/api-suite/monitoring.jpg"
+      ],
+      "details": "Suite completa de APIs que facilita la integración entre diferentes sistemas. Incluye: documentación automática con Swagger, autenticación JWT, rate limiting, logging detallado, y monitoreo en tiempo real. Optimizada para alta performance y escalabilidad."
     }
   ]
-} 
+}

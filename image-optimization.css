@@ -1,0 +1,104 @@
+/* ===== OPTIMIZACIÓN DE IMAGEN DE PERFIL ===== */
+
+/* Mejoras específicas para la imagen de perfil */
+.profile-image {
+    /* Optimización de calidad */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    
+    /* Filtros para mejorar la apariencia */
+    filter: 
+        brightness(1.05) 
+        contrast(1.1) 
+        saturate(1.1) 
+        sepia(0.02);
+    
+    /* Transiciones suaves */
+    transition: 
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 0.3s ease;
+}
+
+/* Efecto hover mejorado */
+.image-frame:hover .profile-image {
+    transform: scale(1.05);
+    filter: 
+        brightness(1.1) 
+        contrast(1.15) 
+        saturate(1.15) 
+        sepia(0.05);
+}
+
+/* Optimización para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .profile-image {
+        filter: 
+            brightness(1.08) 
+            contrast(1.12) 
+            saturate(1.08);
+    }
+}
+
+/* Optimización para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Efecto de carga suave */
+.profile-image {
+    opacity: 0;
+    animation: fadeInProfile 0.8s ease-in-out 0.3s forwards;
+}
+
+@keyframes fadeInProfile {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mejora del marco de la imagen */
+.image-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(30, 60, 114, 0.1) 0%, 
+        transparent 50%, 
+        rgba(6, 182, 212, 0.1) 100%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Optimización para modo oscuro */
+[data-theme="dark"] .profile-image {
+    filter: 
+        brightness(1.1) 
+        contrast(1.15) 
+        saturate(1.1) 
+        sepia(0.03);
+}
+
+[data-theme="dark"] .image-frame:hover .profile-image {
+    filter: 
+        brightness(1.15) 
+        contrast(1.2) 
+        saturate(1.2) 
+        sepia(0.08);
+}
