@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "id": "netorbit-crm",
+      "title": "NetOrbit CRM - IA & WhatsApp",
+      "category": ["automation", "fullstack", "ecommerce"],
+      "featured": true,
+      "mainImage": "netorbit-logo.png",
+      "description": "CRM inteligente con integración de WhatsApp gestionado por IA. Permite registro de actividades, envío automatizado de presupuestos y gestión de clientes.",
+      "technologies": ["Python", "WhatsApp API", "OpenAI API", "React", "PostgreSQL", "Docker"],
+      "githubUrl": "#",
+      "liveUrl": "https://netorbit.es",
+      "images": [
+        "netorbit-logo.png"
+      ],
+      "details": "Sistema CRM avanzado diseñado para optimizar la gestión de clientes y ventas. Características principales: integración profunda con WhatsApp Business API, agentes de IA para respuestas automáticas y calificación de leads, generación y envío automático de presupuestos en PDF, y registro detallado de todas las actividades e interacciones."
+    },
+    {
       "id": "orbitaia-platform",
       "title": "OrbitaIA - Plataforma de Asistentes con IA",
       "category": ["automation", "fullstack"],
