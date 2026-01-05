@@ -1,96 +1,24 @@
 {
   "projects": [
     {
-      "id": "netorbit-crm",
-      "title": "NetOrbit CRM - IA & WhatsApp",
-      "category": ["automation", "fullstack", "ecommerce"],
-      "featured": true,
-      "mainImage": "netorbit-logo.png",
-      "description": "CRM inteligente con integración de WhatsApp gestionado por IA. Permite registro de actividades, envío automatizado de presupuestos y gestión de clientes.",
-      "technologies": ["Python", "WhatsApp API", "OpenAI API", "React", "PostgreSQL", "Docker"],
-      "githubUrl": "#",
-      "liveUrl": "https://netorbit.es",
-      "images": [
-        "netorbit-logo.png"
-      ],
-      "details": "Sistema CRM avanzado diseñado para optimizar la gestión de clientes y ventas. Características principales: integración profunda con WhatsApp Business API, agentes de IA para respuestas automáticas y calificación de leads, generación y envío automático de presupuestos en PDF, y registro detallado de todas las actividades e interacciones."
-    },
-    {
-      "id": "orbitaia-platform",
-      "title": "OrbitaIA - Plataforma de Asistentes con IA",
-      "category": ["automation", "fullstack"],
-      "featured": true,
-      "mainImage": "images/projects/orbitaia/main.jpg",
-      "description": "Plataforma completa de asistentes y automatizaciones con Inteligencia Artificial. Incluye FastAPI + Next.js, PostgreSQL + Vector DB + Redis, autenticación, colas/caché y componentes reutilizables.",
-      "technologies": ["FastAPI", "Next.js", "PostgreSQL", "Redis", "Vector DB", "Python", "TypeScript", "Docker"],
-      "githubUrl": "https://github.com/TaielAguirre/OrbitaIA",
-      "liveUrl": "https://orbitaia-demo.netlify.app",
-      "images": [
-        "images/projects/orbitaia/dashboard.jpg",
-        "images/projects/orbitaia/chat-interface.jpg",
-        "images/projects/orbitaia/automation-builder.jpg"
-      ],
-      "details": "Plataforma innovadora que combina múltiples tecnologías de IA para crear asistentes inteligentes. Características principales: procesamiento de lenguaje natural, base de datos vectorial para búsquedas semánticas, sistema de colas para procesamiento asíncrono, autenticación JWT, y una interfaz moderna construida con Next.js."
-    },
-    {
-      "id": "electroprima-ecommerce",
-      "title": "Electroprima E-commerce (PrestaShop)",
-      "category": ["ecommerce", "fullstack"],
-      "featured": true,
-      "mainImage": "images/projects/electroprima/main.jpg",
-      "description": "E-commerce completo desarrollado con PrestaShop, incluyendo diseño personalizado, módulos PHP/JS, integración con ERP Flexxus, gestión de catálogo, pagos y envíos.",
-      "technologies": ["PrestaShop", "PHP 8", "JavaScript", "MySQL", "Flexxus ERP", "CSS3", "jQuery"],
-      "githubUrl": "https://github.com/TaielAguirre/electroprima-ecommerce",
-      "liveUrl": "https://electroprima.com",
-      "images": [
-        "images/projects/electroprima/homepage.jpg",
-        "images/projects/electroprima/product-catalog.jpg",
-        "images/projects/electroprima/admin-panel.jpg"
-      ],
-      "details": "Tienda online completa para Electroprima S.L.R con funcionalidades avanzadas: catálogo de productos con filtros inteligentes, carrito de compras optimizado, integración completa con ERP Flexxus para sincronización de inventario, sistema de pagos múltiples, gestión de envíos, y panel administrativo personalizado."
-    },
-    {
-      "id": "erp-web-system",
-      "title": "ERP Web (PHP 8 + React)",
-      "category": ["fullstack", "automation"],
-      "featured": true,
-      "mainImage": "images/projects/erp-web/main.jpg",
-      "description": "Sistema ERP web desarrollado con PHP 8 y React, incluyendo AG Grid para tablas avanzadas, soporte multi-moneda, reportes/exportaciones e integración con Flexxus.",
-      "technologies": ["PHP 8", "React", "AG Grid", "MySQL", "REST API", "JavaScript", "Bootstrap"],
-      "githubUrl": "https://github.com/TaielAguirre/erp-web-system",
-      "liveUrl": "https://erp-web-demo.netlify.app",
-      "images": [
-        "images/projects/erp-web/dashboard.jpg",
-        "images/projects/erp-web/inventory.jpg",
-        "images/projects/erp-web/reports.jpg"
-      ],
-      "details": "Sistema ERP moderno que combina la robustez de PHP 8 con la interactividad de React. Características: tablas avanzadas con AG Grid, soporte para múltiples monedas, generación de reportes en PDF/Excel, integración con Flexxus para sincronización de datos, y una interfaz responsive optimizada para dispositivos móviles."
-    },
-    {
-      "id": "automation-scripts",
-      "title": "Scripts de Automatización con IA",
-      "category": ["automation", "security"],
-      "featured": false,
-      "mainImage": "images/projects/automation/main.jpg",
-      "description": "Colección de scripts y automatizaciones desarrolladas con Python, incluyendo bots inteligentes, ETL ligeros, y procesos automatizados para optimización de tareas.",
-      "technologies": ["Python", "FastAPI", "OpenAI API", "Selenium", "Pandas", "Requests", "Cron"],
-      "githubUrl": "https://github.com/TaielAguirre/automation-scripts",
-      "liveUrl": "https://automation-demo.netlify.app",
-      "images": [
-        "images/projects/automation/bot-dashboard.jpg",
-        "images/projects/automation/etl-process.jpg",
-        "images/projects/automation/monitoring.jpg"
-      ],
-      "details": "Suite de herramientas de automatización que incluye bots inteligentes para tareas repetitivas, procesos ETL para transformación de datos, integración con APIs de IA para procesamiento de texto, y monitoreo automatizado de sistemas. Todos los scripts incluyen logging detallado y manejo de errores robusto."
-    },
-    {
       "id": "security-headers-tool",
-      "title": "Herramienta de Headers de Seguridad",
-      "category": ["security", "automation"],
-      "featured": false,
+      "title": "Security Headers & Vuln Scanner",
+      "category": [
+        "security",
+        "automation"
+      ],
+      "featured": true,
       "mainImage": "images/projects/security-headers/main.jpg",
-      "description": "Herramienta para implementación y verificación de headers de seguridad (TLS/HSTS/CSP), cookies seguras y checks en CI/CD con Semgrep, ZAP y Trivy.",
-      "technologies": ["Python", "FastAPI", "Semgrep", "OWASP ZAP", "Trivy", "Docker", "GitHub Actions"],
+      "description": "Orquestador de seguridad para validación de headers (CSP, HSTS) y detección de vulnerabilidades OWASP automatizada en CI/CD.",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "Semgrep",
+        "OWASP ZAP",
+        "Trivy",
+        "Docker",
+        "GitHub Actions"
+      ],
       "githubUrl": "https://github.com/TaielAguirre/security-headers-tool",
       "liveUrl": "https://security-headers-demo.netlify.app",
       "images": [
@@ -98,16 +26,27 @@
         "images/projects/security-headers/scan-results.jpg",
         "images/projects/security-headers/ci-integration.jpg"
       ],
-      "details": "Herramienta integral de seguridad que automatiza la implementación y verificación de headers de seguridad. Incluye: análisis automático de vulnerabilidades, integración con CI/CD, generación de reportes de seguridad, y recomendaciones personalizadas basadas en OWASP Top 10."
+      "details": "Herramienta diseñada para mitigar riesgos como XSS y Clickjacking mediante la implementación y validación estricta de headers de seguridad. Integra escaneos DAST/SAST en pipelines de CI/CD para bloquear deploys inseguros."
     },
     {
       "id": "linux-server-management",
-      "title": "Gestión de Servidores Linux",
-      "category": ["security", "automation"],
-      "featured": false,
+      "title": "Infra Hardening & Secure Cloud",
+      "category": [
+        "security",
+        "automation"
+      ],
+      "featured": true,
       "mainImage": "images/projects/linux-management/main.jpg",
-      "description": "Sistema de administración de servidores Linux con Apache/Nginx, dominios/SSL, backups automatizados y monitoreo básico.",
-      "technologies": ["Linux", "Apache", "Nginx", "SSL/TLS", "Bash", "Cron", "Docker", "Monitoring"],
+      "description": "Implementación de servidores Linux endurecidos (Hardening), configuración segura de Nginx/Apache (TLS, WAF mod_security) y backups encriptados.",
+      "technologies": [
+        "Linux Hardening",
+        "ModSecurity",
+        "Nginx",
+        "SSL/TLS",
+        "Bash",
+        "Fail2Ban",
+        "Docker"
+      ],
       "githubUrl": "https://github.com/TaielAguirre/linux-server-management",
       "liveUrl": "https://server-management-demo.netlify.app",
       "images": [
@@ -115,16 +54,160 @@
         "images/projects/linux-management/ssl-management.jpg",
         "images/projects/linux-management/backup-system.jpg"
       ],
-      "details": "Sistema completo de gestión de servidores que incluye: configuración automatizada de Apache/Nginx, gestión de certificados SSL, sistema de backups programados, monitoreo de recursos del sistema, y alertas automáticas. Optimizado para alta disponibilidad y seguridad."
+      "details": "Gestión de infraestructura enfocada en la reducción de la superficie de ataque. Implementación de reglas de firewall, WAF, gestión de accesos SSH robustos y monitoreo de integridad de archivos."
+    },
+    {
+      "id": "orbitaia-platform",
+      "title": "OrbitaIA - Secure AI Platform",
+      "category": [
+        "automation",
+        "fullstack",
+        "security"
+      ],
+      "featured": true,
+      "mainImage": "images/projects/orbitaia/main.jpg",
+      "description": "Plataforma de IA diseñada con enfoque 'Security by Design'. Gestión de secretos, sandboxing para ejecución de código y protección de datos pii.",
+      "technologies": [
+        "FastAPI",
+        "OAuth2",
+        "PostgreSQL RLS",
+        "Redis",
+        "Vector DB",
+        "Python",
+        "Docker Safety"
+      ],
+      "githubUrl": "https://github.com/TaielAguirre/OrbitaIA",
+      "liveUrl": "https://orbitaia-demo.netlify.app",
+      "images": [
+        "images/projects/orbitaia/dashboard.jpg",
+        "images/projects/orbitaia/chat-interface.jpg",
+        "images/projects/orbitaia/automation-builder.jpg"
+      ],
+      "details": "Arquitectura de microservicios segura. Implementación de rate limiting para prevenir abusos, sanitización de inputs para evitar inyecciones en prompts (Prompt Injection) y cifrado de datos en reposo y tránsito."
+    },
+    {
+      "id": "netorbit-crm",
+      "title": "NetOrbit CRM - Secure Data Handling",
+      "category": [
+        "automation",
+        "fullstack",
+        "security"
+      ],
+      "featured": true,
+      "mainImage": "netorbit-logo.png",
+      "description": "CRM con integración de WhatsApp Business API bajo estrictos controles de acceso y auditoría de logs para protección de datos de clientes.",
+      "technologies": [
+        "Python",
+        "WhatsApp API",
+        "Audit Logs",
+        "React",
+        "PostgreSQL",
+        "RBAC"
+      ],
+      "githubUrl": "#",
+      "liveUrl": "https://netorbit.es",
+      "images": [
+        "netorbit-logo.png"
+      ],
+      "details": "Sistema crítico de gestión de clientes. Foco en la integridad de los datos y control de acceso basado en roles (RBAC). Logs de auditoría inmutables para trazar todas las acciones sobre datos sensibles."
+    },
+    {
+      "id": "electroprima-ecommerce",
+      "title": "E-commerce Security & Payment Ops",
+      "category": [
+        "ecommerce",
+        "fullstack",
+        "security"
+      ],
+      "featured": false,
+      "mainImage": "images/projects/electroprima/main.jpg",
+      "description": "Plataforma E-commerce con cumplimiento PCI-DSS (pasarelas), protección contra fraude transaccional y mitigación de bots.",
+      "technologies": [
+        "PrestaShop Security",
+        "PHP 8",
+        "WAF",
+        "MySQL",
+        "Fraud Prevention"
+      ],
+      "githubUrl": "https://github.com/TaielAguirre/electroprima-ecommerce",
+      "liveUrl": "https://electroprima.com",
+      "images": [
+        "images/projects/electroprima/homepage.jpg",
+        "images/projects/electroprima/product-catalog.jpg",
+        "images/projects/electroprima/admin-panel.jpg"
+      ],
+      "details": "Aseguramiento de transacciones y datos de usuarios. Implementación de CSP estricto, cookies HttpOnly/Secure y monitoreo activo de intentos de login anómalos."
+    },
+    {
+      "id": "erp-web-system",
+      "title": "ERP Web - Secure Internal Tools",
+      "category": [
+        "fullstack",
+        "automation"
+      ],
+      "featured": false,
+      "mainImage": "images/projects/erp-web/main.jpg",
+      "description": "Sistema ERP interno con autenticación robusta y segmentación de datos para evitar fugas de información corporativa.",
+      "technologies": [
+        "PHP 8",
+        "React",
+        "AG Grid",
+        "MySQL",
+        "VLANs",
+        "VPN Access"
+      ],
+      "githubUrl": "https://github.com/TaielAguirre/erp-web-system",
+      "liveUrl": "https://erp-web-demo.netlify.app",
+      "images": [
+        "images/projects/erp-web/dashboard.jpg",
+        "images/projects/erp-web/inventory.jpg",
+        "images/projects/erp-web/reports.jpg"
+      ],
+      "details": "Enfoque en la disponibilidad y confidencialidad. Acceso restringido vía VPN, logs de acceso detallados y backups automatizados fuera del sitio."
+    },
+    {
+      "id": "automation-scripts",
+      "title": "SecOps Automation Scripts",
+      "category": [
+        "automation",
+        "security"
+      ],
+      "featured": false,
+      "mainImage": "images/projects/automation/main.jpg",
+      "description": "Scripts para automatización de tareas de seguridad, rotación de claves y detección de anomalías en logs.",
+      "technologies": [
+        "Python",
+        "Log Analysis",
+        "Key Rotation",
+        "Cron",
+        "Alerting"
+      ],
+      "githubUrl": "https://github.com/TaielAguirre/automation-scripts",
+      "liveUrl": "https://automation-demo.netlify.app",
+      "images": [
+        "images/projects/automation/bot-dashboard.jpg",
+        "images/projects/automation/etl-process.jpg",
+        "images/projects/automation/monitoring.jpg"
+      ],
+      "details": "Automatización de la respuesta a incidentes y mantenimiento preventivo. Scripts para análisis de logs en busca de patrones de ataque y rotación automática de credenciales."
     },
     {
       "id": "prestashop-modules",
-      "title": "Módulos PrestaShop Personalizados",
-      "category": ["ecommerce", "fullstack"],
+      "title": "Secure PrestaShop Modules",
+      "category": [
+        "ecommerce",
+        "fullstack"
+      ],
       "featured": false,
       "mainImage": "images/projects/prestashop-modules/main.jpg",
-      "description": "Colección de módulos personalizados para PrestaShop, incluyendo integraciones con ERP, optimizaciones de performance y funcionalidades avanzadas.",
-      "technologies": ["PrestaShop", "PHP 8", "JavaScript", "MySQL", "Smarty", "jQuery", "CSS3"],
+      "description": "Desarrollo de módulos siguiendo prácticas de codificación segura para evitar vulnerabilidades comunes en plugins (SQLi, XSS).",
+      "technologies": [
+        "PrestaShop",
+        "PHP Security",
+        "Input Validation",
+        "MySQL",
+        "Smarty Escape"
+      ],
       "githubUrl": "https://github.com/TaielAguirre/prestashop-modules",
       "liveUrl": "https://prestashop-modules-demo.netlify.app",
       "images": [
@@ -132,16 +215,26 @@
         "images/projects/prestashop-modules/erp-integration.jpg",
         "images/projects/prestashop-modules/admin-config.jpg"
       ],
-      "details": "Suite de módulos desarrollados específicamente para PrestaShop que incluyen: integración avanzada con ERPs, optimizaciones de rendimiento, funcionalidades de marketing automatizado, y herramientas de análisis. Todos los módulos siguen las mejores prácticas de PrestaShop y están optimizados para performance."
+      "details": "Desarrollo de extensiones resilientes. Validación estricta de tipos de datos, uso de sentencias preparadas y escapeo de salidas para garantizar la seguridad del core."
     },
     {
       "id": "api-integration-suite",
-      "title": "Suite de Integración de APIs",
-      "category": ["fullstack", "automation"],
+      "title": "Secure API Gateway Suite",
+      "category": [
+        "fullstack",
+        "automation"
+      ],
       "featured": false,
       "mainImage": "images/projects/api-suite/main.jpg",
-      "description": "Conjunto de APIs desarrolladas con Python FastAPI y Node.js para integración con servicios externos, automatización de procesos y gestión de datos.",
-      "technologies": ["FastAPI", "Node.js", "Express", "PostgreSQL", "Redis", "Docker", "Swagger", "JWT"],
+      "description": "Gateway para integración de servicios con autenticación centralizada (JWT/OAuth) y validación de esquemas de datos.",
+      "technologies": [
+        "FastAPI",
+        "Node.js",
+        "JWT",
+        "OAuth2",
+        "Rate Limiting",
+        "Swagger"
+      ],
       "githubUrl": "https://github.com/TaielAguirre/api-integration-suite",
       "liveUrl": "https://api-suite-demo.netlify.app",
       "images": [
@@ -149,7 +242,7 @@
         "images/projects/api-suite/integration-flow.jpg",
         "images/projects/api-suite/monitoring.jpg"
       ],
-      "details": "Suite completa de APIs que facilita la integración entre diferentes sistemas. Incluye: documentación automática con Swagger, autenticación JWT, rate limiting, logging detallado, y monitoreo en tiempo real. Optimizada para alta performance y escalabilidad."
+      "details": "Middleware de seguridad para microservicios. Centraliza la autenticación y autorización, permitiendo una gestión de identidades unificada y segura."
     }
   ]
 }
