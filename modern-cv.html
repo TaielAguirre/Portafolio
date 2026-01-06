@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiel Aguirre | Profesional IT Full Stack / Ciberseguridad / Redes</title>
+    <meta name="description" content="Especialista en informática con experiencia en ciberseguridad, redes y desarrollo de software. Certificado en AWS Security, Google Cloud Security y CCSK.">
+    <meta name="keywords" content="Ciberseguridad, Cloud Security, AWS, Google Cloud, Python, Machine Learning, DevSecOps, Pentesting, Automatización Industrial, Full Stack Developer">
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00cc99;
+            --dark-color: #1a1a2e;
+            --light-color: #f5f5f7;
+            --accent-color: #ff6b6b;
+            --gray-color: #555;
+            --light-gray: #ddd;
+            --font-main: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-secondary: #6c757d;
+            --primary-light: #4dabf7;
+            --border-color: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .cv-container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            padding: 35px 30px;
+            background: linear-gradient(135deg, var(--dark-color), #16213e);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="20" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>');
+            opacity: 0.4;
+        }
+        
+        .name-title {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .name-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .contact-item i {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            width: 20px;
+        }
+        
+        .profile-summary {
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+            padding: 20px 30px;
+            margin: 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .profile-summary p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .section-title i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            margin-left: 20px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px 30px;
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 15px;
+            position: relative;
+            padding: 12px 15px;
+            background: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .job-title, .edu-title, .project-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+        
+        .company, .institution, .project-type {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-weight: 500;
+            background: var(--bg-light);
+            padding: 3px 10px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        
+        .job-description, .edu-description, .project-description {
+            margin-bottom: 15px;
+        }
+        
+        .job-description ul, .edu-description ul, .project-description ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+        
+        .job-description li, .edu-description li, .project-description li {
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+        
+        .job-description li::before, .edu-description li::before, .project-description li::before {
+            content: '▶';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        .side-content {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 20px;
+            height: fit-content;
+        }
+        
+        .skills-category {
+            margin-bottom: 12px;
+            background: white;
+            padding: 10px 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skills-category h3 {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .skills-category h3 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .skills-list {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+        
+        .skills-list li {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin: 2px;
+        }
+        
+        .skills-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+        }
+        
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 204, 153, 0.1));
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            border: 1px solid rgba(0, 102, 204, 0.2);
+        }
+        
+        .languages {
+            margin-top: 30px;
+        }
+        
+        .language-item {
+            margin-bottom: 15px;
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .language-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .language-level {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .language-bar {
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .language-progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .download-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .download-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .download-btn i {
+            margin-right: 8px;
+        }
+        
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-center {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .download-pdf-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+        
+        .download-pdf-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .cv-footer {
+            background: linear-gradient(135deg, var(--dark-color), #16213e);
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+        }
+        
+        .updated-date {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .cv-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .download-actions {
+                display: none !important;
+            }
+            
+            .header {
+                background: var(--dark-color) !important;
+            }
+            
+            .main-content {
+                page-break-inside: avoid;
+            }
+            
+            .experience-item, .project-item, .education-item {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-actions {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem !important;
+            }
+            
+            .title {
+                font-size: 1.1rem !important;
+            }
+            
+            .section-title {
+                font-size: 1.4rem !important;
+            }
+            
+            .profile-summary, .main-content {
+                padding: 15px;
+            }
+            
+            .download-pdf-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Sección principal */
+        .main-section {
+            padding: 30px;
+            border-bottom: 1px solid var(--border-color);
+            page-break-inside: avoid;
+        }
+
+        /* Separador de secciones */
+        .section-separator {
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-color), transparent);
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        /* Control de saltos de página */
+        @media print {
+            .cv-container {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .header {
+                position: relative;
+                page-break-after: avoid;
+            }
+
+            .profile-summary {
+                page-break-after: avoid;
+            }
+
+            .main-section {
+                page-break-before: auto;
+                page-break-after: auto;
+            }
+
+            .experience-item, 
+            .project-item, 
+            .education-item,
+            .skills-category {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+
+            /* Repetir encabezado en cada página */
+            .page-header {
+                display: block;
+                position: running(header);
+                padding: 10px 0;
+                border-bottom: 1px solid var(--border-color);
+                margin-bottom: 20px;
+                font-size: 0.8rem;
+                color: var(--gray-color);
+            }
+
+            @page {
+                margin: 20mm 15mm;
+                @top-center {
+                    content: element(header);
+                }
+            }
+        }
+
+        /* Ajustes de diseño para mejor legibilidad */
+        .experience-item, 
+        .project-item, 
+        .education-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .skills-category {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Mejoras en la tipografía */
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .job-title, 
+        .project-title, 
+        .edu-title {
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .company, 
+        .project-type, 
+        .institution {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Ajustes responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-container {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Encabezado que se repite en cada página -->
+        <div class="page-header">
+            TAIEL AGUIRRE - Profesional IT Full Stack / Ciberseguridad / Redes
+        </div>
+        
+        <div class="download-actions">
+            <a href="javascript:window.print()" class="download-btn">
+                <i class="fas fa-print"></i> Imprimir CV
+            </a>
+            <a href="#" id="download-pdf" class="download-btn">
+                <i class="fas fa-file-pdf"></i> Descargar PDF
+            </a>
+        </div>
+        
+        <div class="header main-section">
+            <div class="name-title">
+                <h1>TAIEL AGUIRRE</h1>
+                <div class="title">Full Stack Developer | Cloud & Network Engineer | IT Specialist</div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    taielaguirr@gmail.com
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    291-4476665
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Bahía Blanca, Buenos Aires, Argentina
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    linkedin.com/in/taielaguirre
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    github.com/taielaguirre
+                </div>
+            </div>
+        </div>
+        
+        <div class="profile-summary main-section">
+            <h2 class="section-title"><i class="fas fa-user-tie"></i>PERFIL PROFESIONAL</h2>
+            <p>Especialista en informática con experiencia en desarrollo de software, redes y ciberseguridad. Certificado en AWS Security, Google Cloud Security y CCSK. Enfoque en desarrollo de soluciones digitales empresariales, automatización de procesos y protección de sistemas. Sólida formación en programación, administración de redes y seguridad informática, con historial comprobado en implementación de aplicaciones comerciales seguras y medidas de protección.</p>
+            
+            <div class="download-center">
+                <a href="#" id="download-pdf-main" class="download-pdf-btn">
+                    <i class="fas fa-file-pdf"></i> Descargar CV en PDF
+                </a>
+            </div>
+        </div>
+        
+        <div class="section-separator"></div>
+        
+        <div class="main-content">
+            <div class="left-content">
+                <div class="experience-section main-section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i>EXPERIENCIA PROFESIONAL</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">E-commerce & Full Stack Developer</div>
+                        <div class="company">Electroprima S.L.R</div>
+                        <div class="date">Octubre 2024 - Presente</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Gestión y desarrollo de plataforma e-commerce con PrestaShop</li>
+                                <li>Desarrollo de aplicaciones internas utilizando PHP, Java y Python</li>
+                                <li>Implementación de buenas prácticas OWASP y protocolos de seguridad</li>
+                                <li>Automatización de procesos internos y flujos de trabajo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Instructor de Cursos IT</div>
+                        <div class="company">Tauro Computación</div>
+                        <div class="date">2023 - 2024</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Instrucción en configuración de hardware y redes informáticas</li>
+                                <li>Desarrollo de material educativo y guías prácticas</li>
+                                <li>Configuración y mantenimiento de equipos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Encargado de Telecomunicaciones</div>
+                        <div class="company">SD Energías Renovables</div>
+                        <div class="date">2022 - 2023</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Configuración y mantenimiento de antenas y equipos wireless</li>
+                                <li>Instalación y configuración de sistemas de seguridad</li>
+                                <li>Soporte técnico y atención al cliente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-separator"></div>
+                
+                <div class="projects-section main-section">
+                    <h2 class="section-title"><i class="fas fa-project-diagram"></i>PROYECTOS DESTACADOS</h2>
+                    
+                    <div class="project-item">
+                        <div class="project-title">OrbitaIA - Plataforma de IA Empresarial</div>
+                        <div class="project-type">Desarrollo Full Stack & IA</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Desarrollo de plataforma con integración de servicios de IA</li>
+                                <li>Arquitectura de microservicios con Python FastAPI y React/Next.js</li>
+                                <li>Implementación de sistema conversacional (GPT-4, Claude, DeepSeek)</li>
+                                <li>Integración con PostgreSQL, Vector DB y Redis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Sistema de Gestión ERP</div>
+                        <div class="project-type">Aplicación Web Empresarial</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Desarrollo de aplicación web empresarial con PHP 8 y React</li>
+                                <li>Implementación de interfaz AG Grid Enterprise</li>
+                                <li>Sistema de gestión multi-moneda y actualizaciones automáticas</li>
+                                <li>Integración con sistema Flexxus y APIs externas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="side-content">
+                <div class="certifications-section main-section">
+                    <h2 class="section-title"><i class="fas fa-certificate"></i>CERTIFICACIONES</h2>
+                    
+                    <div class="education-item">
+                        <div class="edu-title">Administración e Instalación de Redes Informáticas</div>
+                        <div class="institution">Escuela Municipal "San Roque"</div>
+                        <div class="cert-badge">540 horas acreditadas</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="edu-title">Formación en Ciberseguridad</div>
+                        <div class="institution">Cisco Academy, HarvardX CS50, Universidad de Maryland</div>
+                        <div class="cert-badge">Networking</div>
+                        <div class="cert-badge">Seguridad Informática</div>
+                        <div class="cert-badge">Ciberseguridad</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="edu-title">Google Cloud Professional Security Engineer</div>
+                        <div class="institution">Google Cloud</div>
+                        <div class="date">2025</div>
+                        <div class="cert-badge">Cloud Security</div>
+                        <div class="cert-badge">IAM</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="edu-title">AWS Certified Security – Specialty</div>
+                        <div class="institution">Amazon Web Services</div>
+                        <div class="date">2024</div>
+                        <div class="cert-badge">AWS Security</div>
+                        <div class="cert-badge">Cloud Architecture</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="edu-title">Certificate of Cloud Security Knowledge (CCSK)</div>
+                        <div class="institution">Cloud Security Alliance</div>
+                        <div class="date">2024</div>
+                        <div class="cert-badge">Cloud Security</div>
+                        <div class="cert-badge">Risk Management</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="edu-title">Inteligencia Artificial Aplicada a Negocios</div>
+                        <div class="institution">Universidad Nacional Guillermo Brown</div>
+                        <div class="cert-badge">IA Empresarial</div>
+                        <div class="cert-badge">Procesos de Negocio</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="edu-title">Python y Ciencia de Datos</div>
+                        <div class="institution">Santander Academy</div>
+                        <div class="cert-badge">Data Science</div>
+                        <div class="cert-badge">Machine Learning</div>
+                    </div>
+                </div>
+                
+                <div class="section-separator"></div>
+                
+                <div class="skills-section main-section">
+                    <h2 class="section-title"><i class="fas fa-code"></i>COMPETENCIAS TÉCNICAS</h2>
+                    
+                    <div class="skills-category">
+                        <h3><i class="fas fa-laptop-code"></i>Desarrollo Full Stack</h3>
+                        <ul class="skills-list">
+                            <li>Python, JavaScript (ES6+)</li>
+                            <li>PHP 8, Java</li>
+                            <li>FastAPI, Django, React</li>
+                            <li>Node.js, Jest, PyTest</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3><i class="fas fa-cloud"></i>Cloud & DevOps</h3>
+                        <ul class="skills-list">
+                            <li>AWS, Google Cloud Platform</li>
+                            <li>Docker, Kubernetes</li>
+                            <li>Jenkins, GitHub Actions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3><i class="fas fa-database"></i>Bases de Datos</h3>
+                        <ul class="skills-list">
+                            <li>PostgreSQL, MySQL</li>
+                            <li>MongoDB, Redis</li>
+                            <li>Vector DB, Memcached</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-separator"></div>
+
+                <div class="languages">
+                    <h2 class="section-title"><i class="fas fa-language"></i>IDIOMAS</h2>
+                    
+                    <div class="language-item">
+                        <div class="language-name">
+                            <span>Español</span>
+                            <span class="language-level">Nativo</span>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="language-item">
+                        <div class="language-name">
+                            <span>Inglés</span>
+                            <span class="language-level">B2 (Profesional)</span>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="cv-footer">
+        <div class="footer-content">
+            <p class="updated-date">Última actualización: Mayo 2024</p>
+            <div class="footer-links">
+                <a href="https://github.com/taielaguirre" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/taielaguirre" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function downloadPDF() {
+            // Ocultar los botones de descarga para el PDF
+            const downloadActions = document.querySelector('.download-actions');
+            const downloadCenter = document.querySelector('.download-center');
+            downloadActions.style.display = 'none';
+            downloadCenter.style.display = 'none';
+            
+            // Configuración del PDF
+            const options = {
+                margin: 10,
+                filename: 'CV-Taiel-Aguirre-2025.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // Generar el PDF
+            const element = document.body;
+            html2pdf().set(options).from(element).save().then(function() {
+                // Mostrar los botones de nuevo después de generar el PDF
+                downloadActions.style.display = 'flex';
+                downloadCenter.style.display = 'block';
+            });
+        }
+        
+        document.getElementById('download-pdf').addEventListener('click', function(e) {
+            e.preventDefault();
+            downloadPDF();
+        });
+        
+        document.getElementById('download-pdf-main').addEventListener('click', function(e) {
+            e.preventDefault();
+            downloadPDF();
+        });
+        
+        // Animaciones suaves al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.experience-item, .education-item, .project-item, .skills-category');
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    item.style.transition = 'all 0.6s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html> 
