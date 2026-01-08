@@ -1,0 +1,227 @@
+%----------------------------------------------------------------------------------------------------------------------------------%
+% Telecom Visual Resume - Sidebar Style
+% Author: Taiel Aguirre
+%----------------------------------------------------------------------------------------------------------------------------------%
+\documentclass[10pt,a4paper]{article}
+
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[default]{raleway} 
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage[margin=0cm, top=0cm, bottom=0cm, left=0cm, right=0cm]{geometry}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Definición de colores (Telecom Style: Teal/Blue/Grey)
+\definecolor{sidebarcolor}{HTML}{263238} % Dark Blue Grey
+\definecolor{sidebartext}{HTML}{ECEFF1}  % Blue Grey Light
+\definecolor{maincolor}{HTML}{37474F}    % Dark Grey for text
+\definecolor{accentcolor}{HTML}{00897B}  % Teal for specialized accents
+
+% Configuración de columnas
+\columnratio{0.32} % 32% Width for sidebar
+\setlength{\columnsep}{0pt}
+
+% Estilos de texto
+\newcommand{\name}[1]{{\Huge\bfseries\color{sidebartext} #1}}
+\newcommand{\tagline}[1]{{\large\color{accentcolor} #1}}
+\newcommand{\sectiontitle}[1]{{\Large\bfseries\color{accentcolor}\uppercase{#1}}\\[2pt]{\color{accentcolor}\rule{0.1\textwidth}{2pt}}}
+\newcommand{\sidebarsection}[1]{{\large\bfseries\color{sidebartext}\uppercase{#1}}\\[2pt]{\color{sidebartext}\rule{0.2\textwidth}{1pt}}}
+
+%----------------------------------------------------------------------------------------------------------------------------------%
+\begin{document}
+
+\begin{paracol}{2}
+
+%----------------------------------------------------------------------------------------------------------------------------------%
+%   SIDEBAR (LEFT COLUMN)
+%----------------------------------------------------------------------------------------------------------------------------------%
+\backgroundcolor{c[0]}{sidebarcolor} 
+\begin{tcolorbox}[colback=sidebarcolor,colframe=sidebarcolor,boxrule=0pt,arc=0pt,outer arc=0pt,height=1.0\textheight,valign=center,left=0.2cm,right=0.2cm]
+
+\vspace{0.2cm}
+
+% --- CONTACTO ---
+\begin{center}
+    \name{TAIEL}\\[3pt]
+    \name{AGUIRRE}
+\end{center}
+
+\vspace{0.5cm}
+
+\sidebarsection{Contacto}
+\vspace{0.2cm}
+\color{sidebartext}
+\footnotesize
+\faPhone \hspace{0.1cm} +54 291-4476665\\[0.15cm]
+\faEnvelope \hspace{0.1cm} braiantaielaguirre@gmail.com\\[0.15cm]
+\faMapMarker* \hspace{0.1cm} Bahía Blanca, Buenos Aires\\[0.15cm]
+\faLinkedin \hspace{0.1cm} \href{https://linkedin.com/in/tu-usuario}{LinkedIn}\\[0.15cm]
+\faGlobe \hspace{0.1cm} \href{https://taielaguirre.github.io/Portafolio/}{taielaguirre.github.io}
+
+\vspace{0.5cm}
+
+% --- SKILLS TECH ---
+\sidebarsection{Habilidades}
+\vspace{0.2cm}
+
+\textbf{\footnotesize REDES \& INFRAESTRUCTURA}
+\begin{itemize}[leftmargin=0.3cm, label={\tiny\faCircle}, noitemsep, topsep=0pt]
+    \footnotesize
+    \item Radioenlaces (Ubiquiti/Mikrotik)
+    \item Configuración de Routers/Switch
+    \item Cableado Estructurado (Cat 5e/6)
+    \item Enlaces PTP y PTMP
+    \item Diagnóstico de Hardware PC
+    \item Montaje de Torres y Equipos
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{\footnotesize SISTEMAS \& SERVIDORES}
+\begin{itemize}[leftmargin=0.3cm, label={\tiny\faCircle}, noitemsep, topsep=0pt]
+    \footnotesize
+    \item Linux (Ubuntu/Debian) Admin
+    \item Virtualización (VPS, Docker)
+    \item Seguridad de Red (Firewall/VPN)
+    \item CCTV (Instalación/Config)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{\footnotesize HERRAMIENTAS}
+\begin{itemize}[leftmargin=0.3cm, label={\tiny\faCircle}, noitemsep, topsep=0pt]
+    \footnotesize
+    \item Winbox (Mikrotik) / UniFi
+    \item Herramientas de Crimpeo/Testeo
+    \item Office / Gestión de Tickets
+\end{itemize}
+
+\vspace{0.5cm}
+
+% --- EDUCACIÓN ---
+\sidebarsection{Educación}
+\vspace{0.2cm}
+\footnotesize
+
+\textbf{Administración de Redes}\\[1pt]
+Escuela "San Roque" -- 540 Hrs\\
+\textit{Acreditado - Prof. Jorge Arreyes}
+
+\vspace{0.2cm}
+
+\textbf{Nivel Secundario}\\[1pt]
+EES 11 "Cesar Milstein"\\
+\textit{Completo}
+
+\vspace{0.5cm}
+
+% --- INFO EXTRA ---
+\sidebarsection{Otros Datos}
+\vspace{0.2cm}
+\footnotesize
+\textbf{Licencia de Conducir:} Al día\\[2pt]
+\textbf{Disponibilidad:} Full-time\\[2pt]
+\textbf{Idiomas:} Inglés Técnico
+
+\end{tcolorbox}
+
+%----------------------------------------------------------------------------------------------------------------------------------%
+%   MAIN CONTENT (RIGHT COLUMN)
+%----------------------------------------------------------------------------------------------------------------------------------%
+\switchcolumn
+\begin{tcolorbox}[colback=white,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,height=1.0\textheight,left=0.5cm,right=0.5cm,top=0.5cm]
+
+% --- HEADER ---
+{\Huge\bfseries\color{maincolor} Técnico Telecomunicaciones}\\[5pt]
+{\Large\color{accentcolor} Administrador de Redes \& Soporte IT}
+
+\vspace{0.2cm}
+
+% --- SUMMARY ---
+\sectiontitle{Perfil Profesional}
+\vspace{0.15cm}
+\color{maincolor}
+\small
+Técnico informático y administrador de redes con sólida experiencia en campo. Especializado en la instalación, configuración y mantenimiento de **radioenlaces (WISP)**, infraestructura de red cableada e inalámbrica, y soporte de hardware. Combino habilidades manuales (montaje de torres, cableado) con conocimientos avanzados de configuración lógica (dominios, servidores Linux, seguridad). Resolutivo, adaptable y orientado a garantizar la conectividad y continuidad operativa.
+
+\vspace{0.25cm}
+
+% --- EXPERIENCIA ---
+\sectiontitle{Experiencia Laboral}
+\vspace{0.15cm}
+
+\textbf{\large SD Energías Renovables} \hfill \textit{2022 -- 2023}\\
+\textit{\color{accentcolor} Encargado de Telecomunicaciones y Soporte}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1pt]
+    \small
+    \item \textbf{Gestión Integral WISP:} Planificación y ejecución de instalaciones de Internet Rural. Gestión de inventario y coordinación de cuadrillas.
+    \item \textbf{Infraestructura L2/L3:} Configuración avanzada de Ubiquiti (AirMax, LTU) y Mikrotik (RouterOS, Queues, VLANs).
+    \item \textbf{Trabajo en Altura:} Montaje seguro de torres, alineación de precisión de antenas PTP/PTMP y mantenimiento preventivo.
+    \item \textbf{CCTV y Seguridad:} Soluciones de videovigilancia IP, acceso remoto (Port Forwarding, DDNS) y cableado estructurado.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{\large Electroprima S.L.R} \hfill \textit{Oct 2024 -- Presente}\\
+\textit{\color{accentcolor} Administrador de Sistemas \& Redes}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1pt]
+    \small
+    \item \textbf{Seguridad de Red:} VPNs (WireGuard) inter-sucursales. Firewalls (iptables).
+    \item \textbf{Servidores Linux:} Hosting web (PrestaShop) y servicios internos. Automatización de backups y monitoreo (Bash/Python).
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{\large Tauro Computación} \hfill \textit{2023 -- 2024}\\
+\textit{\color{accentcolor} Instructor Técnico}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1pt]
+    \small
+    \item \textbf{Formación Técnica:} Dictado de cursos de "Redes y Telecomunicaciones" (OSI, TCP/IP) y "Reparación de Hardware".
+    \item \textbf{Hardware:} Diagnóstico, uso de multímetro/tester y crimpeo.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{\large MaxHard PC} \hfill \textit{Experiencia Previa}\\
+\textit{\color{accentcolor} Técnico de Hardware}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1pt]
+    \small
+    \item Diagnóstico y reparación de placas madre y armado de servidores.
+\end{itemize}
+
+\vspace{0.25cm}
+
+% --- COMPETENCIAS ADICIONALES ---
+\sectiontitle{Conocimientos Técnicos}
+\vspace{0.15cm}
+
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1pt]
+    \small
+    \item **Protocolos:** TCP/IP, DHCP, DNS, NAT, VLAN, OSPF, VPN (IPSec/WireGuard).
+    \item **Wireless:** 2.4/5.8GHz, Zona de Fresnel, Alineación, AirOS / RouterOS.
+    \item **Herramientas:** Winbox, Wireshark, Putty, Crimpadora, Tester, Multímetro.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\sectiontitle{Diferencial Tecnológico (Plus)}
+\vspace{0.2cm}
+\small
+A diferencia de un técnico tradicional, aporto conocimientos de **Desarrollo y Cloud** para modernizar la gestión de redes:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+    \small
+    \item \textbf{Automatización:} Creación de scripts en **Python y Bash** para automatizar backups de routers, monitoreo de ping y alertas por Telegram/WhatsApp.
+    \item \textbf{Cloud \& Virtualización:} Manejo de **Docker** para desplegar controladores (UniFi/UISP) y servidores de monitoreo (Zabbix/Grafana) en contenedores ligeros.
+    \item \textbf{IA Aplicada:} Uso de herramientas de IA para optimizar configuraciones, analizar logs de errores complejos y generar reportes técnicos rápidos.
+\end{itemize}
+
+\end{tcolorbox}
+\end{paracol}
+\end{document}

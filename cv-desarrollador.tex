@@ -1,0 +1,217 @@
+%----------------------------------------------------------------------------------------------------------------------------------%
+% Developer Visual Resume - Sidebar Style
+% Author: Taiel Aguirre
+%----------------------------------------------------------------------------------------------------------------------------------%
+\documentclass[10pt,a4paper]{article}
+
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[default]{raleway} 
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage[margin=0cm, top=0cm, bottom=0cm, left=0cm, right=0cm]{geometry}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Definición de colores (Dev Style: Dark Blue / Vivid Blue)
+\definecolor{sidebarcolor}{HTML}{0f172a} % Slate 900
+\definecolor{sidebartext}{HTML}{f1f5f9}  % Slate 100
+\definecolor{maincolor}{HTML}{334155}    % Slate 700
+\definecolor{accentcolor}{HTML}{2563eb}  % Blue 600 (Dev standard)
+
+% Configuración de columnas
+\columnratio{0.32} % 32% Width for sidebar
+\setlength{\columnsep}{0pt}
+
+% Estilos de texto
+\newcommand{\name}[1]{{\Huge\bfseries\color{sidebartext} #1}}
+\newcommand{\tagline}[1]{{\large\color{accentcolor} #1}}
+\newcommand{\sectiontitle}[1]{{\Large\bfseries\color{accentcolor}\uppercase{#1}}\\[2pt]{\color{accentcolor}\rule{0.1\textwidth}{2pt}}}
+\newcommand{\sidebarsection}[1]{{\large\bfseries\color{sidebartext}\uppercase{#1}}\\[2pt]{\color{sidebartext}\rule{0.2\textwidth}{1pt}}}
+
+%----------------------------------------------------------------------------------------------------------------------------------%
+\begin{document}
+
+\begin{paracol}{2}
+
+%----------------------------------------------------------------------------------------------------------------------------------%
+%   SIDEBAR (LEFT COLUMN)
+%----------------------------------------------------------------------------------------------------------------------------------%
+\backgroundcolor{c[0]}{sidebarcolor} 
+\begin{tcolorbox}[colback=sidebarcolor,colframe=sidebarcolor,boxrule=0pt,arc=0pt,outer arc=0pt,height=1.0\textheight,valign=center,left=0.2cm,right=0.2cm]
+
+\vspace{0.2cm}
+
+% --- CONTACTO ---
+\begin{center}
+    \name{TAIEL}\\[3pt]
+    \name{AGUIRRE}
+\end{center}
+
+\vspace{0.5cm}
+
+\sidebarsection{Contacto}
+\vspace{0.2cm}
+\color{sidebartext}
+\footnotesize
+\faPhone \hspace{0.1cm} +54 291-4476665\\[0.15cm]
+\faEnvelope \hspace{0.1cm} braiantaielaguirre@gmail.com\\[0.15cm]
+\faMapMarker* \hspace{0.1cm} Bahía Blanca, Buenos Aires\\[0.15cm]
+\faLinkedin \hspace{0.1cm} \href{https://linkedin.com/in/tu-usuario}{LinkedIn}\\[0.15cm]
+\faGithub \hspace{0.1cm} \href{https://github.com/TaielAguirre}{TaielAguirre}\\[0.15cm]
+\faGlobe \hspace{0.1cm} \href{https://taielaguirre.github.io/Portafolio/}{taielaguirre.github.io}
+
+\vspace{0.5cm}
+
+% --- STACK TECNOLÓGICO ---
+\sidebarsection{Stack Tecnológico}
+\vspace{0.2cm}
+
+\textbf{\footnotesize FRONTEND MODERNO}
+\begin{itemize}[leftmargin=0.3cm, label={\tiny\faCircle}, noitemsep, topsep=0pt]
+    \footnotesize
+    \item React.js / Next.js 14
+    \item TypeScript / JavaScript (ES6+)
+    \item Tailwind CSS / Shadcn/ui
+    \item HTML5 / CSS3 / Responsive
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{\footnotesize BACKEND \& API}
+\begin{itemize}[leftmargin=0.3cm, label={\tiny\faCircle}, noitemsep, topsep=0pt]
+    \footnotesize
+    \item Python (FastAPI / Django)
+    \item Node.js (Express / NestJS)
+    \item PHP 8.2 (PrestaShop Dev)
+    \item RESTful APIs / GraphQL
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{\footnotesize DATOS \& DEVOPS}
+\begin{itemize}[leftmargin=0.3cm, label={\tiny\faCircle}, noitemsep, topsep=0pt]
+    \footnotesize
+    \item PostgreSQL / MySQL / Redis
+    \item Docker / Docker Compose
+    \item Git / GitHub Actions (CI/CD)
+    \item Linux Server Management
+\end{itemize}
+
+\vspace{0.5cm}
+
+% --- EDUCACIÓN ---
+\sidebarsection{Formación}
+\vspace{0.2cm}
+\footnotesize
+
+\textbf{Full-Stack \& Cloud Skills}\\[1pt]
+\textit{Autodidacta \& Cursos Técnicos}\\
+Platzi / Udemy / Documentación Oficial
+
+\vspace{0.2cm}
+
+\textbf{Administración de Redes}\\[1pt]
+Escuela "San Roque" -- 540 Hrs\\
+\textit{Acreditado}
+
+\vspace{0.5cm}
+\sidebarsection{Idiomas}
+\vspace{0.2cm}
+\footnotesize
+\textbf{Español:} Nativo\\
+\textbf{Inglés:} Técnico Avanzado (Lectura/Documentación)
+
+\end{tcolorbox}
+
+%----------------------------------------------------------------------------------------------------------------------------------%
+%   MAIN CONTENT (RIGHT COLUMN)
+%----------------------------------------------------------------------------------------------------------------------------------%
+\switchcolumn
+\begin{tcolorbox}[colback=white,colframe=white,boxrule=0pt,arc=0pt,outer arc=0pt,height=1.0\textheight,left=0.5cm,right=0.5cm,top=0.6cm]
+
+% --- HEADER ---
+{\Huge\bfseries\color{maincolor} Full Stack Engineer}\\[5pt]
+{\Large\color{accentcolor} Desarrollo Web Moderno | Microservicios | E-commerce}
+
+\vspace{0.3cm}
+
+% --- SUMMARY ---
+\sectiontitle{Perfil Profesional}
+\vspace{0.15cm}
+\color{maincolor}
+\small
+Desarrollador de software con experiencia en la construcción de aplicaciones web escalables y soluciones empresariales. Especializado en el stack moderno (**Next.js, Python/FastAPI, TypeScript**) y desarrollo de sistemas a medida (CRM, E-commerce). Apasionado por la calidad de código, la arquitectura limpia (Clean Architecture) y la optimización de rendimiento. Busco desafíos donde pueda aportar soluciones innovadoras desde el backend hasta el frontend.
+
+\vspace{0.3cm}
+
+% --- EXPERIENCIA ---
+\sectiontitle{Experiencia en Desarrollo}
+\vspace{0.15cm}
+
+\textbf{\large NetOrbit} \hfill \textit{Presente}\\
+\textit{\color{accentcolor} CTO \& Lead Developer}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+    \small
+    \item \textbf{Arquitectura de Microservicios:} Diseño y desarrollo de un CRM SaaS desde cero utilizando **FastAPI (Python)** para el core backend y **Next.js** para el frontend, desplegado en contenedores **Docker**.
+    \item \textbf{Features Complejas:} Implementación de sistema de autenticación custom (JWT/Auth0), integración de WhatsApp API para bots conversacionales y dashboard de métricas en tiempo real.
+    \item \textbf{DevOps Culture:} Configuración de pipelines CI/CD en GitHub Actions para testing y deploy automático en servidores VPS.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{\large Electroprima S.L.R} \hfill \textit{Oct 2024 -- Presente}\\
+\textit{\color{accentcolor} Full Stack Developer \& E-commerce Specialist}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+    \small
+    \item \textbf{Desarrollo PrestaShop:} Creación y mantenimiento de tienda online de alto tráfico. Desarrollo de módulos personalizados en **PHP y JavaScript** para logística y facturación.
+    \item \textbf{API Integrations:} Desarrollo de middleware en Python para sincronizar stock y precios en tiempo real entre el ERP (Flexxus) y la web, reduciendo errores manuales en un 90\%.
+    \item \textbf{Optimización Web:} Mejora de Core Web Vitals, implementación de caché avanzado (Varnish/Redis) y optimización de consultas SQL.
+\end{itemize}
+
+\vspace{0.3cm}
+
+% --- PROYECTOS DESTACADOS (TuMenu vuelve aquí) ---
+\sectiontitle{Proyectos Destacados}
+\vspace{0.15cm}
+
+\textbf{\large TuMenu \small(SaaS Gastronómico)} \hfill \textit{Personal Project}\\
+\textit{\color{accentcolor} Next.js 14 + PostgreSQL + Prisma}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+    \small
+    \item Plataforma completa para gestión de restaurantes y cartas digitales QR.
+    \item **Frontend:** Next.js App Router, Server Components y Server Actions para máxima performance SEO.
+    \item **Backend:** Base de datos PostgreSQL gestionada con Prisma ORM. Autenticación robusta con NextAuth.
+    \item **Feats:** Panel de administración, subida de imágenes optimizada (Cloudinary) y generación dinámica de QRs.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{\large NetOrbit CRM \small(Sistema Empresarial)} \\
+\textit{\color{accentcolor} React + FastAPI + Docker}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+    \small
+    \item Sistema híbrido con módulos de IA para clasificación de clientes y automatización de ventas.
+    \item Arquitectura hexagonal en backend para fácil testabilidad y mantenimiento.
+\end{itemize}
+
+\vspace{0.4cm}
+
+% --- COMPETENCIAS BLANDAS ---
+\sectiontitle{Soft Skills}
+\vspace{0.2cm}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+    \small
+    \item **Resolución de Problemas:** Enfoque analítico para depurar errores complejos en producción.
+    \item **Adaptabilidad:** Capacidad rápida para aprender nuevos stacks (ej. migración de PHP a Python).
+    \item **Visión de Producto:** Entendimiento del negocio para priorizar features de alto valor.
+\end{itemize}
+
+\end{tcolorbox}
+\end{paracol}
+\end{document}
