@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security & AI Engineer | Taiel Aguirre</title>
+    <meta name="description"
+        content="Especialista en Seguridad de Aplicaciones, Cloud Security y AI Safety. Protegiendo el futuro de la inteligencia artificial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="image-optimization.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        /* Security Specific Theme Overrides */
+        :root {
+            --primary-color: #00ff41;
+            /* Cyber Green */
+            --secondary-color: #0c0c0c;
+            /* Darker Black */
+            --accent-color: #008F11;
+            --text-color: #e0e0e0;
+            --bg-color: #050505;
+        }
+
+        body.security-theme {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'JetBrains Mono', monospace;
+            /* More tech/hacker vibe */
+        }
+
+        .security-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('images/hero-security.png');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            /* Taller hero */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .hero-title .title-name {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        .service-card {
+            border: 1px solid #333;
+            background: #111;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .service-icon i {
+            color: var(--primary-color);
+        }
+
+        /* Glitch effect on hover for buttons */
+        .btn-primary {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+            color: black;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body class="security-theme">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <img src="netorbit-logo.png" alt="NETorbit Logo" class="logo-image">
+                    <span class="logo-brand" style="color:white;">SEC<span
+                            style="color:var(--primary-color);">Ops</span></span>
+                </a>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="security.html" class="nav-link active">Security & AI</a>
+                <a href="telecom.html" class="nav-link">Telecom</a>
+                <a href="developer.html" class="nav-link">Developer</a>
+                <a href="#contact" class="btn btn-primary btn-sm"
+                    style="margin-left: 1rem; padding: 0.5rem 1rem;">Contactar</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="security-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" style="margin-bottom: 1rem;">
+                    <span class="title-brand"
+                        style="display:block; font-size: 1.2rem; color: #aaa; margin-bottom: 10px;">PROTEGER LO QUE
+                        IMPORTA</span>
+                    <span class="title-name" style="font-size: 3.5rem; font-weight: 800;">AI & CLOUD SECURITY</span>
+                </h1>
+                <p class="hero-description"
+                    style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem; color: #ccc;">
+                    Ingeniería de seguridad ofensiva y defensiva para la era de la IA. Protejo infraestructuras
+                    críticas, pipelines de datos y modelos de machine learning contra amenazas emergentes.
+                </p>
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="#services" class="btn btn-primary">
+                        <i class="fas fa-shield-alt"></i> Ver Servicios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <section id="services" class="services" style="padding: 5rem 0; background-color: #0a0a0a;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="section-title" style="color: white; font-size: 2.5rem;">Dominios de Seguridad</h2>
+                <div style="width: 80px; height: 3px; background: var(--primary-color); margin: 1rem auto;"></div>
+            </div>
+
+            <div class="services-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+                <div class="service-card" style="padding: 2rem; border-radius: 8px;">
+                    <div class="service-icon" style="font-size: 2.5rem; margin-bottom: 1.5rem;">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 1rem;">AI Security & Safety</h3>
+                    <p style="color: #bbb; line-height: 1.6;">Auditoría de modelos LLM, prevención de Prompt Injection y
+                        Data Poisoning. Implementación de guardrails para sistemas de IA generativa en producción.</p>
+                </div>
+
+                <div class="service-card" style="padding: 2rem; border-radius: 8px;">
+                    <div class="service-icon" style="font-size: 2.5rem; margin-bottom: 1.5rem;">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 1rem;">Cloud Security (AWS/GCP)</h3>
+                    <p style="color: #bbb; line-height: 1.6;">Arquitectura Zero Trust, gestión de identidades (IAM) y
+                        protección de cargas de trabajo en Kubernetes (CKS). Hardening de infraestructura.</p>
+                </div>
+
+                <div class="service-card" style="padding: 2rem; border-radius: 8px;">
+                    <div class="service-icon" style="font-size: 2.5rem; margin-bottom: 1.5rem;">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 1rem;">DevSecOps Pipeline</h3>
+                    <p style="color: #bbb; line-height: 1.6;">Integración de seguridad en CI/CD. Análisis estático y
+                        dinámico (SAST/DAST), escaneo de contenedores y gestión de secretos automatizada.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" style="padding: 4rem 0; background-color: #050505;">
+        <div class="container">
+            <h3 style="text-align: center; color: white; margin-bottom: 3rem;">Certificaciones & Standards</h3>
+            <div class="cert-list" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+                <!-- Reusing cert items but styled for this theme -->
+                <div class="cert-item"
+                    style="border: 1px solid #333; padding: 1rem 2rem; border-radius: 50px; background: #111; display: flex; align-items: center; gap: 1rem;">
+                    <i class="fab fa-google" style="color: var(--primary-color);"></i>
+                    <span style="color: white; font-weight: 500;">Google Professional Cloud Security</span>
+                </div>
+                <div class="cert-item"
+                    style="border: 1px solid #333; padding: 1rem 2rem; border-radius: 50px; background: #111; display: flex; align-items: center; gap: 1rem;">
+                    <i class="fas fa-cubes" style="color: var(--primary-color);"></i>
+                    <span style="color: white; font-weight: 500;">CKS (Kubernetes Security)</span>
+                </div>
+                <div class="cert-item"
+                    style="border: 1px solid #333; padding: 1rem 2rem; border-radius: 50px; background: #111; display: flex; align-items: center; gap: 1rem;">
+                    <i class="fas fa-shield-alt" style="color: var(--primary-color);"></i>
+                    <span style="color: white; font-weight: 500;">OWASP Top 10 / ASVS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Highlight -->
+    <section style="padding: 5rem 0; background: #0c0c0c;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="section-title" style="color: white;">Proyecto Destacado</h2>
+            </div>
+            <div class="project-card"
+                style="background: #151515; border: 1px solid #222; max-width: 800px; margin: 0 auto; padding: 0; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="padding: 2rem;">
+                    <h3 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">Secure AI Gateway</h3>
+                    <p style="color: var(--primary-color); font-size: 0.9rem; margin-bottom: 1.5rem;">PYTHON • LANGCHAIN
+                        • OAUTH2</p>
+                    <p style="color: #aaa; margin-bottom: 1.5rem;">
+                        Middleware de seguridad para aplicaciones empresariales que consumen LLMs. Implementa filtrado
+                        de input/output, sanitización de PII en tiempo real, rate limiting por usuario y logging de
+                        auditoría inmutable.
+                    </p>
+                    <a href="#" class="btn btn-primary" style="display: inline-block;">Ver Arquitectura</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="cta"
+        style="padding: 5rem 0; text-align: center; background: linear-gradient(180deg, #050505 0%, #001f05 100%);">
+        <div class="container">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">¿Tu infraestructura es segura?</h2>
+            <p style="color: #ccc; margin-bottom: 2rem; font-size: 1.2rem;">Hablemos sobre cómo blindar tus activos
+                digitales.</p>
+            <a href="mailto:braiantaielaguirre@gmail.com" class="btn btn-primary"
+                style="font-size: 1.1rem; padding: 1rem 2rem;">
+                <i class="fas fa-envelope"></i> Iniciar Auditoría
+            </a>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Simple Nav Toggle Script Inline for simplicity
+        document.getElementById('nav-toggle').addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
