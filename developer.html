@@ -81,6 +81,23 @@
             z-index: 0;
         }
 
+        .dev-page h1,
+        .dev-page h2,
+        .dev-page h3,
+        .dev-page h4,
+        .dev-page h5,
+        .dev-page h6 {
+            color: var(--dev-text);
+        }
+
+        .dev-page p {
+            color: var(--dev-muted);
+        }
+
+        .dev-page a {
+            color: inherit;
+        }
+
         .dev-page .navbar {
             background: rgba(8, 13, 28, 0.8);
             backdrop-filter: blur(14px);
@@ -612,16 +629,16 @@
                     </div>
                     <div class="metric-grid">
                         <div class="metric-card">
-                            <div class="metric-value">12+</div>
+                            <div class="metric-value">8+</div>
                             <div class="metric-label">Soluciones entregadas</div>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">99%</div>
-                            <div class="metric-label">Foco en estabilidad</div>
+                            <div class="metric-value">En</div>
+                            <div class="metric-label">Mejora continua</div>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">24/7</div>
-                            <div class="metric-label">Mentalidad de producción</div>
+                            <div class="metric-value">QA</div>
+                            <div class="metric-label">Validación antes de entrega</div>
                         </div>
                     </div>
                 </aside>
@@ -640,7 +657,7 @@
                     <button class="chip-btn" data-filter="fullstack">Full-Stack</button>
                     <button class="chip-btn" data-filter="automation">Automatización</button>
                     <button class="chip-btn" data-filter="ecommerce">E-commerce</button>
-                    <button class="chip-btn" data-filter="security">Secure Dev</button>
+                    <button class="chip-btn" data-filter="security">Seguridad aplicada</button>
                 </div>
 
                 <div class="project-grid" id="dev-projects-grid">
@@ -787,7 +804,7 @@
             if (categories.includes('fullstack')) return 'Plataforma Full-Stack';
             if (categories.includes('ecommerce')) return 'E-commerce';
             if (categories.includes('automation')) return 'Automatización';
-            if (categories.includes('security')) return 'Secure Dev';
+            if (categories.includes('security')) return 'Seguridad aplicada';
             return 'Proyecto';
         }
 
